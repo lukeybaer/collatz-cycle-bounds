@@ -1,0 +1,3 @@
+'CollatzGrowthEnvelope.deficit_propagates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzGrowthEnvelope.extremal_prefix_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzGrowthEnvelope.cyclic_gap_growth' depends on axioms: [propext, Classical.choice, Quot.sound]

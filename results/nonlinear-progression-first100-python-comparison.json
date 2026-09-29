@@ -1,0 +1,617 @@
+{
+  "status": "passed",
+  "full_input": false,
+  "capacity_kind": "nonlinear_block_restart",
+  "linear_coefficient_certified": false,
+  "map_id": "plateau-c3799-c4099-h71",
+  "classes": 100,
+  "exact_thresholds_checked": 7938,
+  "rows": [
+    {
+      "id": 0,
+      "seeds": "9223372036854775808",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 1,
+      "seeds": "4611686018427387904",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 2,
+      "seeds": "2305843009213693952",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 3,
+      "seeds": "1152921504606846976",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 4,
+      "seeds": "576460752303423488",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 5,
+      "seeds": "288230376151711744",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 6,
+      "seeds": "144115188075855872",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 7,
+      "seeds": "72057594037927936",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 8,
+      "seeds": "36028797018963968",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 9,
+      "seeds": "18014398509481984",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 10,
+      "seeds": "9007199254740992",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 11,
+      "seeds": "4503599627370496",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 12,
+      "seeds": "2251799813685248",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 13,
+      "seeds": "1125899906842624",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 14,
+      "seeds": "562949953421312",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 15,
+      "seeds": "281474976710656",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 16,
+      "seeds": "140737488355328",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 17,
+      "seeds": "70368744177664",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 18,
+      "seeds": "35184372088832",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 19,
+      "seeds": "17592186044416",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 20,
+      "seeds": "8796093022208",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 21,
+      "seeds": "4398046511104",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 22,
+      "seeds": "2199023255552",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 23,
+      "seeds": "1099511627776",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 24,
+      "seeds": "549755813888",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 25,
+      "seeds": "274877906944",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 26,
+      "seeds": "137438953472",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 27,
+      "seeds": "68719476736",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 28,
+      "seeds": "34359738368",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 29,
+      "seeds": "17179869184",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 30,
+      "seeds": "8589934592",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 31,
+      "seeds": "4294967296",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 32,
+      "seeds": "2147483648",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 33,
+      "seeds": "1073741824",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 34,
+      "seeds": "536870912",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 35,
+      "seeds": "268435456",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 36,
+      "seeds": "134217728",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 37,
+      "seeds": "67108864",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 38,
+      "seeds": "33554432",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 39,
+      "seeds": "16777216",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 40,
+      "seeds": "8388608",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 41,
+      "seeds": "4194304",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 42,
+      "seeds": "2097152",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 43,
+      "seeds": "1048576",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 44,
+      "seeds": "524288",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 45,
+      "seeds": "262144",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 46,
+      "seeds": "131072",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 47,
+      "seeds": "65536",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 48,
+      "seeds": "32768",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 49,
+      "seeds": "16384",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 50,
+      "seeds": "8192",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 51,
+      "seeds": "4096",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 52,
+      "seeds": "2048",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 53,
+      "seeds": "1024",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 54,
+      "seeds": "512",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 55,
+      "seeds": "256",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 56,
+      "seeds": "128",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 57,
+      "seeds": "64",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 58,
+      "seeds": "32",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 59,
+      "seeds": "16",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 60,
+      "seeds": "8",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 61,
+      "seeds": "4",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 62,
+      "seeds": "2",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 63,
+      "seeds": "1",
+      "nodes": 1,
+      "singleton_steps": 216
+    },
+    {
+      "id": 64,
+      "seeds": "1",
+      "nodes": 1,
+      "singleton_steps": 135
+    },
+    {
+      "id": 65,
+      "seeds": "9223372036854775808",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 66,
+      "seeds": "4611686018427387904",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 67,
+      "seeds": "2305843009213693952",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 68,
+      "seeds": "3458764513820540928",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 69,
+      "seeds": "1729382256910270464",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 70,
+      "seeds": "864691128455135232",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 71,
+      "seeds": "432345564227567616",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 72,
+      "seeds": "216172782113783808",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 73,
+      "seeds": "108086391056891904",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 74,
+      "seeds": "54043195528445952",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 75,
+      "seeds": "27021597764222976",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 76,
+      "seeds": "13510798882111488",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 77,
+      "seeds": "6755399441055744",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 78,
+      "seeds": "3377699720527872",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 79,
+      "seeds": "1688849860263936",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 80,
+      "seeds": "844424930131968",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 81,
+      "seeds": "422212465065984",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 82,
+      "seeds": "211106232532992",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 83,
+      "seeds": "105553116266496",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 84,
+      "seeds": "52776558133248",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 85,
+      "seeds": "26388279066624",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 86,
+      "seeds": "13194139533312",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 87,
+      "seeds": "6597069766656",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 88,
+      "seeds": "3298534883328",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 89,
+      "seeds": "1649267441664",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 90,
+      "seeds": "824633720832",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 91,
+      "seeds": "412316860416",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 92,
+      "seeds": "206158430208",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 93,
+      "seeds": "103079215104",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 94,
+      "seeds": "51539607552",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 95,
+      "seeds": "25769803776",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 96,
+      "seeds": "12884901888",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 97,
+      "seeds": "6442450944",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 98,
+      "seeds": "3221225472",
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 99,
+      "seeds": "1610612736",
+      "nodes": 1,
+      "singleton_steps": 0
+    }
+  ],
+  "seconds": 0.1904552000341937,
+  "source_sha256": "8388fd6281ee9dd83c29fa8852df1c8ce0a04c354bd89d890ccad456080a3193",
+  "inherited_source_sha256": "03b1b411dd63aaf29ecae87ae04b7f055822479b83f1d80f5c1f42f2250205c5",
+  "native_source_sha256": "eb7126ade56d9cc2a1c251f2aa337ba84f159247a30bd2b0c5aa522685eb9c3b",
+  "input_sha256": "b4a5b0ee5aab770c5e8edf3fb8dc87ca3d256bf21de4021085f5910dac752f2d",
+  "native_result_sha256": "e3b47b29815111b1f60f5c7440be5b1a4b45c5d2d5ee1df889acfcb8b9373a42"
+}

@@ -1,0 +1,4 @@
+'CollatzThirdRange.interpolation_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzThirdRange.rational_loss_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzThirdRange.first_range_local_loss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzThirdRange.fractional_restart_constant' depends on axioms: [propext, Classical.choice, Quot.sound]

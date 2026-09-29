@@ -1,0 +1,7 @@
+'CollatzTwoRegimeParameters.small_margin_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzTwoRegimeParameters.large_margin_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzTwoRegimeParameters.dyadic_run_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzTwoRegimeParameters.rectangle_cardinality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzTwoRegimeParameters.large_b_numerator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzTwoRegimeParameters.two_block_loss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzTwoRegimeParameters.restart_constant' depends on axioms: [propext, Classical.choice, Quot.sound]

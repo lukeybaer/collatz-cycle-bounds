@@ -1,0 +1,2 @@
+'CollatzNormalizedLog.squared_log_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzNormalizedLog.valuation_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]

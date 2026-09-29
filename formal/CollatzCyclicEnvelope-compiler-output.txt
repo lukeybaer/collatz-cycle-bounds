@@ -1,0 +1,7 @@
+'CollatzCyclicEnvelope.iterate_adjoint' depends on axioms: [propext, Quot.sound]
+'CollatzCyclicEnvelope.inverse_iterate_le' depends on axioms: [propext, Quot.sound]
+'CollatzCyclicEnvelope.term_le_envelope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzCyclicEnvelope.seed_le_envelope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzCyclicEnvelope.envelope_le_height' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzCyclicEnvelope.envelope_growth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzCyclicEnvelope.common_cap_preserves_growth' depends on axioms: [propext]

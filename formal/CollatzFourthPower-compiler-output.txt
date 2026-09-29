@@ -1,0 +1,8 @@
+'CollatzFourthPower.power_identity' depends on axioms: [propext]
+'CollatzFourthPower.signed_form_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzFourthPower.eighty_one_pow_mod_sixteen' depends on axioms: [propext]
+'CollatzFourthPower.high_valuation_congruence' depends on axioms: [propext]
+'CollatzFourthPower.first_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzFourthPower.second_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzFourthPower.first_range_local_loss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzFourthPower.restart_constants' depends on axioms: [propext, Classical.choice, Quot.sound]

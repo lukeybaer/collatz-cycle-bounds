@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "map_id": "plateau-c3799-c4099-h71-graft-eps1over93-B32768",
+  "kind": "analytic_tail_graft",
+  "verified_basin": "2361183241434822606848",
+  "domain_height_floor": 71,
+  "parameters": {
+    "c0": "3799/100",
+    "c1": "4099/100",
+    "h": 71,
+    "epsilon": "1/93",
+    "cutoff": 32768
+  },
+  "finite_root_height_upper": 117,
+  "finite_max_restart_depths": {
+    "nonlinear-J41-full": 5,
+    "nonlinear-clipped-progression-full": 5
+  },
+  "middle_case_margin_lower": "158078814690401299843409054874412600518236275492524987665841091192747118041616124390571870824960074428695329970113517843593360184950056652448983484994132232504334094257860372749307559590015704307182009/10811250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "tail_offset": "2895593/9300",
+  "source_sha256": "26eea6bd5a39e7df4f9c59e7c206bc04d13450300e5453e101cef6871b9055c0",
+  "source_dependencies": {
+    "verify_nonlinear_capacity.py": "e0523bcce9d1c19cc98279480db8d0b0ff2597913698f46ec5387550e3e82acc",
+    "exact_intervals.py": "f06de42a83824055e01890b07ed4f4e750df3180cda38f87a7600c90dfcc434a",
+    "audit_fourth_power_bound.py": "5e87cbe40c46597aef0f4be3c3e7c24b8cb27b930481bf10c9bc48ccb2b43f81"
+  },
+  "dependencies": {
+    "nonlinear-capacity-plateau-c3799-c4099-h71-certificate.json": "ef5ab5a45d59edfaab5d8bfbbf0c2a676dd42007829c48aa78c1a811301d7964",
+    "fourth-power-exponential-bound-audit.json": "9138c6b0759487e068df1a0a6899d39eeeace35920099bd8957165037b581bf4",
+    "extended-capacity-J41-classes.json": "b4a5b0ee5aab770c5e8edf3fb8dc87ca3d256bf21de4021085f5910dac752f2d",
+    "extended-capacity-J41-global.json": "cb21a1447bcf565b6825229d21fdef9f797ffe13eeb63962fb67c3d0081da50e",
+    "extended-capacity-J41-coverage-audit.json": "f28484c38d5fbf723c7041a86ee1a78875092ce85dd063f09412e388a946096a"
+  },
+  "proof_dependencies": {
+    "fourth-power-analytic-tail-graft.md": "b75451bfa392f5204a85c019fb01a9f3f70cda33151bdcc273c53637d8ab2f83",
+    "fourth-power-interpolation-bound.md": "fb65f31333d7f361c7a64a7a0b8a93caf7c30b8c623bb6664f52e58dbcae52eb",
+    "two-regime-interpolation-bound.md": "a31ba6479eb7054a639f02fdbee3f9125b92824af8f3f921333909958b2f875f",
+    "cycle-bound-corollaries.md": "9a91251ca657d3980c889712db8d067a37f9e81fb1715a3df20a4fb592bc6921",
+    "results/interpolation-primary-source-provenance.json": "61ddc22b3418a8692881db137152557f719c94a707aa798ca3f5e8d494f76909",
+    "formal/fourth-power-verification.json": "59f113a4a838153f67bf3554cd23fc7d6cbe01b1a0a529e8970cb08638a8e702",
+    "formal/verify_fourth_power_formal.py": "a0d85dd24cde7d8e7541b2cf5322c20ce7da15b399807c7b055206165c2f38b1",
+    "formal/CollatzFourthPower.lean": "10e4c9ed6de0710b947b7acb7f78c3170dfd51433ce61842f57a1c0ff47fe270",
+    "formal/CollatzFourthPower-compiler-output.txt": "e7334812965447f2c94abbf93a978d0d3989cabf0ba91979b91f688425a2192e",
+    "formal/CollatzAffineEnvelope.lean": "5f6ee7817d61d4c91e23870735efd9b78f0ef1fdb721ca4d99d79d68708f33e8",
+    "formal/CollatzAffineEnvelope-compiler-output.txt": "71cb644da6b98e7e3a4ebddf65d7d1ec821e5f019487a1410520678108bf5784",
+    "formal/two-regime-parameters-verification.json": "b368004bb20b0369df585afbf5b9276b05a8cf6e3d7bf5bb6015cfe46a31706f",
+    "formal/verify_two_regime_formal.py": "945b99fa2f402f5d5512bd468a6732116568dd44b86e047f3f28cf1ef3e0026d",
+    "formal/CollatzTwoRegimeParameters.lean": "2f34de5c7ae4de12fe58c0e2995b0ca3a552818cf449b2304c0e2c78a186abf9",
+    "formal/CollatzTwoRegimeParameters-compiler-output.txt": "4fcc2f37fb92d6a3c9e37148270d1190d5f05cc8d12b36b82075e4917dd2140a",
+    "formal/signed-normalization-verification.json": "82c698b4a7d6be0f1fb05306ec466789ad0626352a5019538d1d5fefe1d3b1d0",
+    "formal/verify_signed_formal.py": "7cdbdaa5b92c143335d9ec5752a13dfecdad36944095f2a9fed5ca0efe3812f5",
+    "formal/CollatzSignedNormalization.lean": "df19b2413900c2577c1d96179b751e966120181d1e1eabdc2b1cda0bbc6a0d31",
+    "formal/CollatzSignedNormalization-compiler-output.txt": "deb39de048a02579658b4a763783887632980d0b43c4c9851e43c4bbe90a692e"
+  },
+  "scope": "Written graft proof plus checked analytic/finite dependencies and exact interval margins. External mathematical review and priority remain pending."
+}

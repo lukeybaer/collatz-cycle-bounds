@@ -1,0 +1,639 @@
+{
+  "status": "passed",
+  "utc": "2026-09-29T13:44:39.532964+00:00",
+  "theorem_count": 93,
+  "module_count": 20,
+  "lean_version": "Lean (version 4.34.1, x86_64-w64-windows-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "receipt_sha256": {
+    "core-verification-v1.json": "98325b52009ef27f018b45d3813402b7ccf9926aa51dbbcc978a9faa50185d71",
+    "sharper-constants-verification.json": "cbe943f38b325bfb2c5ff943517c95cc6386929934cb761dc7cc5eeda3e951ad",
+    "global-envelope-verification.json": "a21ed2749860beece2421929155349bdaf35e5ebea716dd54cc92a57e8774cdf",
+    "convex-cost-verification.json": "2dad5b8d52eb41a53cbc83972fa8698fe7dd8bdb08cb08a295f1c77a5d72a8b1",
+    "independent-constants-verification.json": "2a2874e0480745fbbe310f5db46d19edce833da4a167a48e842b8885ad4c4260",
+    "dependent-valuation-verification.json": "57ca7b6d407895e4d67c9c3ba3f9c1bf316977a7ca6f1d34f2597564251087ca",
+    "reciprocal-cost-verification.json": "208d853d17143bcf27a280a01471f62c6c3797fedd2a0ce1ded750cfe5a14412",
+    "cyclic-envelope-verification.json": "fb8cbe8501d2ecda1d02ce582076de9ef39d23b7bc790ec493b2a44c921fbf11",
+    "parity-constants-verification.json": "71c87f79b5cee479ffb42ab290da165a0ca1619cf577fa234a053f68dd6e2a8b",
+    "common-cap-verification.json": "2cd62ac0036b717703ebc1499539e5a0a46d98bc7d310d2d5748b6f27cf65d23",
+    "signed-normalization-verification.json": "82c698b4a7d6be0f1fb05306ec466789ad0626352a5019538d1d5fefe1d3b1d0",
+    "interpolation-parameters-verification.json": "d9faefe913982c509e8841e9f61fa3a4b34950f2e37da7a02c61e03c1300c288",
+    "two-regime-parameters-verification.json": "b368004bb20b0369df585afbf5b9276b05a8cf6e3d7bf5bb6015cfe46a31706f",
+    "third-range-verification.json": "7991d470207a0c5a21848c6d4e4831c12e15b6d5e9de4e1da9398a363721e76d",
+    "fourth-power-verification.json": "59f113a4a838153f67bf3554cd23fc7d6cbe01b1a0a529e8970cb08638a8e702",
+    "four-range-verification.json": "ba7e683147b8c474e2f452726bf33ffcafccd67cd456242bdddc7aafdd3cbb79"
+  },
+  "checks": [
+    {
+      "module": "CollatzAffineEnvelope",
+      "source_sha256": "5f6ee7817d61d4c91e23870735efd9b78f0ef1fdb721ca4d99d79d68708f33e8",
+      "axioms_by_theorem": {
+        "CollatzAffineEnvelope.growth_le_affine": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzAffineEnvelope.affine_sequence_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "compiler_output": "'CollatzAffineEnvelope.growth_le_affine' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzAffineEnvelope.affine_sequence_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "exit_code": 0
+    },
+    {
+      "module": "CollatzCommonCap",
+      "source_sha256": "ac3bf5c8a4de6ae8600bd5e7d87e9bdcd3f7f40e23e9f9741f947bbfe25e2558",
+      "axioms_by_theorem": {
+        "CollatzCommonCap.capSum_continuous": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzCommonCap.exists_common_cap": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzCommonCap.mass_preserving_growth_cap": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "compiler_output": "'CollatzCommonCap.capSum_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzCommonCap.exists_common_cap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzCommonCap.mass_preserving_growth_cap' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "exit_code": 0
+    },
+    {
+      "module": "CollatzConvexCost",
+      "source_sha256": "5793f0283a062b034e30b9375a3503076c9822f66efab488d6dab77c137ba274",
+      "axioms_by_theorem": {
+        "CollatzConvexCost.weighted_prefix_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzConvexCost.convex_sum_from_tangents": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzConvexCost.supporting_tangent": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzConvexCost.differentiable_convex_majorization": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "compiler_output": "'CollatzConvexCost.weighted_prefix_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzConvexCost.convex_sum_from_tangents' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzConvexCost.supporting_tangent' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzConvexCost.differentiable_convex_majorization' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "exit_code": 0
+    },
+    {
+      "module": "CollatzCyclicEnvelope",
+      "source_sha256": "79a402be1ed3306fe1c68fc66124a396b45a2613ad70a8129a9098420acdc2e0",
+      "axioms_by_theorem": {
+        "CollatzCyclicEnvelope.iterate_adjoint": [
+          "propext",
+          "Quot.sound"
+        ],
+        "CollatzCyclicEnvelope.inverse_iterate_le": [
+          "propext",
+          "Quot.sound"
+        ],
+        "CollatzCyclicEnvelope.term_le_envelope": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzCyclicEnvelope.seed_le_envelope": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzCyclicEnvelope.envelope_le_height": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzCyclicEnvelope.envelope_growth": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzCyclicEnvelope.common_cap_preserves_growth": [
+          "propext"
+        ]
+      },
+      "compiler_output": "'CollatzCyclicEnvelope.iterate_adjoint' depends on axioms: [propext, Quot.sound]\n'CollatzCyclicEnvelope.inverse_iterate_le' depends on axioms: [propext, Quot.sound]\n'CollatzCyclicEnvelope.term_le_envelope' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzCyclicEnvelope.seed_le_envelope' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzCyclicEnvelope.envelope_le_height' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzCyclicEnvelope.envelope_growth' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzCyclicEnvelope.common_cap_preserves_growth' depends on axioms: [propext]\n",
+      "exit_code": 0
+    },
+    {
+      "module": "CollatzDependentValuation",
+      "source_sha256": "ee2ef1bd2a3211e9c1ce6b0dcba772e4182d176a81339ef9b380e8f08e3286e8",
+      "axioms_by_theorem": {
+        "CollatzDependentValuation.three_pow_mod_eight": [
+          "propext"
+        ],
+        "CollatzDependentValuation.odd_multiple_sum_not_eight_dvd": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzDependentValuation.dependent_valuation_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "compiler_output": "'CollatzDependentValuation.three_pow_mod_eight' depends on axioms: [propext]\n'CollatzDependentValuation.odd_multiple_sum_not_eight_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzDependentValuation.dependent_valuation_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "exit_code": 0
+    },
+    {
+      "module": "CollatzFourRange",
+      "source_sha256": "b88213248aee3be813e745298b49ed23ba0430be7aa1dbafa555015f4031947e",
+      "axioms_by_theorem": {
+        "CollatzFourRange.first_margin": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzFourRange.second_margin": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzFourRange.third_margin": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzFourRange.fourth_margin": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzFourRange.numeric_gaps": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzFourRange.local_loss": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzFourRange.ratio_decreases": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzFourRange.restart_constants": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "compiler_output": "'CollatzFourRange.first_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzFourRange.second_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzFourRange.third_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzFourRange.fourth_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzFourRange.numeric_gaps' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzFourRange.local_loss' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzFourRange.ratio_decreases' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzFourRange.restart_constants' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "exit_code": 0
+    },
+    {
+      "module": "CollatzFourthPower",
+      "source_sha256": "10e4c9ed6de0710b947b7acb7f78c3170dfd51433ce61842f57a1c0ff47fe270",
+      "axioms_by_theorem": {
+        "CollatzFourthPower.power_identity": [
+          "propext"
+        ],
+        "CollatzFourthPower.signed_form_identity": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzFourthPower.eighty_one_pow_mod_sixteen": [
+          "propext"
+        ],
+        "CollatzFourthPower.high_valuation_congruence": [
+          "propext"
+        ],
+        "CollatzFourthPower.first_margin": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzFourthPower.second_margin": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzFourthPower.first_range_local_loss": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzFourthPower.restart_constants": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "compiler_output": "'CollatzFourthPower.power_identity' depends on axioms: [propext]\n'CollatzFourthPower.signed_form_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzFourthPower.eighty_one_pow_mod_sixteen' depends on axioms: [propext]\n'CollatzFourthPower.high_valuation_congruence' depends on axioms: [propext]\n'CollatzFourthPower.first_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzFourthPower.second_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzFourthPower.first_range_local_loss' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzFourthPower.restart_constants' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "exit_code": 0
+    },
+    {
+      "module": "CollatzGlobalEnvelope",
+      "source_sha256": "4a28870e906495560935ba80f4f8584162654ad39dee71910671bf2df58638fb",
+      "axioms_by_theorem": {
+        "CollatzGlobalEnvelope.growth_monotone": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzGlobalEnvelope.growth_upper": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzGlobalEnvelope.growth_lower": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzGlobalEnvelope.growth_tail": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzGlobalEnvelope.virtual_lower": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzGlobalEnvelope.virtual_upper": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzGlobalEnvelope.virtual_tail": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzGlobalEnvelope.finite_warmup_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzGlobalEnvelope.delta_bounds": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzGlobalEnvelope.explicit_virtual_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "compiler_output": "'CollatzGlobalEnvelope.growth_monotone' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzGlobalEnvelope.growth_upper' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzGlobalEnvelope.growth_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzGlobalEnvelope.growth_tail' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzGlobalEnvelope.virtual_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzGlobalEnvelope.virtual_upper' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzGlobalEnvelope.virtual_tail' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzGlobalEnvelope.finite_warmup_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzGlobalEnvelope.delta_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzGlobalEnvelope.explicit_virtual_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "exit_code": 0
+    },
+    {
+      "module": "CollatzGrowthEnvelope",
+      "source_sha256": "0c61c2c68aee3c433f5a69332468de9ae19ca337c0c4c82e1d558009ff45ebc6",
+      "axioms_by_theorem": {
+        "CollatzGrowthEnvelope.deficit_propagates": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzGrowthEnvelope.extremal_prefix_sum": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzGrowthEnvelope.cyclic_gap_growth": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "compiler_output": "'CollatzGrowthEnvelope.deficit_propagates' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzGrowthEnvelope.extremal_prefix_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzGrowthEnvelope.cyclic_gap_growth' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "exit_code": 0
+    },
+    {
+      "module": "CollatzIndependentConstants",
+      "source_sha256": "605063acab7510c3417c7ccf045e0a7378369717c772c8f1d52abfce5be05a14",
+      "axioms_by_theorem": {
+        "CollatzIndependentConstants.squared_log_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzIndependentConstants.valuation_cutoff": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzIndependentConstants.two_block_loss": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzIndependentConstants.fractional_two_block_loss": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "compiler_output": "'CollatzIndependentConstants.squared_log_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzIndependentConstants.valuation_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzIndependentConstants.two_block_loss' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzIndependentConstants.fractional_two_block_loss' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "exit_code": 0
+    },
+    {
+      "module": "CollatzInterpolationParameters",
+      "source_sha256": "0636a0d6ffcaebb152f7fa3d29b073483e32bc882fedbb5137301d21bab60026",
+      "axioms_by_theorem": {
+        "CollatzInterpolationParameters.margin_positive": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzInterpolationParameters.dyadic_run_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzInterpolationParameters.residue_rectangle_injective": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzInterpolationParameters.two_block_loss": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "compiler_output": "'CollatzInterpolationParameters.margin_positive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzInterpolationParameters.dyadic_run_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzInterpolationParameters.residue_rectangle_injective' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzInterpolationParameters.two_block_loss' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "exit_code": 0
+    },
+    {
+      "module": "CollatzLocalLoss",
+      "source_sha256": "ec7d7c55df92b5fabb0f1b38cb3bc0b5a9227258bb9ab644d53bbb0845861aaa",
+      "axioms_by_theorem": {
+        "CollatzLocalLoss.two_block_loss": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzLocalLoss.fractional_two_block_loss": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "compiler_output": "'CollatzLocalLoss.two_block_loss' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzLocalLoss.fractional_two_block_loss' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "exit_code": 0
+    },
+    {
+      "module": "CollatzNormalizedLog",
+      "source_sha256": "f0687834e0ecade6b8bd8ca7d8abb3207a44d28311d563bb9ec722e08cfa97b7",
+      "axioms_by_theorem": {
+        "CollatzNormalizedLog.squared_log_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzNormalizedLog.valuation_cutoff": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "compiler_output": "'CollatzNormalizedLog.squared_log_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzNormalizedLog.valuation_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "exit_code": 0
+    },
+    {
+      "module": "CollatzParityConstants",
+      "source_sha256": "628bfa1587d9c2643d57b964a35d948cb863694c83da1b4ce4802ce751e0f450",
+      "axioms_by_theorem": {
+        "CollatzParityConstants.squared_log_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzParityConstants.valuation_cutoff": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzParityConstants.two_block_loss": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzParityConstants.fractional_two_block_loss": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzParityConstants.delta_lower": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "compiler_output": "'CollatzParityConstants.squared_log_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzParityConstants.valuation_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzParityConstants.two_block_loss' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzParityConstants.fractional_two_block_loss' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzParityConstants.delta_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "exit_code": 0
+    },
+    {
+      "module": "CollatzReciprocalCost",
+      "source_sha256": "4f4cd5c9a425c60dba4fcef87f7a80ad6dc2c1373912c1d34fa0378434e2fbf5",
+      "axioms_by_theorem": {
+        "CollatzReciprocalCost.denominator_pos": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzReciprocalCost.cost_hasDerivAt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzReciprocalCost.first_hasDerivAt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzReciprocalCost.cost_antitone": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzReciprocalCost.cost_convex": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzReciprocalCost.binary_cost_convex": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzReciprocalCost.binary_cost_antitone": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "compiler_output": "'CollatzReciprocalCost.denominator_pos' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzReciprocalCost.cost_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzReciprocalCost.first_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzReciprocalCost.cost_antitone' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzReciprocalCost.cost_convex' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzReciprocalCost.binary_cost_convex' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzReciprocalCost.binary_cost_antitone' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "exit_code": 0
+    },
+    {
+      "module": "CollatzRestart",
+      "source_sha256": "ad1aba635a6502a0518dedc28a5002e90e9919f8f193fe18f1ac7145a13312ce",
+      "axioms_by_theorem": {
+        "CollatzRestart.endpoint_or_intermediate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzRestart.run_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzRestart.height_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "compiler_output": "'CollatzRestart.endpoint_or_intermediate' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzRestart.run_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzRestart.height_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "exit_code": 0
+    },
+    {
+      "module": "CollatzSharperConstants",
+      "source_sha256": "e86a7ba0f44f3294f6d0710791b326b6ac49512e9cc1d4e95093a22f8bc5227e",
+      "axioms_by_theorem": {
+        "CollatzSharperConstants.squared_log_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzSharperConstants.valuation_cutoff": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzSharperConstants.two_block_loss": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "compiler_output": "'CollatzSharperConstants.squared_log_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzSharperConstants.valuation_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzSharperConstants.two_block_loss' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "exit_code": 0
+    },
+    {
+      "module": "CollatzSignedNormalization",
+      "source_sha256": "df19b2413900c2577c1d96179b751e966120181d1e1eabdc2b1cda0bbc6a0d31",
+      "axioms_by_theorem": {
+        "CollatzSignedNormalization.three_parity_identity": [
+          "propext",
+          "Quot.sound"
+        ],
+        "CollatzSignedNormalization.signed_form_identity": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzSignedNormalization.nine_pow_mod_eight": [
+          "propext"
+        ],
+        "CollatzSignedNormalization.high_valuation_congruence": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "compiler_output": "'CollatzSignedNormalization.three_parity_identity' depends on axioms: [propext, Quot.sound]\n'CollatzSignedNormalization.signed_form_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzSignedNormalization.nine_pow_mod_eight' depends on axioms: [propext]\n'CollatzSignedNormalization.high_valuation_congruence' depends on axioms: [propext, Quot.sound]\n",
+      "exit_code": 0
+    },
+    {
+      "module": "CollatzThirdRange",
+      "source_sha256": "8611f29157b04668cc964f43c6a8d8555534cbcabe5c26251dd9529cd2886f72",
+      "axioms_by_theorem": {
+        "CollatzThirdRange.interpolation_margin": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzThirdRange.rational_loss_margin": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzThirdRange.first_range_local_loss": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzThirdRange.fractional_restart_constant": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "compiler_output": "'CollatzThirdRange.interpolation_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzThirdRange.rational_loss_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzThirdRange.first_range_local_loss' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzThirdRange.fractional_restart_constant' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "exit_code": 0
+    },
+    {
+      "module": "CollatzTwoRegimeParameters",
+      "source_sha256": "2f34de5c7ae4de12fe58c0e2995b0ca3a552818cf449b2304c0e2c78a186abf9",
+      "axioms_by_theorem": {
+        "CollatzTwoRegimeParameters.small_margin_positive": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzTwoRegimeParameters.large_margin_positive": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzTwoRegimeParameters.dyadic_run_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzTwoRegimeParameters.rectangle_cardinality": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzTwoRegimeParameters.large_b_numerator": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzTwoRegimeParameters.two_block_loss": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzTwoRegimeParameters.restart_constant": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "compiler_output": "'CollatzTwoRegimeParameters.small_margin_positive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzTwoRegimeParameters.large_margin_positive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzTwoRegimeParameters.dyadic_run_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzTwoRegimeParameters.rectangle_cardinality' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzTwoRegimeParameters.large_b_numerator' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzTwoRegimeParameters.two_block_loss' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CollatzTwoRegimeParameters.restart_constant' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "exit_code": 0
+    }
+  ],
+  "source_sha256": "350db4a9716fc6b4594b85121da6c181d00ebd6c417bbf40a86e3925d52949e8",
+  "scope": "Accepted supporting lemmas only. Does not formalize the complete Collatz application, the external p-adic theorem, or finite-search programs."
+}

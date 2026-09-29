@@ -1,0 +1,10 @@
+{
+  "original_source_sha256": "07426c352d09465c57d1422d93db4a34c2a03b30cd30ccbf3801ad62a633610f",
+  "generated_source_sha256": "0b0b1eeed5d11935ae09ab941ba7e943b972cbba9bd4cfa68ea3a4d1aecce8ad",
+  "map_id": "plateau-c3799-c4099-h71",
+  "c0": "3799/100",
+  "c1": "4099/100",
+  "h": 71,
+  "change": "Only the iterated restart envelope, fixed J41 conservative input scope, and output type change. Existing sources remain frozen.",
+  "warning": "Experimental nonlinear capacity, not a certified uniform linear coefficient."
+}

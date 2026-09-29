@@ -1,0 +1,65 @@
+{
+  "status": "passed",
+  "rows": [
+    {
+      "epsilon": "1/93",
+      "C": 92,
+      "J_multiple": 2,
+      "J_minimum": 200,
+      "B": 18400,
+      "warmup": 22,
+      "lambda": "1.574209812549113170701050771904805756071642364681728372283709643788410055751347809834108431907335554",
+      "amplification_A": "1.161556340798545575829550744921423267469540842737545727755809695939340855179266049103168383398970730",
+      "rounding_challenges": 302,
+      "virtual_iteration_challenges": 1206,
+      "cycle_coefficient_upper_rationals": {
+        "basic": "10114389508967121910089152942190295604115672272208457951181221/500000000000000000000000000000000000000000000000000000000000",
+        "middle": "144143220280787954825424191344105189306049522160574963900623/100000000000000000000000000000000000000000000000000000000000",
+        "affine_large": "1895621502658337685909455168411939210193706455205150998731291/125000000000000000000000000000000000000000000000000000000000"
+      },
+      "rounded_cycle_coefficients": {
+        "basic": "2023/100",
+        "middle": "29/20",
+        "affine_large": "1517/100"
+      }
+    },
+    {
+      "epsilon": "1/83",
+      "C": 82,
+      "J_multiple": 20,
+      "J_minimum": 2000,
+      "B": 164000,
+      "warmup": 27,
+      "lambda": "1.572914307950071844104341353586370725627284287210553349612379160565194613336527237221075655640979808",
+      "amplification_A": "1.228785478498040789384877264613731403982686664337448103040002843048580149186661024955150873103274691",
+      "rounding_challenges": 302,
+      "virtual_iteration_challenges": 1206,
+      "cycle_coefficient_upper_rationals": {
+        "basic": "10723990145181769485003905175076907864647674097400633810842471/500000000000000000000000000000000000000000000000000000000000",
+        "middle": "305661646195350174513978495159418636923356231760546711092893/200000000000000000000000000000000000000000000000000000000000",
+        "affine_large": "237221918635249428275479453412363960123715003329207271483581/15625000000000000000000000000000000000000000000000000000000"
+      },
+      "rounded_cycle_coefficients": {
+        "basic": "429/20",
+        "middle": "153/100",
+        "affine_large": "1519/100"
+      }
+    }
+  ],
+  "source_sha256": "622ec83e64829a06232b91ed3d9e8977b27c7ace8bdeb15fc20e4c0d345bbba2",
+  "dependencies": {
+    "fourth-power-exponential-bound-audit.json": "9138c6b0759487e068df1a0a6899d39eeeace35920099bd8957165037b581bf4",
+    "four-range-exponential-bound-audit.json": "32f2442c4d079efcbc7c10cf26c52fc070446952e6f4e3f0aa63a90baaad682d"
+  },
+  "proof_dependencies": {
+    "fourth-power-interpolation-bound.md": "fb65f31333d7f361c7a64a7a0b8a93caf7c30b8c623bb6664f52e58dbcae52eb",
+    "four-range-interpolation-bound.md": "4064047a03370c7cc4a5980cff5371c0c4f132eec2f13f96231a6748003a0b00",
+    "optimized-global-cutoffs.md": "eb76e608be5f1ec8cbbd88c02f4862f40a4cf55cbe902ff8e14ec212309ab1b9"
+  },
+  "source_dependencies": {
+    "audit_fourth_power_bound.py": "5e87cbe40c46597aef0f4be3c3e7c24b8cb27b930481bf10c9bc48ccb2b43f81",
+    "audit_four_range_bound.py": "33bdcfd4cf01f7c535c1ae820fdd06b0dca1545985395587ceb4e39630bafae1",
+    "exact_intervals.py": "f06de42a83824055e01890b07ed4f4e750df3180cda38f87a7600c90dfcc434a"
+  },
+  "scope": "Smaller global cutoffs from already checked local interpolation arguments. Combined finite/analytic capacity requires a separate proof."
+}

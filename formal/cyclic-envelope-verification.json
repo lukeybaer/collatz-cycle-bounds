@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "utc": "2026-09-29T11:38:23.686128+00:00",
+  "lean_version": "Lean (version 4.34.1, x86_64-w64-windows-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "checks": [
+    {
+      "module": "CollatzCyclicEnvelope",
+      "theorems": [
+        "iterate_adjoint",
+        "inverse_iterate_le",
+        "term_le_envelope",
+        "seed_le_envelope",
+        "envelope_le_height",
+        "envelope_growth",
+        "common_cap_preserves_growth"
+      ],
+      "exit_code": 0,
+      "source_sha256": "79a402be1ed3306fe1c68fc66124a396b45a2613ad70a8129a9098420acdc2e0",
+      "compiler_output_sha256": "9db3f5b440d30c342044d0a5a56b2a43b1981f3b595ce39f60a965e44dca030e",
+      "axioms_by_theorem": {
+        "CollatzCyclicEnvelope.iterate_adjoint": [
+          "propext",
+          "Quot.sound"
+        ],
+        "CollatzCyclicEnvelope.inverse_iterate_le": [
+          "propext",
+          "Quot.sound"
+        ],
+        "CollatzCyclicEnvelope.term_le_envelope": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzCyclicEnvelope.seed_le_envelope": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzCyclicEnvelope.envelope_le_height": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzCyclicEnvelope.envelope_growth": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzCyclicEnvelope.common_cap_preserves_growth": [
+          "propext"
+        ]
+      }
+    }
+  ],
+  "scope": "Seven order-theoretic lemmas constructing and capping the subordinate cyclic envelope. Not a formalization of Collatz convergence, the p-adic theorem, or the numerical exclusions.",
+  "verifier_sha256": "23ef67c48fe81dc99a9637bcaa24acddf7c5534f02746225e9bdcc982c47e45f",
+  "toolchain_sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+  "lakefile_sha256": "cabe24446d85c3e3ab5a4a9aa111084ee602c15b007750724e9eb7c1c23d0ab4"
+}

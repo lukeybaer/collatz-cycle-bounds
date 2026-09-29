@@ -1,0 +1,2 @@
+'CollatzAffineEnvelope.growth_le_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAffineEnvelope.affine_sequence_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

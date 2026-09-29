@@ -1,0 +1,94 @@
+{
+  "status": "passed",
+  "map_id": "plateau-c3799-c4099-h71",
+  "full_global_input": false,
+  "classes": 12,
+  "rows": [
+    {
+      "id": 0,
+      "source_class": 631,
+      "nodes": 11683,
+      "singleton_steps": 1669714
+    },
+    {
+      "id": 1,
+      "source_class": 6324,
+      "nodes": 7717,
+      "singleton_steps": 585751
+    },
+    {
+      "id": 2,
+      "source_class": 8953,
+      "nodes": 1879,
+      "singleton_steps": 149606
+    },
+    {
+      "id": 3,
+      "source_class": 11108,
+      "nodes": 9807,
+      "singleton_steps": 264436
+    },
+    {
+      "id": 4,
+      "source_class": 13320,
+      "nodes": 15621,
+      "singleton_steps": 443413
+    },
+    {
+      "id": 5,
+      "source_class": 15678,
+      "nodes": 3242,
+      "singleton_steps": 245140
+    },
+    {
+      "id": 6,
+      "source_class": 18216,
+      "nodes": 1029,
+      "singleton_steps": 83642
+    },
+    {
+      "id": 7,
+      "source_class": 21229,
+      "nodes": 10047,
+      "singleton_steps": 1134178
+    },
+    {
+      "id": 8,
+      "source_class": 24301,
+      "nodes": 6140,
+      "singleton_steps": 233074
+    },
+    {
+      "id": 9,
+      "source_class": 28031,
+      "nodes": 6562,
+      "singleton_steps": 723685
+    },
+    {
+      "id": 10,
+      "source_class": 31775,
+      "nodes": 1260,
+      "singleton_steps": 112570
+    },
+    {
+      "id": 11,
+      "source_class": 40093,
+      "nodes": 889,
+      "singleton_steps": 66745
+    }
+  ],
+  "seconds": 11.459807500010356,
+  "source_sha256": "1f74d5d7c724d42b9e51f6b1996bf35079408bf02475b2a819d95ec8a3435f2b",
+  "source_dependencies": {
+    "verify_family_capacity.py": "03b1b411dd63aaf29ecae87ae04b7f055822479b83f1d80f5c1f42f2250205c5",
+    "verify_precise_nonlinear_progression.py": "9435c72a561606e2e666228554f9c0678fe221f986266f19032e235b6a08001d",
+    "audit_logtable.py": "132026817f33a6e57d719748011bf28eaefd2858823fdd32b1451b7a7268c156",
+    "ClippedNonlinearProgressionVerifier.cs": "85c3abe2a9e2dc4885099f4b9e041c0881219ece39d707604425e59daea8389d"
+  },
+  "dependencies": {
+    "nonlinear-progression-challenge-input.json": "6c693c50549a0aa796a5e0d1cc23a6104d68518ecc768a5c7ef38f4e5ad3d2d0",
+    "nonlinear-clipped-progression-challenge12-result.json": "6eb234e309daca19f469e42e19a6a2a17c13918362c70ea262f96d47360fa86c",
+    "nonlinear-clipped-progression-challenge12-metadata.json": "62782f8f17c3789ef8b3b312c8955710fef4e23144f3e4f6e36c5cce13edd873",
+    "log2-mantissa-table.json": "026a267563ed50f334b40fa53faf8cae4ff009c2ff378674a188efb0a4e7adc7"
+  }
+}

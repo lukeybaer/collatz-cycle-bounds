@@ -1,0 +1,41 @@
+{
+  "utc": "2026-09-29T12:22:14.294665+00:00",
+  "source": "Yann Bugeaud author-hosted complete PostScript",
+  "url": "https://irma.math.unistra.fr/~bugeaud/travaux/shopuissdef.ps",
+  "doi": "10.1017/S0305004199003692",
+  "used": "Theorem1 rational clause(6), author pages3-4 visually inspected",
+  "final_journal_fulltext_compared": false,
+  "files": [
+    {
+      "path": "shopuissdef.ps",
+      "bytes": 109178,
+      "sha256": "a15847fda238b164e943621b47377fd57870ed4fa9ddfaf5846e5c5d7f699127"
+    },
+    {
+      "path": "shopuissdef-author.pdf",
+      "bytes": 132471,
+      "sha256": "1400037cc402aa0bd7d8fbdd465730a1477a92d4cbee50d1eb6c2395d8ed5a9d"
+    },
+    {
+      "path": "shopuissdef-page-3.png",
+      "bytes": 143199,
+      "sha256": "a97bbea90d5b51270aadfe517c17998ee93d678938594d8b0a8b80e708a70998"
+    },
+    {
+      "path": "shopuissdef-page-4.png",
+      "bytes": 130325,
+      "sha256": "7c1fdc2454a4efad52b28e815b3ff041d1e0cb131f7ddc95153be3e121623ff7"
+    },
+    {
+      "path": "ladicdef.ps",
+      "bytes": 243761,
+      "sha256": "c9087db700cb71774f344831e1a61bdd0ccec9bf8a216bd41ae5f136691aa792"
+    },
+    {
+      "path": "logpadicdef.ps",
+      "bytes": 248138,
+      "sha256": "8efa1b161a1e7b3045027c3f491fdcdd2a18a50a6e889c2a2a1937976d8ba990"
+    }
+  ],
+  "scope": "Third-party source files retained in work/sources for private research, not included in deliverables."
+}

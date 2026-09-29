@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "utc": "2026-09-29T11:55:35.460463+00:00",
+  "lean_version": "Lean (version 4.34.1, x86_64-w64-windows-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "checks": [
+    {
+      "module": "CollatzCommonCap",
+      "theorems": [
+        "capSum_continuous",
+        "exists_common_cap",
+        "mass_preserving_growth_cap"
+      ],
+      "exit_code": 0,
+      "source_sha256": "ac3bf5c8a4de6ae8600bd5e7d87e9bdcd3f7f40e23e9f9741f947bbfe25e2558",
+      "compiler_output_sha256": "b750916dccaeb900efb0312433d49df2618a6709eefa3088913443cc0077b0f9",
+      "axioms_by_theorem": {
+        "CollatzCommonCap.capSum_continuous": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzCommonCap.exists_common_cap": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzCommonCap.mass_preserving_growth_cap": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    }
+  ],
+  "scope": "Three lemmas proving exact common-cap existence and preservation of growth. Not a formalization of Collatz convergence, the p-adic theorem, or the numerical exclusions.",
+  "verifier_sha256": "c74cd2c9bc0e325b6127de3345cfe5c43e657416bd2d0445d5f38d705f8358dc",
+  "toolchain_sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+  "lakefile_sha256": "cabe24446d85c3e3ab5a4a9aa111084ee602c15b007750724e9eb7c1c23d0ab4"
+}

@@ -1,0 +1,30 @@
+{
+  "journal": "wide-m100-fourth-power-J38-grafted-release-journal.jsonl",
+  "sha256": "01a521734a48d7d32dfc082b0b1144c71eb5b123d5d62fe1fd4a2407eb31a77d",
+  "status": "passed",
+  "jobs_present": 231505,
+  "jobs_expected": 231505,
+  "survivors": 0,
+  "incomplete_jobs": [],
+  "errors": [],
+  "job_totals": {
+    "nodes": 14527929867,
+    "singletons": 15047534892,
+    "descent": 185424,
+    "capacity": 15047349468,
+    "empty": 1049627132,
+    "survivors": 0,
+    "odd_tail": 10191803758,
+    "even_tail": 1979603168
+  },
+  "generator_counters": {
+    "nodes": 254278,
+    "singletons": 28659,
+    "descent": 1447,
+    "capacity": 27212,
+    "empty": 6903,
+    "survivors": 0,
+    "odd_tail": 956,
+    "even_tail": 13415
+  }
+}

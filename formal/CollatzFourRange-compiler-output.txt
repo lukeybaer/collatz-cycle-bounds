@@ -1,0 +1,8 @@
+'CollatzFourRange.first_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzFourRange.second_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzFourRange.third_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzFourRange.fourth_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzFourRange.numeric_gaps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzFourRange.local_loss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzFourRange.ratio_decreases' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzFourRange.restart_constants' depends on axioms: [propext, Classical.choice, Quot.sound]

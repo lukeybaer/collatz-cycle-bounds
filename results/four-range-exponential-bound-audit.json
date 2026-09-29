@@ -1,0 +1,101 @@
+{
+  "status": "passed",
+  "epsilon": "1/83",
+  "B": 262144,
+  "C": 82,
+  "J_minimum": 2000,
+  "J_multiple": 20,
+  "warmup": 33,
+  "rows": [
+    {
+      "x": "31/5",
+      "r": "69/20",
+      "S": 9,
+      "T": 83,
+      "valuation_bound_over_J": "124",
+      "b_at_J2000": "152170141/2479800",
+      "log_b_upper": "4117/1000",
+      "gamma_R_over_J_upper": "15551/13500",
+      "gamma_S_upper": "15551/5178",
+      "interpolation_margin_over_J_lower": "2389158679/81553500000",
+      "local_gap_over_J_lower": "18646/3125",
+      "two_block_loss_over_J_lower": "34084888/9765625"
+    },
+    {
+      "x": "63/10",
+      "r": "7/2",
+      "S": 9,
+      "T": 89,
+      "valuation_bound_over_J": "126",
+      "b_at_J2000": "162991041/2519800",
+      "log_b_upper": "417/100",
+      "gamma_R_over_J_upper": "3503/3000",
+      "gamma_S_upper": "10509/3502",
+      "interpolation_margin_over_J_lower": "1120388537/18385500000",
+      "local_gap_over_J_lower": "17349/3125",
+      "two_block_loss_over_J_lower": "31713972/9765625"
+    },
+    {
+      "x": "67/10",
+      "r": "67/20",
+      "S": 10,
+      "T": 110,
+      "valuation_bound_over_J": "134",
+      "b_at_J2000": "901070711/10719200",
+      "log_b_upper": "554/125",
+      "gamma_R_over_J_upper": "3353/3000",
+      "gamma_S_upper": "16765/5028",
+      "interpolation_margin_over_J_lower": "47604587/251400000",
+      "local_gap_over_J_lower": "22067/3125",
+      "two_block_loss_over_J_lower": "40338476/9765625"
+    },
+    {
+      "x": "42/5",
+      "r": "21/5",
+      "S": 10,
+      "T": 256,
+      "valuation_bound_over_J": "168",
+      "b_at_J2000": "2084095911/13439200",
+      "log_b_upper": "1261/250",
+      "gamma_R_over_J_upper": "1401/1000",
+      "gamma_S_upper": "7005/2101",
+      "interpolation_margin_over_J_lower": "25238517/183837500",
+      "local_gap_over_J_lower": "3966/625",
+      "two_block_loss_over_J_lower": "7249848/1953125"
+    }
+  ],
+  "cycle_coefficient_upper_rationals": {
+    "basic": "22452772350999502121593914747113048968646691375388498712768979/1000000000000000000000000000000000000000000000000000000000000",
+    "middle": "319981241382408269167767443889521251252393277478681143764657/200000000000000000000000000000000000000000000000000000000000",
+    "affine_large": "15189192553270245801669069239519363368142168983198507389599693/1000000000000000000000000000000000000000000000000000000000000"
+  },
+  "parameter_challenges": 20,
+  "factorial_product_challenges": 6,
+  "virtual_iteration_challenges": 2808,
+  "large_integer_orbit_challenges": 12,
+  "observed_branches": {
+    "one": 0,
+    "two": 12
+  },
+  "actual_J2000_sample_margins": [
+    "0.0588024054642659530266372214929291856881732667435409899483491442823924547730624093350785451788238162151992325",
+    "0.092747632563290337459811232066549303269816112145436716554792913074225607874848823930073537515635662742442436",
+    "0.2218934727400994940162488704526990621987521297104253418439038196319200547267647584642005629492359498176418575",
+    "0.173673412607399371447821561892268560187303359840782568799214004098292236091681185856841531223363140386067705"
+  ],
+  "numeric": {
+    "lambda": "1.5729143079500718441043413535863707256272842872105533496123791605651946133365272372210756556409798083560409035",
+    "amplification_A": "1.2863514533033387348107072285373922872991055442334072026793583737139810836096328856784775875929576450925007382",
+    "basic_cycle_coefficient": "22.452772350999502121593914747113048968646691375388498712768978453069329840650514908304166174749042032723023943",
+    "middle_cycle_coefficient": "1.5999062069120413458388372194476062562619663873934057188232843044846602545958325890064394451994027672405826631",
+    "affine_constant_c": "5512.7990381039260410936914105095546660770665789015399474113093365206323183123901038645778149043377019087309460"
+  },
+  "source_sha256": "33bdcfd4cf01f7c535c1ae820fdd06b0dca1545985395587ceb4e39630bafae1",
+  "note_sha256": "4064047a03370c7cc4a5980cff5371c0c4f132eec2f13f96231a6748003a0b00",
+  "proof_dependencies": {
+    "fourth-power-interpolation-bound.md": "fb65f31333d7f361c7a64a7a0b8a93caf7c30b8c623bb6664f52e58dbcae52eb",
+    "two-regime-interpolation-bound.md": "a31ba6479eb7054a639f02fdbee3f9125b92824af8f3f921333909958b2f875f",
+    "cycle-bound-corollaries.md": "9a91251ca657d3980c889712db8d067a37f9e81fb1715a3df20a4fb592bc6921"
+  },
+  "scope": "Exact constants and supplementary finite challenges. Universal proof, Bugeaud1999, and published cycle bounds are written dependencies. No convergence proof or priority confirmation."
+}

@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "utc": "2026-09-29T12:09:58.272140+00:00",
+  "lean_version": "Lean (version 4.34.1, x86_64-w64-windows-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "checks": [
+    {
+      "module": "CollatzInterpolationParameters",
+      "theorems": [
+        "margin_positive",
+        "dyadic_run_bound",
+        "residue_rectangle_injective",
+        "two_block_loss"
+      ],
+      "exit_code": 0,
+      "source_sha256": "0636a0d6ffcaebb152f7fa3d29b073483e32bc882fedbb5137301d21bab60026",
+      "compiler_output_sha256": "7971f7d37878573b2612a5415fce834342a2cb03b5fc4bc5ce1a809031aed727",
+      "axioms_by_theorem": {
+        "CollatzInterpolationParameters.margin_positive": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzInterpolationParameters.dyadic_run_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzInterpolationParameters.residue_rectangle_injective": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzInterpolationParameters.two_block_loss": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    }
+  ],
+  "scope": "Four elementary all-parameter lemmas for the direct interpolation argument. Not a formalization of Collatz convergence, the p-adic theorem, or the numerical exclusions.",
+  "verifier_sha256": "511fc631e8f9b2362e1fb6cec2572375beccc412a8bf9936dfc5550a0da7393f",
+  "toolchain_sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+  "lakefile_sha256": "cabe24446d85c3e3ab5a4a9aa111084ee602c15b007750724e9eb7c1c23d0ab4"
+}

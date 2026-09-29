@@ -1,0 +1,250 @@
+{
+  "status": "passed",
+  "J": 35,
+  "B": 100,
+  "k_lower": 1,
+  "k_upper_exclusive": 524288,
+  "checked_pairs": 17825758,
+  "rows": [
+    {
+      "ell": 1,
+      "a_exponent_upper": 59,
+      "bits": 102,
+      "minimum_residue": 4117349964816289942166245,
+      "minimum_at_k": 333117
+    },
+    {
+      "ell": 2,
+      "a_exponent_upper": 57,
+      "bits": 103,
+      "minimum_residue": 55945019107413603604288501,
+      "minimum_at_k": 191706
+    },
+    {
+      "ell": 3,
+      "a_exponent_upper": 55,
+      "bits": 104,
+      "minimum_residue": 59209174210826898646143691,
+      "minimum_at_k": 181047
+    },
+    {
+      "ell": 4,
+      "a_exponent_upper": 54,
+      "bits": 105,
+      "minimum_residue": 164153677560585020314495291,
+      "minimum_at_k": 370001
+    },
+    {
+      "ell": 5,
+      "a_exponent_upper": 52,
+      "bits": 106,
+      "minimum_residue": 513368384653935698502363779,
+      "minimum_at_k": 404087
+    },
+    {
+      "ell": 6,
+      "a_exponent_upper": 50,
+      "bits": 107,
+      "minimum_residue": 296847112888301255945318897,
+      "minimum_at_k": 313636
+    },
+    {
+      "ell": 7,
+      "a_exponent_upper": 48,
+      "bits": 108,
+      "minimum_residue": 174104195603026277680683587,
+      "minimum_at_k": 299375
+    },
+    {
+      "ell": 8,
+      "a_exponent_upper": 47,
+      "bits": 109,
+      "minimum_residue": 644126895805825595171181971,
+      "minimum_at_k": 135331
+    },
+    {
+      "ell": 9,
+      "a_exponent_upper": 45,
+      "bits": 110,
+      "minimum_residue": 4454277705908966882100384001,
+      "minimum_at_k": 326720
+    },
+    {
+      "ell": 10,
+      "a_exponent_upper": 43,
+      "bits": 111,
+      "minimum_residue": 1590889682056019261965590299,
+      "minimum_at_k": 272061
+    },
+    {
+      "ell": 11,
+      "a_exponent_upper": 42,
+      "bits": 112,
+      "minimum_residue": 184855442828698389616814731,
+      "minimum_at_k": 130681
+    },
+    {
+      "ell": 12,
+      "a_exponent_upper": 40,
+      "bits": 113,
+      "minimum_residue": 49432642954068247753878967955,
+      "minimum_at_k": 414755
+    },
+    {
+      "ell": 13,
+      "a_exponent_upper": 38,
+      "bits": 114,
+      "minimum_residue": 25890183954797469144702507835,
+      "minimum_at_k": 324805
+    },
+    {
+      "ell": 14,
+      "a_exponent_upper": 36,
+      "bits": 115,
+      "minimum_residue": 6288305274694904057583028169,
+      "minimum_at_k": 518862
+    },
+    {
+      "ell": 15,
+      "a_exponent_upper": 35,
+      "bits": 116,
+      "minimum_residue": 889325785814828949844386487273,
+      "minimum_at_k": 99558
+    },
+    {
+      "ell": 16,
+      "a_exponent_upper": 33,
+      "bits": 117,
+      "minimum_residue": 804149138067829586839843941515,
+      "minimum_at_k": 461049
+    },
+    {
+      "ell": 17,
+      "a_exponent_upper": 31,
+      "bits": 118,
+      "minimum_residue": 379732114435636562869698599177,
+      "minimum_at_k": 394942
+    },
+    {
+      "ell": 18,
+      "a_exponent_upper": 30,
+      "bits": 119,
+      "minimum_residue": 2389311511842203259837821121337,
+      "minimum_at_k": 498626
+    },
+    {
+      "ell": 19,
+      "a_exponent_upper": 28,
+      "bits": 120,
+      "minimum_residue": 699940967261929467850407890849,
+      "minimum_at_k": 480376
+    },
+    {
+      "ell": 20,
+      "a_exponent_upper": 26,
+      "bits": 121,
+      "minimum_residue": 22437675102022161692487512171795,
+      "minimum_at_k": 235715
+    },
+    {
+      "ell": 21,
+      "a_exponent_upper": 24,
+      "bits": 122,
+      "minimum_residue": 7539270515726196017858284176457,
+      "minimum_at_k": 430638
+    },
+    {
+      "ell": 22,
+      "a_exponent_upper": 23,
+      "bits": 123,
+      "minimum_residue": 95768630121290036053300283033491,
+      "minimum_at_k": 83555
+    },
+    {
+      "ell": 23,
+      "a_exponent_upper": 21,
+      "bits": 124,
+      "minimum_residue": 6714200318701632911726351661619,
+      "minimum_at_k": 341195
+    },
+    {
+      "ell": 24,
+      "a_exponent_upper": 19,
+      "bits": 125,
+      "minimum_residue": 47431914953888813715333037603961,
+      "minimum_at_k": 397490
+    },
+    {
+      "ell": 25,
+      "a_exponent_upper": 18,
+      "bits": 126,
+      "minimum_residue": 38325771797563663296066056305867,
+      "minimum_at_k": 481545
+    },
+    {
+      "ell": 26,
+      "a_exponent_upper": 16,
+      "bits": 127,
+      "minimum_residue": 1474205412838899225165236114535667,
+      "minimum_at_k": 390395
+    },
+    {
+      "ell": 27,
+      "a_exponent_upper": 14,
+      "bits": 128,
+      "minimum_residue": 77506585812994563843212099410633,
+      "minimum_at_k": 251150
+    },
+    {
+      "ell": 28,
+      "a_exponent_upper": 12,
+      "bits": 129,
+      "minimum_residue": 1221590411807479164934871113360051,
+      "minimum_at_k": 517099
+    },
+    {
+      "ell": 29,
+      "a_exponent_upper": 11,
+      "bits": 130,
+      "minimum_residue": 1588482766384202643873313747520041,
+      "minimum_at_k": 390294
+    },
+    {
+      "ell": 30,
+      "a_exponent_upper": 9,
+      "bits": 131,
+      "minimum_residue": 5561004050815669362239211810482707,
+      "minimum_at_k": 377859
+    },
+    {
+      "ell": 31,
+      "a_exponent_upper": 7,
+      "bits": 132,
+      "minimum_residue": 8066940952268753125538832032946979,
+      "minimum_at_k": 145159
+    },
+    {
+      "ell": 32,
+      "a_exponent_upper": 6,
+      "bits": 133,
+      "minimum_residue": 9668207540308366721259443757253115,
+      "minimum_at_k": 142197
+    },
+    {
+      "ell": 33,
+      "a_exponent_upper": 4,
+      "bits": 134,
+      "minimum_residue": 29375502042738265645238170953313355,
+      "minimum_at_k": 237801
+    },
+    {
+      "ell": 34,
+      "a_exponent_upper": 2,
+      "bits": 135,
+      "minimum_residue": 173780849330367488197897410447843793,
+      "minimum_at_k": 85532
+    }
+  ],
+  "seconds": 5.799065199913457,
+  "source_sha256": "830f05fa7e44dec9f521153930f4339e44b0c11a6992010528331b13387c395e"
+}

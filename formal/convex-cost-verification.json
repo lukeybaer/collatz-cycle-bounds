@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "utc": "2026-09-29T11:15:50.895178+00:00",
+  "lean_version": "Lean (version 4.34.1, x86_64-w64-windows-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "checks": [
+    {
+      "module": "CollatzConvexCost",
+      "theorems": [
+        "weighted_prefix_bound",
+        "convex_sum_from_tangents",
+        "supporting_tangent",
+        "differentiable_convex_majorization"
+      ],
+      "exit_code": 0,
+      "source_sha256": "5793f0283a062b034e30b9375a3503076c9822f66efab488d6dab77c137ba274",
+      "compiler_output_sha256": "65aa59e79a61e712e1fed9f9ef0a6d9a901aa25d4d7a3264c28b6da7ba663a25",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "scope": "Four weighted-prefix and differentiable convex majorization lemmas. Not a formalization of Collatz convergence, the p-adic theorem, or the numerical exclusions.",
+  "verifier_sha256": "76472c178eae63e47c7aaf92ed23c580e6630035bbc7fa92e194fec0651e2c02",
+  "toolchain_sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+  "lakefile_sha256": "cabe24446d85c3e3ab5a4a9aa111084ee602c15b007750724e9eb7c1c23d0ab4"
+}

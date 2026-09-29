@@ -1,0 +1,64 @@
+{
+  "status": "passed",
+  "utc": "2026-09-29T12:22:38.950173+00:00",
+  "lean_version": "Lean (version 4.34.1, x86_64-w64-windows-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "checks": [
+    {
+      "module": "CollatzTwoRegimeParameters",
+      "theorems": [
+        "small_margin_positive",
+        "large_margin_positive",
+        "dyadic_run_bound",
+        "rectangle_cardinality",
+        "large_b_numerator",
+        "two_block_loss",
+        "restart_constant"
+      ],
+      "exit_code": 0,
+      "source_sha256": "2f34de5c7ae4de12fe58c0e2995b0ca3a552818cf449b2304c0e2c78a186abf9",
+      "compiler_output_sha256": "4fcc2f37fb92d6a3c9e37148270d1190d5f05cc8d12b36b82075e4917dd2140a",
+      "axioms_by_theorem": {
+        "CollatzTwoRegimeParameters.small_margin_positive": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzTwoRegimeParameters.large_margin_positive": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzTwoRegimeParameters.dyadic_run_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzTwoRegimeParameters.rectangle_cardinality": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzTwoRegimeParameters.large_b_numerator": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzTwoRegimeParameters.two_block_loss": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzTwoRegimeParameters.restart_constant": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    }
+  ],
+  "scope": "Seven elementary all-parameter lemmas for the two-regime interpolation argument. Not a formalization of Collatz convergence, the p-adic theorem, or the numerical exclusions.",
+  "verifier_sha256": "945b99fa2f402f5d5512bd468a6732116568dd44b86e047f3f28cf1ef3e0026d",
+  "toolchain_sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+  "lakefile_sha256": "cabe24446d85c3e3ab5a4a9aa111084ee602c15b007750724e9eb7c1c23d0ab4"
+}

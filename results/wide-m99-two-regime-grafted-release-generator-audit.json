@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "jobs": 206426,
+  "generator": {
+    "status": "generator_only",
+    "excluded": false,
+    "nodes": 229161,
+    "singletons": 26200,
+    "descent": 275,
+    "capacity": 25925,
+    "empty": 5148,
+    "survivors": 0,
+    "odd_tail": 945,
+    "even_tail": 11737,
+    "seconds": 0
+  },
+  "configHash": "E3ABE927D9289007A26725706E30F9B1A7BF19494E66B93D190916CF16877778",
+  "sourceHash": "5F8C23685313516245AC845E9D1486EEE818AE208DFAE19DC1D997E4BC99BF1F"
+}

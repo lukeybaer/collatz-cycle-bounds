@@ -1,0 +1,2 @@
+'CollatzLocalLoss.two_block_loss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzLocalLoss.fractional_two_block_loss' depends on axioms: [propext, Classical.choice, Quot.sound]

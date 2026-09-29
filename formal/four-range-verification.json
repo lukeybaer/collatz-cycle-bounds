@@ -1,0 +1,70 @@
+{
+  "status": "passed",
+  "utc": "2026-09-29T13:37:47.931326+00:00",
+  "lean_version": "Lean (version 4.34.1, x86_64-w64-windows-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "checks": [
+    {
+      "module": "CollatzFourRange",
+      "theorems": [
+        "first_margin",
+        "second_margin",
+        "third_margin",
+        "fourth_margin",
+        "numeric_gaps",
+        "local_loss",
+        "ratio_decreases",
+        "restart_constants"
+      ],
+      "exit_code": 0,
+      "source_sha256": "b88213248aee3be813e745298b49ed23ba0430be7aa1dbafa555015f4031947e",
+      "compiler_output_sha256": "9723fee4ad6dcfcbe9d5b0ec61447045f6322f8f1e09cc269f325ea605e9bff5",
+      "axioms_by_theorem": {
+        "CollatzFourRange.first_margin": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzFourRange.second_margin": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzFourRange.third_margin": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzFourRange.fourth_margin": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzFourRange.numeric_gaps": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzFourRange.local_loss": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzFourRange.ratio_decreases": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzFourRange.restart_constants": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    }
+  ],
+  "scope": "Eight supporting four-range parameter, local-loss, monotonic-ratio and restart lemmas. Not a formalization of Collatz convergence, the p-adic theorem, or the numerical exclusions.",
+  "verifier_sha256": "29a3e816ae4695ff192efa7f2c1fc5c5f1b56a87458e25d6c97f49c9a009ada1",
+  "toolchain_sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+  "lakefile_sha256": "cabe24446d85c3e3ab5a4a9aa111084ee602c15b007750724e9eb7c1c23d0ab4"
+}

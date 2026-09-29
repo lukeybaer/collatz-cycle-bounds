@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "scope": "Full original BigInteger rerun of every job that invoked wide singleton fallback; not a full rerun of the remaining jobs",
+  "jobs": [
+    {
+      "job": 21366,
+      "wide_fallbacks": 1,
+      "reference": {
+        "status": "complete",
+        "excluded": true,
+        "nodes": 5063641,
+        "singletons": 5141224,
+        "descent": 9,
+        "capacity": 5141215,
+        "empty": 424878,
+        "survivors": 0,
+        "odd_tail": 3532305,
+        "even_tail": 612999,
+        "seconds": 0
+      }
+    }
+  ],
+  "seconds": 18.7562339,
+  "configHash": "732688B23D32E9130A4DF36F18E66DA45E53BAF3E2C6BBBCF912B2B03DFD93CF",
+  "referenceSourceHash": "5F8C23685313516245AC845E9D1486EEE818AE208DFAE19DC1D997E4BC99BF1F",
+  "driverSourceHash": "425C6DE6A88816BFA9E5E9490976D211A0942837DB95E1BB29875CEF34F9622A",
+  "selectionHash": "BD322E70ACBC3F3E4E5850C4E01364908167D791E0D6DBE17FE868B36B50DE78",
+  "journalHash": "01A521734A48D7D32DFC082B0B1144C71EB5B123D5D62FE1FD4A2407EB31A77D"
+}

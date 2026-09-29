@@ -1,0 +1,64 @@
+{
+  "status": "passed",
+  "utc": "2026-09-29T11:35:45.943748+00:00",
+  "lean_version": "Lean (version 4.34.1, x86_64-w64-windows-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "checks": [
+    {
+      "module": "CollatzReciprocalCost",
+      "theorems": [
+        "denominator_pos",
+        "cost_hasDerivAt",
+        "first_hasDerivAt",
+        "cost_antitone",
+        "cost_convex",
+        "binary_cost_convex",
+        "binary_cost_antitone"
+      ],
+      "exit_code": 0,
+      "source_sha256": "4f4cd5c9a425c60dba4fcef87f7a80ad6dc2c1373912c1d34fa0378434e2fbf5",
+      "compiler_output_sha256": "c3876b7de6bd2ebc50a38c52c1930e35075f0fd6b5ba3757d6f38f4be19d78e4",
+      "axioms_by_theorem": {
+        "CollatzReciprocalCost.denominator_pos": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzReciprocalCost.cost_hasDerivAt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzReciprocalCost.first_hasDerivAt": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzReciprocalCost.cost_antitone": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzReciprocalCost.cost_convex": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzReciprocalCost.binary_cost_convex": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzReciprocalCost.binary_cost_antitone": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    }
+  ],
+  "scope": "Seven analytic lemmas for the convex decreasing reciprocal exponential cost. Not a formalization of Collatz convergence, the p-adic theorem, or the numerical exclusions.",
+  "verifier_sha256": "c466e10263738f776152014eff4855f0f7a470e099728a84b40b1488de5c0794",
+  "toolchain_sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+  "lakefile_sha256": "cabe24446d85c3e3ab5a4a9aa111084ee602c15b007750724e9eb7c1c23d0ab4"
+}

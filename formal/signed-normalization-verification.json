@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "utc": "2026-09-29T11:58:01.547709+00:00",
+  "lean_version": "Lean (version 4.34.1, x86_64-w64-windows-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "checks": [
+    {
+      "module": "CollatzSignedNormalization",
+      "theorems": [
+        "three_parity_identity",
+        "signed_form_identity",
+        "nine_pow_mod_eight",
+        "high_valuation_congruence"
+      ],
+      "exit_code": 0,
+      "source_sha256": "df19b2413900c2577c1d96179b751e966120181d1e1eabdc2b1cda0bbc6a0d31",
+      "compiler_output_sha256": "deb39de048a02579658b4a763783887632980d0b43c4c9851e43c4bbe90a692e",
+      "axioms_by_theorem": {
+        "CollatzSignedNormalization.three_parity_identity": [
+          "propext",
+          "Quot.sound"
+        ],
+        "CollatzSignedNormalization.signed_form_identity": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzSignedNormalization.nine_pow_mod_eight": [
+          "propext"
+        ],
+        "CollatzSignedNormalization.high_valuation_congruence": [
+          "propext",
+          "Quot.sound"
+        ]
+      }
+    }
+  ],
+  "scope": "Four exact algebra and congruence lemmas for the signed-rational argument. Not a formalization of Collatz convergence, the p-adic theorem, or the numerical exclusions.",
+  "verifier_sha256": "7cdbdaa5b92c143335d9ec5752a13dfecdad36944095f2a9fed5ca0efe3812f5",
+  "toolchain_sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+  "lakefile_sha256": "cabe24446d85c3e3ab5a4a9aa111084ee602c15b007750724e9eb7c1c23d0ab4"
+}

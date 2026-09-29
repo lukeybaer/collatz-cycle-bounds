@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "J": 41,
+  "pairs": 20971480,
+  "classes": 44497,
+  "seeds": "144429913922369056364",
+  "input_sha256": "b4a5b0ee5aab770c5e8edf3fb8dc87ca3d256bf21de4021085f5910dac752f2d",
+  "source_sha256": "d1df9a4a6520b8926148c580568699f4543355272cd033effa5822fa04ba84e8",
+  "seconds": 10.189053199952468,
+  "warning": "Coverage only: every exceptional class still needs a basin or block-restart proof."
+}

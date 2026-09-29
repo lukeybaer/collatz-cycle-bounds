@@ -1,0 +1,74 @@
+{
+  "status": "passed",
+  "utc": "2026-09-29T10:39:39.975096+00:00",
+  "lean_version": "Lean (version 4.34.1, x86_64-w64-windows-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "checks": [
+    {
+      "module": "CollatzGrowthEnvelope",
+      "theorems": [
+        "deficit_propagates",
+        "extremal_prefix_sum",
+        "cyclic_gap_growth"
+      ],
+      "exit_code": 0,
+      "source_sha256": "0c61c2c68aee3c433f5a69332468de9ae19ca337c0c4c82e1d558009ff45ebc6",
+      "compiler_output_sha256": "275e29dae3b1ce2a99452c2861e5e52e2ee2a81cd026bcd92899b9158ae65d65",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "CollatzRestart",
+      "theorems": [
+        "endpoint_or_intermediate",
+        "run_bound",
+        "height_bound"
+      ],
+      "exit_code": 0,
+      "source_sha256": "ad1aba635a6502a0518dedc28a5002e90e9919f8f193fe18f1ac7145a13312ce",
+      "compiler_output_sha256": "4d137cf23ef3f07a2c21bef2a3e43ffa978509f698a1bfcd91c4200cbb21a4db",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "CollatzLocalLoss",
+      "theorems": [
+        "two_block_loss",
+        "fractional_two_block_loss"
+      ],
+      "exit_code": 0,
+      "source_sha256": "ec7d7c55df92b5fabb0f1b38cb3bc0b5a9227258bb9ab644d53bbb0845861aaa",
+      "compiler_output_sha256": "6529b737fcdc176b8bd0b748e8967180a1b80b5f104541cd4426d34eb70c6745",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "CollatzNormalizedLog",
+      "theorems": [
+        "squared_log_bound",
+        "valuation_cutoff"
+      ],
+      "exit_code": 0,
+      "source_sha256": "f0687834e0ecade6b8bd8ca7d8abb3207a44d28311d563bb9ec722e08cfa97b7",
+      "compiler_output_sha256": "0e81d55dc233f9e98a944ebdb19e9d3abca3bb868d0a8c336bb2598404cd2da8",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "scope": "Ten abstract growth, prefix-sum, bounded-restart, local-loss, and normalized-logarithm lemmas. Not a formalization of Collatz convergence, the p-adic theorem, or the numerical exclusions.",
+  "verifier_sha256": "2c08b0e3794186184650fb98c02fd8a40f81942705bf8d93cbfc67f1428a5dfb",
+  "toolchain_sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+  "lakefile_sha256": "cabe24446d85c3e3ab5a4a9aa111084ee602c15b007750724e9eb7c1c23d0ab4"
+}

@@ -1,0 +1,3 @@
+'CollatzSharperConstants.squared_log_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzSharperConstants.valuation_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzSharperConstants.two_block_loss' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,7 @@
+'CollatzReciprocalCost.denominator_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzReciprocalCost.cost_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzReciprocalCost.first_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzReciprocalCost.cost_antitone' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzReciprocalCost.cost_convex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzReciprocalCost.binary_cost_convex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzReciprocalCost.binary_cost_antitone' depends on axioms: [propext, Classical.choice, Quot.sound]

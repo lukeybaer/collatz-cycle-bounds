@@ -1,0 +1,4 @@
+'CollatzIndependentConstants.squared_log_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzIndependentConstants.valuation_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzIndependentConstants.two_block_loss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzIndependentConstants.fractional_two_block_loss' depends on axioms: [propext, Classical.choice, Quot.sound]

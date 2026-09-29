@@ -1,0 +1,3 @@
+'CollatzRestart.endpoint_or_intermediate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzRestart.run_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzRestart.height_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

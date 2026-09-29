@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "m": 99,
+  "capacity_map_proved": true,
+  "configuration": "two-regime-grafted-config-m99-lo1-hi11.json",
+  "suffix_targets_checked": 97,
+  "rounding_denominator": "10000000000000000000000000000000000000000",
+  "configuration_sha256": "e3abe927d9289007a26725706e30f9b1a7bf19494e66b93d190916cf16877778",
+  "source_sha256": "0cc47953865a5aa15448fd4d391db14ba71e1e96d0371187831c51b2a6144d54",
+  "initial_K_certificate_sha256": "3033b92042e16e0aef8e335a05b60b03ed4525d49849df023136a4075115cbe2",
+  "verification_source_sha256": "f2407f730492dadb2f3621310b85e094079dbf124c91965ad5dd8e8737c76acc",
+  "warning": "This verifies necessary targets, not a completed finite search or final cycle contradiction."
+}

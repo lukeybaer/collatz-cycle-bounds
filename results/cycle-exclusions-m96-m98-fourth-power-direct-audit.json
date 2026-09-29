@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "rows": [
+    {
+      "m": 96,
+      "minimum_lower": "2361183241434822606848",
+      "initial_K": "205632218873398596256",
+      "final_K": "31150961018190238869556",
+      "upper_ceiling": "2258844699213160095667",
+      "additional_minimum_window_search_required": false
+    },
+    {
+      "m": 97,
+      "minimum_lower": "2361183241434822606848",
+      "initial_K": "205632218873398596256",
+      "final_K": "7941964418702608664581",
+      "upper_ceiling": "3617477728030676597534",
+      "additional_minimum_window_search_required": false
+    },
+    {
+      "m": 98,
+      "minimum_lower": "2361183241434822606848",
+      "initial_K": "205632218873398596256",
+      "final_K": "7941964418702608664581",
+      "upper_ceiling": "5792675479587768997864",
+      "additional_minimum_window_search_required": false
+    }
+  ],
+  "externally_reviewed": false,
+  "novelty_confirmed": false,
+  "dependencies": {
+    "grafted-capacity-eps1over93-B32768-certificate.json": "6ba39ce30370b2f7ec2b6a3f71e2069036d636b28306252255301fae425850b1",
+    "fourth-power-grafted-profile-certificates.json": "9f9488abf9d52d090d3af1586d7b979ff6b83753ea1110cdfce132fc051d2b98",
+    "fourth-power-grafted-profile-proposals.json": "a2ba0e29f4a9ce7fd60ac8500f9868f7d17da4d8c79fbfa0ceaf6f4173a5ba7d",
+    "fourth-power-grafted-profile-proposals-audit.json": "d296802b4da2edb173480cc622d9b0d305f1e606acc4cd4a7c50be56c8e958d2",
+    "K-lower-bounds-family-J38.json": "5b4580f1007df6208b29647d7ded11e46ae16c51e9a4d209221777e25b2be641"
+  },
+  "source_dependencies": {
+    "audit_fourth_power_direct_exclusions.py": "28edaf022574d39bb5cb04e69f374ff53613b9dc36d03bfdd125e78f635fbd19",
+    "verify_fourth_power_grafted_capacity.py": "e373c0dfc74dbbba906107001b35dcbba498eca024c875c3fc5d0b36e2243e37",
+    "audit_fourth_power_grafted_profiles.py": "7159c95840d5ed56dc2fcd63833ac17fc77b16cce92df4f4181902c19f99871c",
+    "verify_certificates.py": "f2407f730492dadb2f3621310b85e094079dbf124c91965ad5dd8e8737c76acc"
+  },
+  "external_inputs": [
+    "Published convergence below 2^71; endpoint is a power of two.",
+    "Bugeaud1999 Theorem1 rational clause(6).",
+    "Simons-de Weger2010 Theorem3(d) in its stated middle range."
+  ],
+  "scope": "Candidate exclusions for exactly96,97,98 local minima. Uses completed finite-capacity proofs and the analytic tail; no additional minimum-window search is needed. Not a proof of Collatz convergence."
+}

@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "utc": "2026-09-29T11:24:16.684439+00:00",
+  "lean_version": "Lean (version 4.34.1, x86_64-w64-windows-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "checks": [
+    {
+      "module": "CollatzDependentValuation",
+      "theorems": [
+        "three_pow_mod_eight",
+        "odd_multiple_sum_not_eight_dvd",
+        "dependent_valuation_bound"
+      ],
+      "exit_code": 0,
+      "source_sha256": "ee2ef1bd2a3211e9c1ce6b0dcba772e4182d176a81339ef9b380e8f08e3286e8",
+      "compiler_output_sha256": "b085fd70f2ce0ccac20797988ba9cb60a31f9add8c765d6531d0e71169ef9791",
+      "axioms_by_theorem": {
+        "CollatzDependentValuation.three_pow_mod_eight": [
+          "propext"
+        ],
+        "CollatzDependentValuation.odd_multiple_sum_not_eight_dvd": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzDependentValuation.dependent_valuation_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    }
+  ],
+  "scope": "Three elementary valuation lemmas for the multiplicatively dependent case. Not a formalization of Collatz convergence, the p-adic theorem, or the numerical exclusions.",
+  "verifier_sha256": "3519a301eb9b97204e05e9216b29d9772be4cacbfdc14eafd2ba29a965028229",
+  "toolchain_sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+  "lakefile_sha256": "cabe24446d85c3e3ab5a4a9aa111084ee602c15b007750724e9eb7c1c23d0ab4"
+}

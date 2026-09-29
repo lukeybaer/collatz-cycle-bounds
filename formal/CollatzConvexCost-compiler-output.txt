@@ -1,0 +1,4 @@
+'CollatzConvexCost.weighted_prefix_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzConvexCost.convex_sum_from_tangents' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzConvexCost.supporting_tangent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzConvexCost.differentiable_convex_majorization' depends on axioms: [propext, Classical.choice, Quot.sound]

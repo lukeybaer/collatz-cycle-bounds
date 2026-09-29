@@ -1,0 +1,86 @@
+{
+  "status": "passed",
+  "utc": "2026-09-29T13:06:04.978538+00:00",
+  "lean_version": "Lean (version 4.34.1, x86_64-w64-windows-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "checks": [
+    {
+      "module": "CollatzFourthPower",
+      "theorems": [
+        "power_identity",
+        "signed_form_identity",
+        "eighty_one_pow_mod_sixteen",
+        "high_valuation_congruence",
+        "first_margin",
+        "second_margin",
+        "first_range_local_loss",
+        "restart_constants"
+      ],
+      "exit_code": 0,
+      "source_sha256": "10e4c9ed6de0710b947b7acb7f78c3170dfd51433ce61842f57a1c0ff47fe270",
+      "compiler_output_sha256": "e7334812965447f2c94abbf93a978d0d3989cabf0ba91979b91f688425a2192e",
+      "axioms_by_theorem": {
+        "CollatzFourthPower.power_identity": [
+          "propext"
+        ],
+        "CollatzFourthPower.signed_form_identity": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzFourthPower.eighty_one_pow_mod_sixteen": [
+          "propext"
+        ],
+        "CollatzFourthPower.high_valuation_congruence": [
+          "propext"
+        ],
+        "CollatzFourthPower.first_margin": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzFourthPower.second_margin": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzFourthPower.first_range_local_loss": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzFourthPower.restart_constants": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "module": "CollatzAffineEnvelope",
+      "theorems": [
+        "growth_le_affine",
+        "affine_sequence_bound"
+      ],
+      "exit_code": 0,
+      "source_sha256": "5f6ee7817d61d4c91e23870735efd9b78f0ef1fdb721ca4d99d79d68708f33e8",
+      "compiler_output_sha256": "71cb644da6b98e7e3a4ebddf65d7d1ec821e5f019487a1410520678108bf5784",
+      "axioms_by_theorem": {
+        "CollatzAffineEnvelope.growth_le_affine": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "CollatzAffineEnvelope.affine_sequence_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    }
+  ],
+  "scope": "Ten supporting fourth-power normalization, parameter, local-loss, and affine-envelope lemmas. Not a formalization of Collatz convergence, the p-adic theorem, or the numerical exclusions.",
+  "verifier_sha256": "a0d85dd24cde7d8e7541b2cf5322c20ce7da15b399807c7b055206165c2f38b1",
+  "toolchain_sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+  "lakefile_sha256": "cabe24446d85c3e3ab5a4a9aa111084ee602c15b007750724e9eb7c1c23d0ab4"
+}

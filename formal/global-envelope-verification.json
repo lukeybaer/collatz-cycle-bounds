@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "utc": "2026-09-29T11:07:14.119463+00:00",
+  "lean_version": "Lean (version 4.34.1, x86_64-w64-windows-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "checks": [
+    {
+      "module": "CollatzGlobalEnvelope",
+      "theorems": [
+        "growth_monotone",
+        "growth_upper",
+        "growth_lower",
+        "growth_tail",
+        "virtual_lower",
+        "virtual_upper",
+        "virtual_tail",
+        "finite_warmup_bound",
+        "delta_bounds",
+        "explicit_virtual_bound"
+      ],
+      "exit_code": 0,
+      "source_sha256": "4a28870e906495560935ba80f4f8584162654ad39dee71910671bf2df58638fb",
+      "compiler_output_sha256": "e82e21394995aef891007b518b02dc52645462f915773ba6c84d4d0e689dfd10",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "scope": "Ten global extension and virtual orbit lemmas. Not a formalization of Collatz convergence, the p-adic theorem, or the numerical exclusions.",
+  "verifier_sha256": "f935192ff24c462a7547628394a1803f7915516635bd1100e939feb90f65553c",
+  "toolchain_sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+  "lakefile_sha256": "cabe24446d85c3e3ab5a4a9aa111084ee602c15b007750724e9eb7c1c23d0ab4"
+}

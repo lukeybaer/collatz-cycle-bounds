@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Please cite the repository version and the accompanying research manuscript. Amy's AI contribution is disclosed in the paper."
+type: software
+title: "Collatz cycle bounds: research and reproduction code"
+authors:
+  - family-names: Baer
+    given-names: Luke
+  - name: "Amy (AI research system operating through OpenAI Codex)"
+version: 0.1.0-review
+date-released: 2026-09-29
+repository-code: "https://github.com/lukeybaer/collatz-cycle-bounds"
+abstract: "Source, saved certificates, selected Lean proofs and reproducibility tools accompanying an unreviewed Collatz research manuscript."

@@ -1,0 +1,3 @@
+'CollatzCommonCap.capSum_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzCommonCap.exists_common_cap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzCommonCap.mass_preserving_growth_cap' depends on axioms: [propext, Classical.choice, Quot.sound]

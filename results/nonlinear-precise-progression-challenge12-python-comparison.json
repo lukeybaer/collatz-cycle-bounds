@@ -1,0 +1,94 @@
+{
+  "status": "passed",
+  "map_id": "plateau-c3799-c4099-h71",
+  "full_global_input": false,
+  "classes": 12,
+  "exact_thresholds_checked": 0,
+  "rows": [
+    {
+      "id": 0,
+      "source_class": 631,
+      "nodes": 26604,
+      "singleton_steps": 3142490
+    },
+    {
+      "id": 1,
+      "source_class": 6324,
+      "nodes": 56907,
+      "singleton_steps": 2591118
+    },
+    {
+      "id": 2,
+      "source_class": 8953,
+      "nodes": 13652,
+      "singleton_steps": 665818
+    },
+    {
+      "id": 3,
+      "source_class": 11108,
+      "nodes": 25543,
+      "singleton_steps": 731520
+    },
+    {
+      "id": 4,
+      "source_class": 13320,
+      "nodes": 38982,
+      "singleton_steps": 1278653
+    },
+    {
+      "id": 5,
+      "source_class": 15678,
+      "nodes": 54932,
+      "singleton_steps": 1948734
+    },
+    {
+      "id": 6,
+      "source_class": 18216,
+      "nodes": 14643,
+      "singleton_steps": 606521
+    },
+    {
+      "id": 7,
+      "source_class": 21229,
+      "nodes": 369581,
+      "singleton_steps": 13313093
+    },
+    {
+      "id": 8,
+      "source_class": 24301,
+      "nodes": 35856,
+      "singleton_steps": 1041334
+    },
+    {
+      "id": 9,
+      "source_class": 28031,
+      "nodes": 235291,
+      "singleton_steps": 8452644
+    },
+    {
+      "id": 10,
+      "source_class": 31775,
+      "nodes": 20356,
+      "singleton_steps": 889733
+    },
+    {
+      "id": 11,
+      "source_class": 40093,
+      "nodes": 8412,
+      "singleton_steps": 457898
+    }
+  ],
+  "seconds": 63.4457790000597,
+  "source_sha256": "9435c72a561606e2e666228554f9c0678fe221f986266f19032e235b6a08001d",
+  "source_dependencies": {
+    "verify_family_capacity.py": "03b1b411dd63aaf29ecae87ae04b7f055822479b83f1d80f5c1f42f2250205c5",
+    "audit_logtable.py": "132026817f33a6e57d719748011bf28eaefd2858823fdd32b1451b7a7268c156",
+    "PreciseNonlinearProgressionVerifier.cs": "ac4218836f3a7c34780aeee864e8ab3004bb89ad05c65bd3248a94ed4917d13d"
+  },
+  "dependencies": {
+    "nonlinear-progression-challenge-input.json": "6c693c50549a0aa796a5e0d1cc23a6104d68518ecc768a5c7ef38f4e5ad3d2d0",
+    "nonlinear-precise-progression-challenge12-result.json": "0765ea6c3f80a5e153ff38afb23d1235c0bc88138dee2745e04c0a039a24ba64",
+    "nonlinear-precise-progression-challenge12-metadata.json": "1a3354f630370484bcfad9054beabd5d6a204bcb367b034a642167feaae27441",
+    "log2-mantissa-table.json": "026a267563ed50f334b40fa53faf8cae4ff009c2ff378674a188efb0a4e7adc7"
+  }
+}

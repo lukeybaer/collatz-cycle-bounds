@@ -1,0 +1,20 @@
+{
+  "kind": "uniform_block_restart",
+  "J": 38,
+  "capacity_certified": true,
+  "capacity_c": "3799/100",
+  "verified_basin": "2361183241434822606848",
+  "proof": "../block-restart-capacity.md",
+  "analytic_status": "internally derived and audited; external review and novelty review pending",
+  "scope": "all hypothetical nontrivial positive cycles, uniformly in m",
+  "independent_proof": "Python parity-bisection checker uses coarse integer heights and does not depend on the C# logarithm table.",
+  "dependencies": {
+    "extended-capacity-J38-global.json": "7f23e9cf8957827b535650f565b81db35a33b2e09d06e654d9c90bae8736ba32",
+    "extended-capacity-J38-classes.json": "0614dd35fd467b3419cb0843461c4989800a8447d16f5d58ff6e66f364a3563a",
+    "extended-capacity-J38-coverage-audit.json": "cbbc0ed76c64f39d3204b62e0d415d7b0217610379393003d763ffd7e4a0c361",
+    "family-J38-python-full.json": "2050332ad6c9587839cc393b403c696c7a450c4f1e490b6f1e65788e273efb9d",
+    "family-J38-precise-full-result.json": "3045ded696107702ee9af7fd8a30fb3205bb225ecc6380befd2d982688f59c32",
+    "family-J38-precise-full-metadata.json": "dc87487db4fd58a56e667850e732ea01740814069748221ae49c6d846e2fbffd",
+    "log2-mantissa-table.json": "026a267563ed50f334b40fa53faf8cae4ff009c2ff378674a188efb0a4e7adc7"
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "status": "passed",
+  "epsilon": "1/80",
+  "C": "159/2",
+  "J0": 10000,
+  "multiple": 100,
+  "B": 1272000,
+  "warmup": 32,
+  "rows": [
+    {
+      "D_lower": "0",
+      "D_upper": "9/10",
+      "lower_height": "159/2",
+      "T": "10241/100",
+      "x": "301/50",
+      "r": "301/100",
+      "S": 10,
+      "height_coefficient": "1871705357157/1750000000000",
+      "log_b_upper": "223249/50000",
+      "interpolation_margin_lower": "31815639652007/7902300000000000",
+      "gap_lower": "896723/160000",
+      "retained_loss_lower": "41963946231/12800000000"
+    },
+    {
+      "D_lower": "0",
+      "D_upper": "9/10",
+      "lower_height": "10241/100",
+      "T": "256",
+      "x": "196/25",
+      "r": "98/25",
+      "S": 10,
+      "height_coefficient": "1871705357157/1750000000000",
+      "log_b_upper": "255541/50000",
+      "interpolation_margin_lower": "1146365134603729/3430350000000000",
+      "gap_lower": "44128077/8000000",
+      "retained_loss_lower": "2065061619369/640000000000"
+    },
+    {
+      "D_lower": "9/10",
+      "D_upper": "1",
+      "lower_height": "159/2",
+      "T": "1599/20",
+      "x": "61/10",
+      "r": "339/100",
+      "S": 9,
+      "height_coefficient": "2079649514157/1750000000000",
+      "log_b_upper": "409441/100000",
+      "interpolation_margin_lower": "15131872307063/3203928000000000",
+      "gap_lower": "640723/160000",
+      "retained_loss_lower": "41503914231/12800000000"
+    },
+    {
+      "D_lower": "9/10",
+      "D_upper": "1",
+      "lower_height": "1599/20",
+      "T": "2023/25",
+      "x": "613/100",
+      "r": "341/100",
+      "S": 9,
+      "height_coefficient": "2079649514157/1750000000000",
+      "log_b_upper": "12817/3125",
+      "interpolation_margin_lower": "44376587714069/10742760000000000",
+      "gap_lower": "6588403/1600000",
+      "retained_loss_lower": "423517495191/128000000000"
+    },
+    {
+      "D_lower": "9/10",
+      "D_upper": "1",
+      "lower_height": "2023/25",
+      "T": "8603/100",
+      "x": "621/100",
+      "r": "69/20",
+      "S": 9,
+      "height_coefficient": "2079649514157/1750000000000",
+      "log_b_upper": "414871/100000",
+      "interpolation_margin_lower": "5599917271857/1207640000000000",
+      "gap_lower": "8110331/2000000",
+      "retained_loss_lower": "523539159807/160000000000"
+    },
+    {
+      "D_lower": "9/10",
+      "D_upper": "1",
+      "lower_height": "8603/100",
+      "T": "10943/100",
+      "x": "331/50",
+      "r": "92/25",
+      "S": 9,
+      "height_coefficient": "2079649514157/1750000000000",
+      "log_b_upper": "216109/50000",
+      "interpolation_margin_lower": "50388973621501/11593260000000000",
+      "gap_lower": "31634591/8000000",
+      "retained_loss_lower": "2056403955027/640000000000"
+    },
+    {
+      "D_lower": "9/10",
+      "D_upper": "1",
+      "lower_height": "10943/100",
+      "T": "256",
+      "x": "847/100",
+      "r": "106/25",
+      "S": 10,
+      "height_coefficient": "2079649514157/1750000000000",
+      "log_b_upper": "31463/6250",
+      "interpolation_margin_lower": "8841150207408839/22262100000000000",
+      "gap_lower": "32339571/8000000",
+      "retained_loss_lower": "2089394904087/640000000000"
+    }
+  ],
+  "cycle_coefficients_upper": {
+    "basic": "2251/100",
+    "middle": "161/100",
+    "large": "1527/100"
+  },
+  "parameter_challenges": 35,
+  "rounding_challenges": 14,
+  "virtual_challenges": 1260,
+  "exact_integer_orbit_challenges": 9,
+  "numeric": {
+    "lambda": "1.572462500721156181453738943947816508759814407692481060455752654541098227794358562522280474918088242",
+    "amplification": "1.288362904141605572484368269019270443611899626222280770630677648053757410992325910099012907843404197"
+  },
+  "source_sha256": "33561c3d9fdd0c5a44a8809f38772215d85f5adabc26385b0ae2cd938625c8ee",
+  "source_dependencies": {
+    "exact_intervals.py": "f06de42a83824055e01890b07ed4f4e750df3180cda38f87a7600c90dfcc434a"
+  },
+  "proof_dependencies": {
+    "retained-loss-interpolation-bound.md": "50328e5b04690cc7727c2dfd72bee47caa12fea9215d6f190ff932986387d029",
+    "four-range-interpolation-bound.md": "4064047a03370c7cc4a5980cff5371c0c4f132eec2f13f96231a6748003a0b00",
+    "fourth-power-interpolation-bound.md": "fb65f31333d7f361c7a64a7a0b8a93caf7c30b8c623bb6664f52e58dbcae52eb",
+    "two-regime-interpolation-bound.md": "a31ba6479eb7054a639f02fdbee3f9125b92824af8f3f921333909958b2f875f",
+    "optimized-global-cutoffs.md": "eb76e608be5f1ec8cbbd88c02f4862f40a4cf55cbe902ff8e14ec212309ab1b9",
+    "cycle-bound-corollaries.md": "9a91251ca657d3980c889712db8d067a37f9e81fb1715a3df20a4fb592bc6921"
+  },
+  "dependencies": {
+    "four-range-exponential-bound-audit.json": "32f2442c4d079efcbc7c10cf26c52fc070446952e6f4e3f0aa63a90baaad682d",
+    "two-regime-exponential-bound-audit.json": "7f71b1a76304429440729a2022d564b353fae64aa0aef6f8f12a8f05223538a0",
+    "interpolation-primary-source-provenance.json": "61ddc22b3418a8692881db137152557f719c94a707aa798ca3f5e8d494f76909"
+  },
+  "scope": "Exact constants plus finite challenges for the written universal retained-loss proof; not a proof of convergence or a priority claim."
+}

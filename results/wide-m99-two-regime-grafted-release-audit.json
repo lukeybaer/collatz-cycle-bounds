@@ -1,0 +1,30 @@
+{
+  "journal": "wide-m99-two-regime-grafted-release-journal.jsonl",
+  "sha256": "238886e213d818bd9f7a47807abac217e86f76cbef21c587c4bda736208f0f70",
+  "status": "passed",
+  "jobs_present": 206426,
+  "jobs_expected": 206426,
+  "survivors": 0,
+  "incomplete_jobs": [],
+  "errors": [],
+  "job_totals": {
+    "nodes": 2758502285,
+    "singletons": 2647280664,
+    "descent": 12234,
+    "capacity": 2647268430,
+    "empty": 184272414,
+    "survivors": 0,
+    "odd_tail": 1952850062,
+    "even_tail": 369182856
+  },
+  "generator_counters": {
+    "nodes": 229161,
+    "singletons": 26200,
+    "descent": 275,
+    "capacity": 25925,
+    "empty": 5148,
+    "survivors": 0,
+    "odd_tail": 945,
+    "even_tail": 11737
+  }
+}

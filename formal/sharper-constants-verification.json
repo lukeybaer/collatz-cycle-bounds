@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "utc": "2026-09-29T10:55:44.079615+00:00",
+  "lean_version": "Lean (version 4.34.1, x86_64-w64-windows-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "checks": [
+    {
+      "module": "CollatzSharperConstants",
+      "theorems": [
+        "squared_log_bound",
+        "valuation_cutoff",
+        "two_block_loss"
+      ],
+      "exit_code": 0,
+      "source_sha256": "e86a7ba0f44f3294f6d0710791b326b6ac49512e9cc1d4e95093a22f8bc5227e",
+      "compiler_output_sha256": "09bd305ceed927ff7dec687dca97a08b69c04802235a2d9fdeedb826c23f8bff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "scope": "Three sharper all-parameter logarithm and local-loss lemmas. Not a formalization of Collatz convergence, the p-adic theorem, or the numerical exclusions.",
+  "verifier_sha256": "c5cdd859f3c1aa6de90a11f104e0c39461afe19599378da08051f7c65bdcf01d",
+  "toolchain_sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+  "lakefile_sha256": "cabe24446d85c3e3ab5a4a9aa111084ee602c15b007750724e9eb7c1c23d0ab4"
+}

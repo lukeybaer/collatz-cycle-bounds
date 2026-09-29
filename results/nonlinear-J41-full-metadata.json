@@ -1,0 +1,10 @@
+{
+  "startedUtc": "2026-09-29T08:40:56.7904749Z",
+  "inputHash": "B4A5B0EE5AAB770C5E8EDF3FB8DC87CA3D256BF21DE4021085F5910DAC752F2D",
+  "sourceHash": "0B0B1EEED5D11935AE09AB941BA7E943B972CBBA9BD4CFA68EA3A4D1AECCE8AD",
+  "workers": 2,
+  "depth": 16,
+  "nodeLimit": 100000000,
+  "take": 0,
+  "compilerOptimization": "release /optimize+"
+}

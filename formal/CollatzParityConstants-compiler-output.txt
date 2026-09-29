@@ -1,0 +1,5 @@
+'CollatzParityConstants.squared_log_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzParityConstants.valuation_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzParityConstants.two_block_loss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzParityConstants.fractional_two_block_loss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzParityConstants.delta_lower' depends on axioms: [propext, Classical.choice, Quot.sound]

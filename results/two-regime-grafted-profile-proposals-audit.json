@@ -1,0 +1,71 @@
+{
+  "status": "passed",
+  "capacity_map_proved": false,
+  "map_id": "plateau-c3799-c4099-h71-graft-eps1over160-B16384",
+  "rows": [
+    {
+      "m": 96,
+      "minimum_factor": 1,
+      "profile_entries_checked": 96,
+      "arithmetic_passed": true
+    },
+    {
+      "m": 97,
+      "minimum_factor": 1,
+      "profile_entries_checked": 97,
+      "arithmetic_passed": true
+    },
+    {
+      "m": 98,
+      "minimum_factor": 6,
+      "profile_entries_checked": 98,
+      "arithmetic_passed": true
+    },
+    {
+      "m": 99,
+      "minimum_factor": 11,
+      "profile_entries_checked": 198,
+      "arithmetic_passed": true
+    },
+    {
+      "m": 100,
+      "minimum_factor": 17,
+      "profile_entries_checked": 200,
+      "arithmetic_passed": true
+    },
+    {
+      "m": 101,
+      "minimum_factor": 22,
+      "profile_entries_checked": 202,
+      "arithmetic_passed": true
+    },
+    {
+      "m": 102,
+      "minimum_factor": 27,
+      "profile_entries_checked": 204,
+      "arithmetic_passed": true
+    },
+    {
+      "m": 103,
+      "minimum_factor": 33,
+      "profile_entries_checked": 206,
+      "arithmetic_passed": true
+    },
+    {
+      "m": 104,
+      "minimum_factor": 38,
+      "profile_entries_checked": 312,
+      "arithmetic_passed": true
+    },
+    {
+      "m": 105,
+      "minimum_factor": 44,
+      "profile_entries_checked": 315,
+      "arithmetic_passed": true
+    }
+  ],
+  "input_sha256": "f4710a29f7f1c47dfeb640c3201e0d003347b0adce2438d17574d00ddaf96cde",
+  "source_sha256": "7bf9267c8c96ea745dff87f27593f07add3cba0e189ff308c168e7cba333645d",
+  "verification_source_sha256": "f2407f730492dadb2f3621310b85e094079dbf124c91965ad5dd8e8737c76acc",
+  "warning": "Exact arithmetic passed; the new graft capacity requires a separate proof audit."
+}

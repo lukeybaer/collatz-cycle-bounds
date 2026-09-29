@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "capacity_map_proved": false,
+  "map_id": "plateau-c3799-c4099-h71-graft-eps1over93-B32768",
+  "rows": [
+    {
+      "m": 92,
+      "minimum_factor": 1,
+      "profile_entries_checked": 92,
+      "arithmetic_passed": true
+    },
+    {
+      "m": 93,
+      "minimum_factor": 1,
+      "profile_entries_checked": 93,
+      "arithmetic_passed": true
+    },
+    {
+      "m": 94,
+      "minimum_factor": 1,
+      "profile_entries_checked": 94,
+      "arithmetic_passed": true
+    },
+    {
+      "m": 95,
+      "minimum_factor": 1,
+      "profile_entries_checked": 95,
+      "arithmetic_passed": true
+    }
+  ],
+  "input_sha256": "5140ceb711fe73fbbd7f5dca6ee9454e6f11e88a1a1f9b5237f1142a1ad7dd60",
+  "source_sha256": "0f220fcb9384aa1f6a9b1ae440f5484e27708ee076de4e4ff57512a01fa751ea",
+  "verification_source_sha256": "f2407f730492dadb2f3621310b85e094079dbf124c91965ad5dd8e8737c76acc",
+  "warning": "Exact arithmetic passed; the new graft capacity requires a separate proof audit."
+}

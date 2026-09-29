@@ -1,0 +1,623 @@
+{
+  "status": "passed",
+  "map_id": "plateau-c3799-c4099-h71",
+  "full_global_input": false,
+  "classes": 100,
+  "exact_thresholds_checked": 2032128,
+  "rows": [
+    {
+      "id": 0,
+      "source_class": 0,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 1,
+      "source_class": 1,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 2,
+      "source_class": 2,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 3,
+      "source_class": 3,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 4,
+      "source_class": 4,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 5,
+      "source_class": 5,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 6,
+      "source_class": 6,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 7,
+      "source_class": 7,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 8,
+      "source_class": 8,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 9,
+      "source_class": 9,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 10,
+      "source_class": 10,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 11,
+      "source_class": 11,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 12,
+      "source_class": 12,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 13,
+      "source_class": 13,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 14,
+      "source_class": 14,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 15,
+      "source_class": 15,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 16,
+      "source_class": 16,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 17,
+      "source_class": 17,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 18,
+      "source_class": 18,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 19,
+      "source_class": 19,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 20,
+      "source_class": 20,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 21,
+      "source_class": 21,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 22,
+      "source_class": 22,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 23,
+      "source_class": 23,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 24,
+      "source_class": 24,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 25,
+      "source_class": 25,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 26,
+      "source_class": 26,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 27,
+      "source_class": 27,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 28,
+      "source_class": 28,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 29,
+      "source_class": 29,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 30,
+      "source_class": 30,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 31,
+      "source_class": 31,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 32,
+      "source_class": 32,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 33,
+      "source_class": 33,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 34,
+      "source_class": 34,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 35,
+      "source_class": 35,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 36,
+      "source_class": 36,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 37,
+      "source_class": 37,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 38,
+      "source_class": 38,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 39,
+      "source_class": 39,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 40,
+      "source_class": 40,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 41,
+      "source_class": 41,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 42,
+      "source_class": 42,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 43,
+      "source_class": 43,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 44,
+      "source_class": 44,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 45,
+      "source_class": 45,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 46,
+      "source_class": 46,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 47,
+      "source_class": 47,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 48,
+      "source_class": 48,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 49,
+      "source_class": 49,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 50,
+      "source_class": 50,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 51,
+      "source_class": 51,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 52,
+      "source_class": 52,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 53,
+      "source_class": 53,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 54,
+      "source_class": 54,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 55,
+      "source_class": 55,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 56,
+      "source_class": 56,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 57,
+      "source_class": 57,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 58,
+      "source_class": 58,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 59,
+      "source_class": 59,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 60,
+      "source_class": 60,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 61,
+      "source_class": 61,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 62,
+      "source_class": 62,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 63,
+      "source_class": 63,
+      "nodes": 1,
+      "singleton_steps": 216
+    },
+    {
+      "id": 64,
+      "source_class": 64,
+      "nodes": 1,
+      "singleton_steps": 135
+    },
+    {
+      "id": 65,
+      "source_class": 65,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 66,
+      "source_class": 66,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 67,
+      "source_class": 67,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 68,
+      "source_class": 68,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 69,
+      "source_class": 69,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 70,
+      "source_class": 70,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 71,
+      "source_class": 71,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 72,
+      "source_class": 72,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 73,
+      "source_class": 73,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 74,
+      "source_class": 74,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 75,
+      "source_class": 75,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 76,
+      "source_class": 76,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 77,
+      "source_class": 77,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 78,
+      "source_class": 78,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 79,
+      "source_class": 79,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 80,
+      "source_class": 80,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 81,
+      "source_class": 81,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 82,
+      "source_class": 82,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 83,
+      "source_class": 83,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 84,
+      "source_class": 84,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 85,
+      "source_class": 85,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 86,
+      "source_class": 86,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 87,
+      "source_class": 87,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 88,
+      "source_class": 88,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 89,
+      "source_class": 89,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 90,
+      "source_class": 90,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 91,
+      "source_class": 91,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 92,
+      "source_class": 92,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 93,
+      "source_class": 93,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 94,
+      "source_class": 94,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 95,
+      "source_class": 95,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 96,
+      "source_class": 96,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 97,
+      "source_class": 97,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 98,
+      "source_class": 98,
+      "nodes": 1,
+      "singleton_steps": 0
+    },
+    {
+      "id": 99,
+      "source_class": 99,
+      "nodes": 1,
+      "singleton_steps": 0
+    }
+  ],
+  "seconds": 26.84850289998576,
+  "source_sha256": "9435c72a561606e2e666228554f9c0678fe221f986266f19032e235b6a08001d",
+  "source_dependencies": {
+    "verify_family_capacity.py": "03b1b411dd63aaf29ecae87ae04b7f055822479b83f1d80f5c1f42f2250205c5",
+    "audit_logtable.py": "132026817f33a6e57d719748011bf28eaefd2858823fdd32b1451b7a7268c156",
+    "PreciseNonlinearProgressionVerifier.cs": "ac4218836f3a7c34780aeee864e8ab3004bb89ad05c65bd3248a94ed4917d13d"
+  },
+  "dependencies": {
+    "extended-capacity-J41-classes.json": "b4a5b0ee5aab770c5e8edf3fb8dc87ca3d256bf21de4021085f5910dac752f2d",
+    "nonlinear-precise-progression-first100-result.json": "b0ddd73fc739ecfcd8a394b33334b3002c7e5f44a66e01894ba8e96d83184bf3",
+    "nonlinear-precise-progression-first100-metadata.json": "125980b2e66c8f47af315273616040f7ba22126020858d09606d83f817115bcb",
+    "log2-mantissa-table.json": "026a267563ed50f334b40fa53faf8cae4ff009c2ff378674a188efb0a4e7adc7",
+    "nonlinear-precise-progression-first100-thresholds.json": "8f8b826498682831c3dc4c13aaf14f0153cd041c77544bc75ca63b30d2daa0f2"
+  }
+}

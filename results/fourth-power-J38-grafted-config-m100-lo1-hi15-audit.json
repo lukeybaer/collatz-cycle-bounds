@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "m": 100,
+  "capacity_map_proved": true,
+  "configuration": "fourth-power-J38-grafted-config-m100-lo1-hi15.json",
+  "suffix_targets_checked": 96,
+  "rounding_denominator": "10000000000000000000000000000000000000000",
+  "configuration_sha256": "732688b23d32e9130a4df36f18e66da45e53baf3e2c6bbbcf912b2b03dfd93cf",
+  "source_sha256": "9b9b2956e4680b6235fa4d15660b0e26fd3f10163a4d807ad73c578b1b51a6be",
+  "initial_K_certificate_sha256": "5b4580f1007df6208b29647d7ded11e46ae16c51e9a4d209221777e25b2be641",
+  "verification_source_sha256": "f2407f730492dadb2f3621310b85e094079dbf124c91965ad5dd8e8737c76acc",
+  "warning": "This verifies necessary targets, not a completed finite search or final cycle contradiction."
+}

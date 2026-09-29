@@ -1,0 +1,52 @@
+{
+  "status": "passed",
+  "rows": [
+    {
+      "m": 92,
+      "minimum": "2361183241434822606848",
+      "initial_K": 205632218873398596256,
+      "final_K": 253438635377865553122983825848491,
+      "upper_ceiling": "343025970248850209781"
+    },
+    {
+      "m": 93,
+      "minimum": "2361183241434822606848",
+      "initial_K": 205632218873398596256,
+      "final_K": 11322003431549588082278945047,
+      "upper_ceiling": "549592900700722011957"
+    },
+    {
+      "m": 94,
+      "minimum": "2361183241434822606848",
+      "initial_K": 205632218873398596256,
+      "final_K": 78163235572431531149225513,
+      "upper_ceiling": "880450634383675057774"
+    },
+    {
+      "m": 95,
+      "minimum": "2361183241434822606848",
+      "initial_K": 205632218873398596256,
+      "final_K": 1752190149218482586763461,
+      "upper_ceiling": "1410326784332514996168"
+    }
+  ],
+  "additional_minimum_window_search_required": false,
+  "capacity_certificate": "grafted-capacity-eps1over93-B32768-certificate.json",
+  "externally_reviewed": false,
+  "novelty_confirmed": false,
+  "dependencies": {
+    "grafted-capacity-eps1over93-B32768-certificate.json": "6ba39ce30370b2f7ec2b6a3f71e2069036d636b28306252255301fae425850b1",
+    "early-fourth-power-profile-proposals.json": "5140ceb711fe73fbbd7f5dca6ee9454e6f11e88a1a1f9b5237f1142a1ad7dd60",
+    "early-fourth-power-profile-proposals-audit.json": "9e217bd1e3ae184322b896665a3a0a08fcf543b8a2e59988f8c836e9f17f682e",
+    "K-lower-bounds-reproduction.json": "c85baed62e3c19dfda20145deef0d97342854bb6dd25451bea59d575b70e5d31"
+  },
+  "source_dependencies": {
+    "audit_early_fourth_power_exclusions.py": "0bfc8f9e423ef7b3e52d82ffcb0ec3b3bb8b0b0d1395ba451362f2dcfe00c149",
+    "audit_early_fourth_power_profiles.py": "0f220fcb9384aa1f6a9b1ae440f5484e27708ee076de4e4ff57512a01fa751ea",
+    "early_fourth_power_profiles.py": "10e95035340181744d970af7c09ad149811420ffb4d426909a30a2617820922a",
+    "fourth_power_grafted_profile_proposals.py": "ee9c6fce5710dd429732ca79a922047f594cec396850a0020d66a9a6ac685fcd",
+    "verify_fourth_power_grafted_capacity.py": "e373c0dfc74dbbba906107001b35dcbba498eca024c875c3fc5d0b36e2243e37",
+    "verify_certificates.py": "f2407f730492dadb2f3621310b85e094079dbf124c91965ad5dd8e8737c76acc"
+  },
+  "scope": "Alternative direct internal exclusions for92..95 using the frozen capacity; these cases were previously known. Published basin, p-adic theorem and cycle-size upper bounds remain dependencies."
+}

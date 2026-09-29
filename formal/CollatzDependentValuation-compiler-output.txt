@@ -1,0 +1,3 @@
+'CollatzDependentValuation.three_pow_mod_eight' depends on axioms: [propext]
+'CollatzDependentValuation.odd_multiple_sum_not_eight_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzDependentValuation.dependent_valuation_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
