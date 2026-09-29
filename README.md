@@ -18,7 +18,7 @@ The analytic manuscript gives the block-growth base `lambda = log2(3) - 1/80`. I
 
 ## Reproduce the saved evidence
 
-Clone the repository, enter its directory, and use Python 3.11 or newer. The following checks use only the standard library; no AI service or API key is needed.
+Clone the repository, enter its directory, and use Python 3.11 or newer. The following checks use only the standard library; no AI service or API key is needed. Use Windows for the `--audits` command: the historical receipts include Windows line endings, and downstream receipts hash those exact bytes. The manifest-only check works across platforms. GitHub runs the full audits on Windows.
 
 ```sh
 git clone https://github.com/lukeybaer/collatz-cycle-bounds.git
