@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "method": "UInt128 singleton iteration and overflow fallback compared with Python direct shortcut iteration",
+  "bigIntegerFallbacks": 420,
+  "cases": 999
+}

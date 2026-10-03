@@ -1,4 +1,4 @@
-import Collatz.Blocks
+import Collatz.Construction
 import Collatz.Legacy.CollatzRestart
 import Collatz.Legacy.CollatzRetainedLoss
 import Collatz.Legacy.CollatzAffineEnvelope
@@ -7,7 +7,7 @@ import Collatz.Legacy.CollatzAffineEnvelope
 # Connected, conditional block-growth theorem
 
 The only unproved mathematical input to `block_growth_of_local_loss` is the
-explicit local certificate below. It is the conclusion of Sections 5--9 of
+explicit local certificate below. It is the conclusion of Sections 2--5 of
 the manuscript, including the external p-adic interpolation theorem. It is
 NOT asserted here as an axiom or silently discharged by numerical checks.
 The formal argument connects arithmetic blocks, elementary logarithmic
@@ -151,8 +151,34 @@ theorem block_growth_of_local_loss (o : BlockOrbit) (h : LocalLossCertificate o)
       _ ≤ delta*(envelopeConstant*o.height 0*lambda^t) := hm
       _ = delta*envelopeConstant*o.height 0*lambda^t := by ring
 
+/-- The encoded block starts are actual shortcut iterates, and their
+growth satisfies the manuscript bound under the explicit local certificate. -/
+theorem block_trajectory_and_growth (o : BlockOrbit) (h : LocalLossCertificate o) :
+    (∀ i, shortcut^[o.time i] (o.n 0) = o.n i) ∧
+    (∀ t, o.run t ≤ envelopeConstant*o.height 0*lambda^t) ∧
+    (∀ t, o.height (t+1) ≤ delta*envelopeConstant*o.height 0*lambda^t) :=
+  ⟨o.is_trajectory, block_growth_of_local_loss o h⟩
+
+/-- Every positive odd starting value has the represented trajectory;
+the only analytic input here is its explicitly stated local certificate. -/
+theorem odd_start_growth (s : OddStart) (h : LocalLossCertificate (orbitOfOdd s)) :
+    (∀ i, shortcut^[(orbitOfOdd s).time i] s.value = (orbitOfOdd s).n i) ∧
+    (∀ t, (orbitOfOdd s).run t ≤
+      envelopeConstant*(Real.log ((s.value : ℝ)+1)/Real.log 2)*lambda^t) ∧
+    (∀ t, (orbitOfOdd s).height (t+1) ≤
+      delta*envelopeConstant*(Real.log ((s.value : ℝ)+1)/Real.log 2)*lambda^t) :=
+  block_trajectory_and_growth (orbitOfOdd s) h
+
 end Collatz
 
 /-- info: 'Collatz.block_growth_of_local_loss' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
 #print axioms Collatz.block_growth_of_local_loss
+
+/-- info: 'Collatz.block_trajectory_and_growth' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms Collatz.block_trajectory_and_growth
+
+/-- info: 'Collatz.odd_start_growth' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms Collatz.odd_start_growth

@@ -3,7 +3,7 @@
 \usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs,array,longtable}
 \usepackage[margin=1in]{geometry}
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
-\usepackage{enumitem}
+\usepackage{enumitem,placeins}
 \setlist{nosep}
 \setlength{\emergencystretch}{2em}
 \newtheorem{theorem}{Theorem}
@@ -54,7 +54,7 @@ A hypothetical nontrivial positive cycle satisfies
 \begin{theorem}[Computer-assisted exclusion claim]\label{thm:finite}
 Under the external inputs and certificate soundness argument specified in Section~\ref{sec:finite}, the completed certificates exclude nontrivial positive cycles with $92\le m\le100$. Combined with Hercher's result and its corrigendum~\cite{hercher}, this excludes $m\le100$.
 \end{theorem}
-Theorem~\ref{thm:finite} is a submitted-for-review computational proof claim; execution receipts alone do not establish the correctness of its mathematical reduction. Wang's located preprint already claims $m\le95$~\cite{wang}. Thus the additional finite cases relative to that claim are $96$--$100$; Wang's exclusion is not an input here.
+Theorem~\ref{thm:finite} is an unrefereed computational proof claim; execution receipts alone do not establish the correctness of its mathematical reduction. Wang's located preprint already claims $m\le95$~\cite{wang}. Thus the additional finite cases relative to that claim are $96$--$100$; Wang's exclusion is not an input here.
 
 \paragraph{Strategy.}
 An odd block can grow by approximately a factor $\delta$ in logarithmic height. Either an elementary loss already reduces that growth, or small loss restricts the height of a rational number to which Bugeaud's interpolation theorem applies. The resulting bound on the next odd run forces a loss within two blocks. A restart induction handles every block, including the intermediate one. Published minimum-height bounds turn this all-orbit envelope into a cycle bound. The finite argument separately combines a certified nonlinear envelope with an extremal profile, rational approximation, and exhaustive pruning of possible least minima.
@@ -151,6 +151,7 @@ II&109.43&256&8.47&4.24&10&169.4\\\bottomrule
 \end{tabular}
 \caption{Exact interpolation parameters; entries are terminating rationals.}\label{tab:params}
 \end{table}
+\FloatBarrier
 The first row in each stratum uses $y\ge79.5J$; later rows apply when $k$ exceeds the preceding endpoint and use $y\ge k$. Divisibility of $J$ makes all required parameters integers, with $M\ge60200$. Since $k>77J$ and $r\le4.24$, $R_2<u_0$. Distinct powers of $81$ give the first cardinality condition. Injectivity of $z+u_0w$ on $0\le z<R_2$, $0\le w<S$ and $rS\ge5x$ give the second.
 
 Here $R=rJ+4$, $N=5xJ$, and Lemma~\ref{lem:factorial} gives
@@ -379,18 +380,23 @@ $m$&Final lower bound for $K$&Upper ceiling for $K$\\\midrule
 The complete evidence chain includes the map certificates, profiles, target derivation, journal coverage, partition audits and fixed-width overflow fallback. The revision's full $m=100$ original-arithmetic reproduction is reported with its exact completion status and counters in the repository's verification report. No unfinished $m=101$ experiment is an input.
 
 \section{What Lean proves, and what remains outside it}\label{sec:lean}
-The active project has a root \texttt{lakefile.toml}, pinned Lean 4.34.1 and mathlib commit \texttt{d13f23b723b8a846827a245b89c10fc7d3f11612}, and root module \texttt{Collatz}. It imports guarded copies of all 21 historical modules and the connected modules \texttt{Collatz.Blocks} and \texttt{Collatz.Connected}.
+The active project has a root \texttt{lakefile.toml}, pinned Lean 4.34.1 and mathlib commit \texttt{d13f23b723b8a846827a245b89c10fc7d3f11612}, and root module \texttt{Collatz}. It imports guarded copies of all 21 historical modules and the connected modules described below.
 
-The structure \texttt{Collatz.BlockOrbit} records positive natural-number sequences $n,a,k,\ell$, oddness of $n,a$, and the exact identities $n_i+1=a_i2^{k_i}$ and $n_{i+1}2^{\ell_i}+1=a_i3^{k_i}$. Lean derives $k_i\le y_i$, $y_i\ge1$, and $y_{i+1}\le\delta y_i$ from these identities. It does not yet prove equivalence of this representation with a separately defined iterated $T$.
+The structure \texttt{Collatz.BlockOrbit} records positive natural-number sequences $n,a,k,\ell$, oddness of $n,a$, and the exact identities $n_i+1=a_i2^{k_i}$ and $n_{i+1}2^{\ell_i}+1=a_i3^{k_i}$. Lean derives $k_i\le y_i$, $y_i\ge1$, and $y_{i+1}\le\delta y_i$ from these identities. The dynamics module defines the shortcut map and proves
+\[
+ T^{k_i+\ell_i}(n_i)=n_{i+1},\qquad T^{\tau_i}(n_0)=n_i,
+ \quad \tau_0=0,\quad\tau_{i+1}=\tau_i+k_i+\ell_i.
+\]
+The construction module factors positive integers into powers of two times odd parts and constructs such a block orbit from every positive odd starting integer. Thus the representation is inhabited for the intended starting values and is connected to actual Collatz iterations.
 
 The explicit proposition \texttt{LocalLossCertificate} is
 \begin{align*}
- \forall i,J\in\NN,quad 100\mid J,\ J\ge10000,\ 79.5J\le y_i
+ \forall i,J\in\NN,\quad 100\mid J,\ J\ge10000,\ 79.5J\le y_i
  \quad\Longrightarrow\quad& y_{i+1}\le\delta y_i-J\\
  &\text{or }\bigl(k_{i+1}\le\delta y_i-J\ \text{and }\
  y_{i+2}\le\delta^2y_i-\tfrac{16}{5}J\bigr).
 \end{align*}
-The top-level theorem \texttt{Collatz.block\_growth\_of\_local\_loss} takes a \texttt{BlockOrbit} and a proof of this proposition, and concludes both inequalities of Theorem~\ref{thm:growth}. Rounding, restart induction and the finite warmup are connected to that conclusion. The proposition is a hypothesis, not a newly declared axiom or a proof supplied by a numerical table. Its mathematical justification is Sections~\ref{sec:blocks}--\ref{sec:unbounded}; that justification is not fully formalized.
+The top-level theorem \texttt{Collatz.odd\_start\_growth} takes a positive odd starting integer and a proof of this proposition for its constructed orbit. It concludes both the trajectory identity and the two inequalities of Theorem~\ref{thm:growth}, with initial height $\log_2(n_0+1)$. Rounding, restart induction and the finite warmup are connected to that conclusion. The proposition is a hypothesis, not a newly declared axiom or a proof supplied by a numerical table. Its mathematical justification is Sections~\ref{sec:blocks}--\ref{sec:unbounded}; that justification is not fully formalized.
 
 \texttt{\#guard\_msgs} checks the axiom reports, allowing only Lean's usual \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}. This excludes proof placeholders in the checked conclusions, but does not remove their explicit hypotheses. The external interpolation theorem, its full specialization, imported cycle theorems and exhaustive search programs remain outside the connected formal proof. A successful build is therefore partial formal verification, not a machine-checked proof of the whole paper.
 

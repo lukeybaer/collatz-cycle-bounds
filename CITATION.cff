@@ -6,7 +6,7 @@ authors:
   - family-names: Baer
     given-names: Luke
   - name: "Amy (AI research system operating through OpenAI Codex)"
-version: 0.1.0-review
-date-released: 2026-09-29
+version: 0.2.0-review
+date-released: 2026-10-03
 repository-code: "https://github.com/lukeybaer/collatz-cycle-bounds"
-abstract: "Source, saved certificates, selected Lean proofs and reproducibility tools accompanying an unreviewed Collatz research manuscript."
+abstract: "Source, exact certificates, connected conditional Lean proofs and reproducibility tools accompanying an unrefereed Collatz research manuscript."

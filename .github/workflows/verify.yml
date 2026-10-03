@@ -18,6 +18,8 @@ jobs:
           python-version: '3.12'
       - name: Verify frozen hashes and reproduce seven audits
         run: python scripts/verify_revision.py --audits
+      - name: Regenerate direct-iteration, native arithmetic and exact interval checks
+        run: python scripts/verify_revision.py --small-tests
       - name: Replay full-reference revision receipts when present
         shell: pwsh
         run: |

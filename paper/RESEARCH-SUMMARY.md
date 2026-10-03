@@ -25,7 +25,7 @@ The reduction uses Barina's published verification below 2^71, nonlinear extrema
 
 - A conventional LaTeX paper replaces the prose-oriented PDF source, with a proof strategy, explicit notation, theorem/proof structure and a search soundness explanation.
 - A standard pinned Lake project imports all active modules. Guarded axiom reports fail the build if the checked dependencies change.
-- A connected top-level theorem now proves the growth inequalities from natural-number block identities **and an explicit local analytic hypothesis**. The external p-adic theorem and full specialization remain outside Lean.
+- A connected top-level theorem starts from every positive odd integer, constructs its block orbit, connects it to actual shortcut Collatz iterations, and proves the growth inequalities **under an explicit local analytic hypothesis**. The external p-adic theorem and full specialization remain outside Lean.
 - The literature review now distinguishes inherited methods from the specific candidate improvement. In particular, Hercher's corrigendum already uses the geometric extremal mechanism underlying our profile argument.
 - The even-run inequality at a closed stratum boundary is corrected from strict to non-strict. The later bounds allow this and the exact analytic audits remain applicable.
 

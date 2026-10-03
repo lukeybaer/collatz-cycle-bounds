@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "farey_intervals": 190,
+  "prefix_cases": 180,
+  "individual_seed_comparisons": 13860
+}

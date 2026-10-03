@@ -37,6 +37,14 @@ def run(root, script, *args):
     print(result.stdout.strip(), flush=True)
 
 
+def run_powershell(root, script, *args):
+    result = subprocess.run(['pwsh', '-NoProfile', '-File', str(root / script), *args],
+                            cwd=root, capture_output=True, text=True, encoding='utf-8')
+    if result.returncode:
+        raise RuntimeError(script + '\n' + result.stdout + result.stderr)
+    print(script, result.stdout.strip(), flush=True)
+
+
 def archive_copy(destination):
     manifest = read(ROOT / 'MANIFEST.json')
     for name in ['MANIFEST.json', *manifest['files']]:
@@ -46,6 +54,8 @@ def archive_copy(destination):
 
 
 def main():
+    if not __debug__:
+        raise RuntimeError('Auditors require assertions: do not use Python -O or PYTHONOPTIMIZE.')
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--audits', action='store_true', help='Replay all seven frozen audits.')
     parser.add_argument('--record-m100', action='store_true', help='Write new m=100 revision receipts after successful checks.')
@@ -64,11 +74,7 @@ def main():
             run(copy, 'src/build_singleton_tests.py')
             run(copy, 'src/test_exact_tools.py')
             for script in ('test_native.ps1', 'test_kernel128.ps1', 'test_singletons.ps1', 'test_wide.ps1'):
-                result = subprocess.run(['pwsh', '-NoProfile', '-File', str(copy / 'src' / script)],
-                                        cwd=copy, capture_output=True, text=True, encoding='utf-8')
-                if result.returncode:
-                    raise RuntimeError(script + '\n' + result.stdout + result.stderr)
-                print(script, result.stdout.strip(), flush=True)
+                run_powershell(copy, 'src/' + script)
             for name in ('native-test-receipt.json', 'kernel128-test-receipt.json',
                          'singleton-test-receipt.json', 'wide-arithmetic-test.json', 'exact-tools-check.json'):
                 source = copy / 'results' / name
@@ -92,6 +98,26 @@ def main():
                 raise AssertionError('Reference kernel hash mismatch')
             if metadata['configHash'].lower() != sha(r / CONFIG):
                 raise AssertionError('Configuration hash mismatch')
+            config = read(r / CONFIG)
+            if metadata['config'] != config or metadata['split'] != 1:
+                raise AssertionError('Reference metadata does not match the documented run')
+            rows = [json.loads(line) for line in
+                    (r / (REFERENCE + '-journal.jsonl')).read_text(encoding='utf-8-sig').splitlines()]
+            if rows[-1].get('event') != 'finish' or rows[-1]['receipt'] != read(r / (REFERENCE + '-result.json')):
+                raise AssertionError('Reference result is not the journal finish receipt')
+            start = rows[0]
+            if (start.get('event') != 'start' or start['m'] != config['m'] or
+                    int(start['low']) != int(config['low']) or int(start['high']) != int(config['high'])):
+                raise AssertionError('Reference journal starts with a different search window')
+            # Recompute the cheap coverage/partition checks, not just their saved statuses.
+            run(copy, 'src/audit_journal.py', 'results/' + REFERENCE + '-journal.jsonl')
+            for script in ('audit_generator.ps1', 'audit_reference_partition.ps1'):
+                run_powershell(copy, 'src/' + script, '-Config', 'results/' + CONFIG,
+                               '-Split', '1', '-Label', REFERENCE)
+            for suffix in ('-audit.json', '-generator-audit.json', '-partition-audit.json'):
+                name = REFERENCE + suffix
+                if read(r / name)['status'] != 'passed' or sha(r / name) != sha(ROOT / 'results' / name):
+                    raise AssertionError('Reference audit did not reproduce exactly: ' + name)
             sys.path.insert(0, str(copy / 'src'))
             spec = importlib.util.spec_from_file_location('fresh_full_reference', copy / 'src/audit_full_reference.py')
             module = importlib.util.module_from_spec(spec)

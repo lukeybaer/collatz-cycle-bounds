@@ -12,13 +12,20 @@ lake build
 
 ## Main entry point
 
-Read `Collatz/Connected.lean`, theorem `Collatz.block_growth_of_local_loss`.
+Read `Collatz/Connected.lean`, theorem `Collatz.odd_start_growth`.
 
-It takes a natural-number `BlockOrbit` and the explicitly stated `LocalLossCertificate`, and proves both inequalities in manuscript Theorem 1. `Blocks.lean` derives elementary logarithmic bounds from the exact block identities. `Connected.lean` connects them to rounding, restart induction and the 32-step virtual warmup.
+It takes any positive odd starting integer (`OddStart`) and the explicitly stated `LocalLossCertificate` for its constructed block orbit. It concludes that the block starts are actual iterates of the shortcut Collatz map and proves both inequalities in manuscript Theorem 1.
+
+The connected modules have distinct roles:
+
+- `Blocks.lean` derives elementary logarithmic bounds from exact natural-number block identities.
+- `Dynamics.lean` defines the shortcut map and proves that each represented block, and the concatenated trajectory, consists of its actual iterates.
+- `Construction.lean` factors the required positive integers into powers of two times odd parts and constructs a `BlockOrbit` from every positive odd starting value.
+- `Connected.lean` connects those facts to rounding, restart induction and the 32-step virtual warmup. Its intermediate `block_growth_of_local_loss` theorem is the analytic envelope statement for a given `BlockOrbit`.
 
 **The local analytic certificate is still an explicit hypothesis.** Its written derivation invokes Bugeaud's published theorem. Neither that theorem nor the whole specialization is formalized here. A hypothesis appearing in a theorem's type does not appear as a new axiom in `#print axioms`; the guarded axiom list is therefore not a claim that all mathematical inputs have been discharged.
 
-The arithmetic block representation is not yet formally proved equivalent to iteration of a separately defined Collatz function. The cycle deductions, external convergence verification and exhaustive C# search are also outside the connected formal theorem.
+The cycle deductions, external convergence verification and exhaustive C# search remain outside the connected formal theorem. Construction uses classical choice, as permitted by the guarded dependency list; it is an existence proof, not an extracted executable search kernel.
 
 ## Historical modules
 

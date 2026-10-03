@@ -10,6 +10,7 @@ This repository accompanies *Explicit block-growth bounds and finite-cycle exclu
 - [Results and limits](paper/RESEARCH-SUMMARY.md).
 - [Claim-to-evidence and reproduction guide](paper/VERIFICATION-REPORT.md).
 - [Expanded priority review, sources and search limitations](paper/NOVELTY-REVIEW.md).
+- [Revision notes and correction to the archived text](paper/REVISION-NOTES.md).
 - [Active Lean project and its exact formal boundary](proof/README.md).
 - [Research implementations](src/) and [saved certificates and journals](results/).
 
@@ -17,7 +18,7 @@ The written analytic claim uses `lambda = log2(3) - 1/80`. At 1,024 local minima
 
 ## What the Lean build establishes
 
-`Collatz.block_growth_of_local_loss` connects natural-number block identities, elementary height bounds, rounding, restart induction and the finite warmup to the two headline growth inequalities. Its `LocalLossCertificate` is an **explicit hypothesis**. The written specialization of Bugeaud's external theorem is not fully formalized. A passing axiom guard does not discharge a theorem's hypotheses.
+`Collatz.odd_start_growth` starts from any positive odd integer, constructs its block orbit, identifies its block starts with actual shortcut Collatz iterates, and connects elementary height bounds, rounding, restart induction and the finite warmup to the two headline growth inequalities. Its `LocalLossCertificate` is an **explicit hypothesis**. The written specialization of Bugeaud's external theorem is not fully formalized. A passing axiom guard does not discharge a theorem's hypotheses.
 
 ```sh
 lake exe cache get

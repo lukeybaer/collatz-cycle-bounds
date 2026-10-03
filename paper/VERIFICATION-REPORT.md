@@ -4,8 +4,8 @@ This report separates a written proof claim, computer checks of finite evidence,
 
 | Claim or component | Evidence | Boundary |
 |---|---|---|
-| Elementary block-height bounds | `proof/Collatz/Blocks.lean`, derived from positive natural-number block identities | Equivalence with iteration of a separately defined Collatz map is not formalized. |
-| Headline growth envelope from local loss | `Collatz.block_growth_of_local_loss` in `proof/Collatz/Connected.lean`; successful local Lean build | `LocalLossCertificate` is an explicit input, not a proved instance. |
+| Block construction, actual iteration and elementary heights | `Blocks.lean`, `Dynamics.lean`, `Construction.lean`: every positive odd integer has a block orbit whose starts are actual shortcut iterates | This proves the represented dynamics, not the missing analytic certificate. |
+| Headline growth envelope from local loss | `Collatz.odd_start_growth` in `proof/Collatz/Connected.lean`; successful local Lean build | `LocalLossCertificate` is an explicit input, not a proved instance. |
 | Local analytic certificate | Written manuscript, published Bugeaud criterion, exact rational margin auditor | Full specialization and external theorem are not formalized or independently reviewed. |
 | Cycle constants | Written deductions using Simons–de Weger and exact analytic auditors | Imported cycle statements and their entire composition are outside the connected Lean theorem. |
 | Finite cases 92–100 | Four end-to-end exclusion audits bind maps, profiles, windows, partitions and journals | Correctness of the mathematical reduction remains a review obligation; Barina's floor is external. |

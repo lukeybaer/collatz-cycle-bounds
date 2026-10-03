@@ -6,8 +6,9 @@ import Collatz.Legacy.CollatzGlobalEnvelope
 An odd block begins at `n = a * 2^k - 1` and, after `k` odd shortcut
 steps and `ell` even steps, ends at `(a * 3^k - 1) / 2^ell`.
 The structure records these exact natural-number identities. Oddness makes
-the run lengths maximal. This is an arithmetic representation of blocks;
-equivalence with a separately defined iterated Collatz function is not claimed.
+the run lengths maximal. `Dynamics.lean` embeds the represented blocks in
+shortcut iteration; `Construction.lean` constructs them from every positive
+odd starting value.
 -/
 namespace Collatz
 

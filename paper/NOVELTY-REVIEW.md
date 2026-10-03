@@ -29,6 +29,12 @@ Our first public edition dates to 29 September 2026. This revision is not journa
 
 ## Search designed to find overlap
 
+Three further leads from the final broader search were checked at statement level:
+
+- [E. G. Belaga, Effective polynomial upper bounds to perigees and numbers of (3x+d)-cycles of a given oddlength, Acta Arithmetica 106.2 (2003)](https://www.impan.pl/shop/publication/transaction/download/product/82606), introduction and Sections 2–3. The paper bounds the least value and number of cycles in terms of **oddlength**, which is our K. Its displayed `(3/2)^k` estimate is not a bound with base 1.5 in the number of local minima. The polynomial minimum bounds are important prior context, not an overlooked direct statement of our all-orbit block envelope.
+- [H. Mohammadpour, Elementary Exponential Density Bounds for Collatz Growth Chains via First-Multiple-of-Four Decomposition (March 2026)](https://hamedmp.github.io/collatz-fmf/paper/collatz-fmf.pdf), abstract, Sections 6.1–6.3 and Conjecture 7.11. The displayed uniform growth-chain-length estimate is labeled a conjecture; its other stated bounds concern density/average contraction. These differ from the all-orbit upper envelope claimed here. We did not verify the paper's stronger comparative claims or code.
+- [J. C. Hateley, The Collatz Conjecture and the Spectral Calculus for Arithmetic Dynamics, v6 (28 January 2026)](https://doi.org/10.20944/preprints202511.1440.v6), introduction, Lemma 6.11 and adjoining conditional statements. Its universal exponential estimate is the elementary bound on `T^k(n)+1` by `(3/2)^k(n+1)`, indexed by **individual shortcut steps**. Its “blocks” are magnitude intervals based on powers of six, not our maximal odd/even runs. This is not the same envelope. The page request was too large for the browser extractor; the linked 111-page PDF was available. Only the relevant statements were examined, not the entire proposed spectral theory.
+
 Queries included exact constants and variants, older terminology, broad cycle-bound searches, and new 2026 work. The following are representative literal query families used during the revision; results were inspected selectively for relevance, not treated as proof merely because a search engine returned them:
 
 - `Collatz 1.572`, `Collatz 1.5724625`, `Collatz 1/80`, and `Collatz block growth`.
@@ -38,6 +44,8 @@ Queries included exact constants and variants, older terminology, broad cycle-bo
 - `Collatz majorization cyclic growth` and `nonlinear majorization Phi cyclic growth`.
 - `Collatz m-cycles 100 2026`, `Collatz m-cycles 96 100`, `Collatz upper bound 2024 2025 2026`, and `m-cycles site:arxiv.org`.
 - Wang title searches, journal-status searches and a targeted `site:math.colgate.edu` search. No matching journal acceptance was located.
+- `Collatz cycles upper bound "1.5" minima`, `Collatz m cycles exponential upper bound improvement logarithms 2026 100`, `Collatz "block" "growth" Bugeaud`, and `Collatz "100" "local minima"`.
+- `"Brox" "Collatz cycles with few descents" pdf`, `Collatz "logarithmic height" growth bounds`, `"Collatz" "block-growth" bound`, and `"Collatz" "96" "cycles" 2026`.
 
 The Collatz literature index at [ccchallenge.org](https://ccchallenge.org/) was used to discover leads, not as mathematical evidence. Journal/author sources and the cited repositories were used for comparisons. A higher-order Collatz-sequences lead was located but not counted as a full-text inspection after an attempted download did not produce a usable PDF.
 

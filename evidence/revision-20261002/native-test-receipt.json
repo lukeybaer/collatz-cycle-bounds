@@ -1,0 +1,5 @@
+{
+  "status": "passed",
+  "cases": 168,
+  "method": "Compiled BigInteger branch search compared with Python direct shortcut iteration"
+}
