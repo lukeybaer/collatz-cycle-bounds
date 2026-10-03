@@ -9,7 +9,7 @@ This report separates a written proof claim, computer checks of finite evidence,
 | Local analytic certificate | Written manuscript, published Bugeaud criterion, exact rational margin auditor | Full specialization and external theorem are not formalized or independently reviewed. |
 | Cycle constants | Written deductions using Simons–de Weger and exact analytic auditors | Imported cycle statements and their entire composition are outside the connected Lean theorem. |
 | Finite cases 92–100 | Four end-to-end exclusion audits bind maps, profiles, windows, partitions and journals | Correctness of the mathematical reduction remains a review obligation; Barina's floor is external. |
-| Full m=100 arithmetic repeat | Original BigInteger run `reference-m100-full-20261002` | **Running at the initial revision commit.** Completion is not assumed. |
+| Full m=100 arithmetic repeat | Original BigInteger run `reference-m100-full-20261002`; 956/956 jobs complete, zero survivors; seven terminal counters and normalized nodes match exactly | Arithmetic and coverage reproduction; the mathematical reduction is shared. |
 | Priority | [Dated primary-source comparisons](NOVELTY-REVIEW.md) | No matching statement found is not proof that none exists. |
 
 ## Routine reproduction
@@ -41,6 +41,23 @@ The local root build succeeded on 3 October 2026 UTC. GitHub CI supplies a separ
 
 The run uses the unchanged `src/PrefixKernel.cs`, release compilation, eight workers, and split depth 1, giving 956 dispatched jobs. The fixed-width run used 231,505 jobs. Different partitions are intentional: total nodes must be normalized by subtracting dispatched split roots.
 
+**Completed on 3 October 2026 UTC.** The run began at 01:24:54 UTC; its search took 7,944.4830591 seconds (132.4 minutes). The following journal and generator checks finished by 03:37:21 UTC. All 956 jobs completed, with no missing or duplicate IDs, no incomplete jobs and zero survivors. The partition audit also passed. The counter comparison is:
+
+| Counter | BigInteger reference | Fixed-width run |
+|---|---:|---:|
+| Raw nodes | 14,527,953,596 | 14,528,184,145 |
+| Dispatched roots | 956 | 231,505 |
+| Normalized nodes | **14,527,952,640** | **14,527,952,640** |
+| Singletons | 15,047,563,551 | 15,047,563,551 |
+| Descent | 186,871 | 186,871 |
+| Capacity | 15,047,376,680 | 15,047,376,680 |
+| Empty | 1,049,634,035 | 1,049,634,035 |
+| Survivors | 0 | 0 |
+| Odd tail | 10,191,804,714 | 10,191,804,714 |
+| Even tail | 1,979,616,583 | 1,979,616,583 |
+
+The comparison and fresh end-to-end receipt are stored in `evidence/revision-20261002/`. The current CI requires their replay. The seven terminal counters are the rows from Singletons through Even tail. Nodes measure search-tree visits; they are not a count of individually tested starting integers.
+
 ```powershell
 pwsh -NoProfile -File src/run_reference_release.ps1 `
   -Config results/fourth-power-J38-grafted-config-m100-lo1-hi15.json `
@@ -56,7 +73,7 @@ pwsh -NoProfile -File src/audit_reference_partition.ps1 `
 python scripts/verify_revision.py --record-m100
 ```
 
-Check the JSON statuses; a process exit alone is not sufficient. `--record-m100` requires passed coverage, generator and partition receipts, a complete zero-survivor result, agreement of all seven terminal counters and normalized nodes, and a fresh end-to-end m=100 audit incorporating the reference run. It writes new receipts under `evidence/revision-20261002/`, without replacing the archival audit.
+Check the JSON statuses; a process exit alone is not sufficient. `--record-m100` requires passed coverage, generator and partition receipts, a complete zero-survivor result, agreement of all seven terminal counters and normalized nodes, and a fresh end-to-end m=100 audit incorporating the reference run. It also recomputes the three reference audits, checks their exact bytes, and binds the result to the journal's finish entry and preserved source/configuration hashes. It writes new receipts under `evidence/revision-20261002/`, without replacing the archival audit.
 
 After the revision receipts are recorded, replay them with:
 

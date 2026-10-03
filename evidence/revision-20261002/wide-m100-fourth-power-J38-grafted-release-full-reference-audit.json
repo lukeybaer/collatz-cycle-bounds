@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "wide": "wide-m100-fourth-power-J38-grafted-release",
+  "reference": "reference-m100-full-20261002",
+  "config_sha256": "732688B23D32E9130A4DF36F18E66DA45E53BAF3E2C6BBBCF912B2B03DFD93CF",
+  "normalized_nodes": 14527952640,
+  "normalization": "nodes minus number of dispatched split roots",
+  "matching_counters": {
+    "singletons": 15047563551,
+    "descent": 186871,
+    "capacity": 15047376680,
+    "empty": 1049634035,
+    "survivors": 0,
+    "odd_tail": 10191804714,
+    "even_tail": 1979616583
+  },
+  "dependencies": {
+    "wide-m100-fourth-power-J38-grafted-release-result.json": "3bc83dcfe5070aa9019e326f55c28147b99fcff0a70b676aa640ee7f843212c2",
+    "wide-m100-fourth-power-J38-grafted-release-metadata.json": "b1ab43d4eccd9c4085a0fa67e2d8fb62b7ea1c5d4c5b1a4523ac8626e9db5425",
+    "wide-m100-fourth-power-J38-grafted-release-audit.json": "398e719cb3235869cb44a42c59583ab0a3b9453bb00ffa78f48c721aac7feba8",
+    "wide-m100-fourth-power-J38-grafted-release-generator-audit.json": "923559f2d0b8c1886fdcb256e0f5acfe3dc4e19a5806a4e2ac02ee6db4a379a5",
+    "reference-m100-full-20261002-result.json": "efb7ad173e48287c6c1eb67b4530fe8b3f5a16fc333dfaed12e58b0e33452a1c",
+    "reference-m100-full-20261002-metadata.json": "577f986201f49564c182b3a00e35712136005cd1e623db60133a215bff9d19cb",
+    "reference-m100-full-20261002-audit.json": "d3bd66de9f3484c61cb22e7f81f8dcb29d7f2d9577d63feeb864619ced694b07",
+    "reference-m100-full-20261002-generator-audit.json": "7250e14c04943a633cbbe8ac1df24e21ab3a1536e0115894bd3ea932cc1a760a"
+  }
+}

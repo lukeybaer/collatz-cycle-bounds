@@ -1,0 +1,30 @@
+{
+  "journal": "reference-m100-full-20261002-journal.jsonl",
+  "sha256": "f3ac143a702d3d1d4e6cbf80e47e67c38df6a37406c838a571a68ffb499826e0",
+  "status": "passed",
+  "jobs_present": 956,
+  "jobs_expected": 956,
+  "survivors": 0,
+  "incomplete_jobs": [],
+  "errors": [],
+  "job_totals": {
+    "nodes": 14527952430,
+    "singletons": 15047563492,
+    "descent": 186867,
+    "capacity": 15047376625,
+    "empty": 1049633855,
+    "survivors": 0,
+    "odd_tail": 10191804714,
+    "even_tail": 1979616554
+  },
+  "generator_counters": {
+    "nodes": 1166,
+    "singletons": 59,
+    "descent": 4,
+    "capacity": 55,
+    "empty": 180,
+    "survivors": 0,
+    "odd_tail": 0,
+    "even_tail": 29
+  }
+}

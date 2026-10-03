@@ -20,13 +20,8 @@ jobs:
         run: python scripts/verify_revision.py --audits
       - name: Regenerate direct-iteration, native arithmetic and exact interval checks
         run: python scripts/verify_revision.py --small-tests
-      - name: Replay full-reference revision receipts when present
-        shell: pwsh
-        run: |
-          if (Test-Path evidence/revision-20261002/cycle-exclusion-m100-fourth-power-grafted-audit.json) {
-            python scripts/verify_revision.py --m100
-            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-          }
+      - name: Require the complete m100 reference comparison and its replay
+        run: python scripts/verify_revision.py --m100
   lean:
     runs-on: ubuntu-latest
     timeout-minutes: 45

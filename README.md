@@ -39,7 +39,7 @@ python scripts/verify_revision.py --small-tests
 
 The first checks all 428 frozen manifest entries and replays seven saved audits in a minimal temporary copy. It does not copy the Lean dependency cache or modify the archived receipts. The second regenerates Python direct-iteration cases and compares both native kernels, exercises overflow fallback, and checks exact interval/prefix tools.
 
-The full `m=100` BigInteger reference rerun is being completed as part of this revision. Its final status and reproduction commands are recorded in the [verification report](paper/VERIFICATION-REPORT.md). The routine audits do not repeat the billion-node searches or Barina's external convergence computation.
+The full `m=100` BigInteger reference rerun completed all 956 jobs with zero survivors on 3 October 2026 UTC. All seven terminal counters and **14,527,952,640 normalized nodes** agree exactly with the fixed-width implementation. Replay the new coverage, partition, comparison and end-to-end receipts with `python scripts/verify_revision.py --m100`. The [verification report](paper/VERIFICATION-REPORT.md) includes the full-run command and exact counters. Routine audits do not repeat the billion-node searches or Barina's external convergence computation.
 
 ## Preservation and review
 

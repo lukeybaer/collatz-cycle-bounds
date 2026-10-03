@@ -20,6 +20,6 @@ The expanded primary-source review found important prior art in Hercher's 2026 c
 
 ## Computational confidence
 
-Fresh small tests compare independently generated Python shortcut trajectories with both native kernels, exercise overflow fallback, and check wide arithmetic and exact interval/prefix tools. The full original-arithmetic m=100 repeat, its status and exact comparison requirements are documented in `VERIFICATION-REPORT.md`. New receipts are kept under `evidence/revision-20261002/`; all 428 historical manifest entries remain unchanged.
+Fresh small tests compare independently generated Python shortcut trajectories with both native kernels, exercise overflow fallback, and check wide arithmetic and exact interval/prefix tools. The full original-arithmetic m=100 repeat completed all 956 jobs with zero survivors. Its seven terminal counters and 14,527,952,640 normalized nodes exactly match the fixed-width result. Full commands and comparison requirements are documented in `VERIFICATION-REPORT.md`. New receipts are kept under `evidence/revision-20261002/`; all 428 historical manifest entries remain unchanged.
 
 The arithmetic repeat and successful Lean build address specific risks. They do not replace specialist review of the written interpolation argument, imported cycle results and search soundness. The feedback that prompted this revision was not an endorsement of correctness or priority.

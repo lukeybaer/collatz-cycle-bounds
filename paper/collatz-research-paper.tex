@@ -377,7 +377,7 @@ $m$&Final lower bound for $K$&Upper ceiling for $K$\\\midrule
 100&$3876482907693838530030634129025455$&$14848791401834506924263$\\\bottomrule
 \end{tabular}
 \end{center}
-The complete evidence chain includes the map certificates, profiles, target derivation, journal coverage, partition audits and fixed-width overflow fallback. The revision's full $m=100$ original-arithmetic reproduction is reported with its exact completion status and counters in the repository's verification report. No unfinished $m=101$ experiment is an input.
+The complete evidence chain includes the map certificates, profiles, target derivation, journal coverage, partition audits and fixed-width overflow fallback. The full $m=100$ original-arithmetic repeat completed successfully; its comparison is described in Section~\ref{sec:reproduce}. No unfinished $m=101$ experiment is an input.
 
 \section{What Lean proves, and what remains outside it}\label{sec:lean}
 The active project has a root \texttt{lakefile.toml}, pinned Lean 4.34.1 and mathlib commit \texttt{d13f23b723b8a846827a245b89c10fc7d3f11612}, and root module \texttt{Collatz}. It imports guarded copies of all 21 historical modules and the connected modules described below.
@@ -416,7 +416,9 @@ python scripts/verify_revision.py --audits
 lake exe cache get
 lake build
 \end{verbatim}
-The documented full-reference command uses the original BigInteger kernel, a different split from the fixed-width run, and requires exact agreement of seven terminal counters and nodes after subtraction of dispatched roots. This is an arithmetic implementation cross-check sharing the reduction and some search logic; it is not independent mathematical review. The new receipt also requires journal coverage, generator agreement and a partition audit. The full command and current evidence paths are in \texttt{paper/VERIFICATION-REPORT.md}.
+On 3 October 2026 UTC, the full $m=100$ BigInteger reference run completed all 956 dispatched jobs with zero survivors in 7944.4830591 seconds. Its $14\,527\,953\,596$ raw nodes and the fixed-width run's $14\,528\,184\,145$ raw nodes both normalize to $14\,527\,952\,640$ after subtracting their respective 956 and $231\,505$ dispatched roots. All seven terminal counters agree exactly. The fresh end-to-end receipt incorporates journal coverage, generator agreement and a partition audit.
+
+This is an arithmetic implementation cross-check sharing the reduction and some search logic; it is not independent mathematical review. The full command and exact counters are in \texttt{paper/VERIFICATION-REPORT.md}. New receipts are kept separately from the unchanged historical manifest and can be replayed with \texttt{python scripts/verify\_revision.py --m100}.
 
 The most useful next mathematical review is bounded: check the rational clause of Bugeaud's theorem, its signed rational arguments and height conventions, both cardinality conditions, the unbounded dyadic range, then the analytic-to-finite join. A separate reviewer can check the search invariant and directed rounding from the preserved source. Independent-machine reruns and further formalization would reduce distinct risks. Agreement of two programs cannot exclude a common mistaken mathematical premise.
 

@@ -19,7 +19,7 @@ At m=1024 the first displayed bound is about 3,049 times smaller than the applic
 
 Separate certificates use earlier frozen analytic parameters to exclude candidate cycles with 92–100 local minima. Hercher's journal result, including its corrigendum, covers through 91. Wang's located 2026 preprint claims through 95. Thus the additional cases relative to the latter are 96–100. `m` is not the number of individual steps in a cycle.
 
-The reduction uses Barina's published verification below 2^71, nonlinear extremal profiles, exact rational-approximation certificates, and complete least-minimum window searches. The full m=100 original-arithmetic reproduction status is maintained in [VERIFICATION-REPORT.md](VERIFICATION-REPORT.md).
+The reduction uses Barina's published verification below 2^71, nonlinear extremal profiles, exact rational-approximation certificates, and complete least-minimum window searches. The full m=100 BigInteger reference repeat completed 956 jobs with zero survivors in 132.4 minutes. All seven terminal counters and 14,527,952,640 normalized nodes match the fixed-width result. The [verification report](VERIFICATION-REPORT.md) gives the evidence and its limits.
 
 ## What changed after feedback
 
