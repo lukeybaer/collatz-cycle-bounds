@@ -1,0 +1,10 @@
+{
+  "source_file": "paper/collatz-research-paper.tex",
+  "source_sha256": "571caf8c3bc77900638bad6e4fd47491fe60ba5cb7f31f8f38941c0afa557a8c",
+  "pdf_file": "paper/collatz-research-paper.pdf",
+  "pdf_sha256": "a3b4e064c3599930a68119e745d61aed46a92bd9d6ac7e4ba3c1289cbb270c79",
+  "source_commit": "edfed2d54f3633eb38a41c67ef3be685311c5b18",
+  "workflow_run_url": "https://github.com/lukeybaer/collatz-cycle-bounds/actions/runs/37093960465",
+  "page_count": 12,
+  "method": "Compiled by GitHub Actions with TeX Live 2026; rendered pages inspected before publication."
+}
