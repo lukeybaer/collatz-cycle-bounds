@@ -1,144 +1,71 @@
-# Verification report
+# Verification report — review revision
 
-Prepared 29 September 2026. This report separates completed verification from
-future or unfinished checks. The mathematical claims are in `collatz-paper.md`
-and `collatz-research-paper.pdf`; their significance and prior-work comparison
-are in `RESEARCH-SUMMARY.md`.
+This report separates a written proof claim, computer checks of finite evidence, and Lean's formal scope. A result marked passed applies only to the named check.
 
-## Claim-to-evidence map
-
-| Claim | Principal evidence | What it establishes |
+| Claim or component | Evidence | Boundary |
 |---|---|---|
-| All-orbit base δ−1/80 | `retained-loss-interpolation-bound.md`; `src/audit_retained_loss_bound.py`; `results/retained-loss-exponential-bound-audit.json` | Written universal argument and exact constants |
-| Cycle coefficients 1.61 and 15.27 | Same audit; `cycle-bound-corollaries.md`; cited Simons-de Weger theorem | Exact specialization of the applicable published ranges |
-| General cyclic majorization | `nonlinear-envelope-lemma.md`; `results/nonlinear-majorization-check.json` | Self-contained proof, challenged on exact finite examples |
-| Finite nonlinear map | `results/nonlinear-capacity-plateau-c3799-c4099-h71-certificate.json` | Two completed native proofs and exact dependency checks |
-| m=92–95 | `results/cycle-exclusions-m92-m95-fourth-power-direct-audit.json` | Four exact profile contradictions with the proved finite map |
-| m=96–98 | `results/cycle-exclusions-m96-m98-fourth-power-direct-audit.json` | Three exact profile contradictions with the proved finite map |
-| m=99 | `results/cycle-exclusion-m99-two-regime-grafted-audit.json` | Complete minimum-window search, full original-arithmetic repeat and profile closure |
-| m=100 | `results/cycle-exclusion-m100-fourth-power-grafted-audit.json` | Complete minimum-window search, partition/journal/fallback checks and profile closure |
+| Elementary block-height bounds | `proof/Collatz/Blocks.lean`, derived from positive natural-number block identities | Equivalence with iteration of a separately defined Collatz map is not formalized. |
+| Headline growth envelope from local loss | `Collatz.block_growth_of_local_loss` in `proof/Collatz/Connected.lean`; successful local Lean build | `LocalLossCertificate` is an explicit input, not a proved instance. |
+| Local analytic certificate | Written manuscript, published Bugeaud criterion, exact rational margin auditor | Full specialization and external theorem are not formalized or independently reviewed. |
+| Cycle constants | Written deductions using Simons–de Weger and exact analytic auditors | Imported cycle statements and their entire composition are outside the connected Lean theorem. |
+| Finite cases 92–100 | Four end-to-end exclusion audits bind maps, profiles, windows, partitions and journals | Correctness of the mathematical reduction remains a review obligation; Barina's floor is external. |
+| Full m=100 arithmetic repeat | Original BigInteger run `reference-m100-full-20261002` | **Running at the initial revision commit.** Completion is not assumed. |
+| Priority | [Dated primary-source comparisons](NOVELTY-REVIEW.md) | No matching statement found is not proof that none exists. |
 
-## Analytic argument
+## Routine reproduction
 
-The retained-loss proof fixes J≥10,000, divisible by 100, and y≥79.5J.
-When D≥J the elementary one-block loss suffices. Otherwise it splits at
-D=0.9J. Two interpolation rows cover the smaller-loss stratum and five cover
-the larger-loss stratum through k/J=256. A separate polynomial argument
-covers every larger k/J. Every row has a positive exact interpolation margin,
-a sufficient intermediate-run bound, and a retained two-block loss greater
-than 3.2J. The cutoff B=1,272,000 and 32-step virtual warmup then give the
-stated global theorem.
+From the repository root on Windows with Python 3.11+ and PowerShell 7:
 
-The exact audit also runs 35 large-parameter challenges, 14 rounding-boundary
-checks, 1,260 virtual-envelope checks and nine exact-integer block challenges.
-The largest specified odd-run exponent in the latter is 2,600,000. These
-are supplemental challenges, not an enumeration of all possible orbits.
-The receipt binds the source, proof notes and earlier infinite-range argument
-by SHA-256. It has no floating-point decision in the certificate inequalities.
+```sh
+python scripts/verify_revision.py --audits
+python scripts/verify_revision.py --small-tests
+```
 
-The author-hosted 1999 Bugeaud theorem was rendered and visually inspected,
-including its rational clause, logarithmic-height convention, signed rational
-arguments and two cardinality conditions. The first uses powers with exponent
-2r because p=2 and the source's t=1. A comparison against the final journal
-typesetting remains pending. The complete external theorem is an assumed
-published input, not re-proved or formally verified here.
+The first verifies the 428-file frozen manifest and saved 103-lemma compilation records, then reruns seven certificate audits in minimal temporary copies and requires byte-identical receipts. It does not invoke Lean or rerun large searches. The temporary-copy wrapper avoids copying `.lake` and preserves every frozen receipt.
 
-## Finite map and search arithmetic
+The small tests regenerate expected cases by Python direct shortcut iteration. They compare the BigInteger and UInt128 searches, exercise singleton overflow fallback, test wide arithmetic, and validate rational intervals and prefix coverage on small instances. Fresh receipts are saved separately in `evidence/revision-20261002/` when run with `--record-small-tests`.
 
-The J41 map has an exhaustive 20,971,480-pair modular reduction and 44,497
-remaining classes, with exactly 144,429,913,922,369,056,364 seeds. The inverse-
-residue proof uses 1,648,100,522 nodes; the parity-progression proof uses
-1,253,664,985 nodes. Both finish every class. The largest successful restart
-depth is five. Their partition counts need not agree, but each independently
-covers the full input.
+## Lean reproduction
 
-Directed integer and rational logarithmic bounds are checked independently.
-Python reconstructs 2,032,128 threshold values and repeats 112 selected
-progression cases. Separate, simpler J35 and J38 capacity certificates have
-full Python verification. No claim is made that the J41 proof itself was
-fully repeated in Python.
+```sh
+lake exe cache get
+python scripts/build_lean.py
+lake build
+```
 
-The m=99 compact search consists of 206,426 jobs and 2,758,731,446 nodes.
-Its original-arithmetic repeat uses 945 initial jobs and 2,758,525,965 nodes.
-After normalizing the partition-boundary work, the node count is 2,758,525,020
-in both, and all seven substantive counters agree. There are zero survivors.
+The root project pins Lean 4.34.1 and mathlib `d13f23b723b8a846827a245b89c10fc7d3f11612`. The helper serializes the legacy targets to limit memory, then builds the root normally. All 21 historical modules and the new connected modules are imported. Guarded axiom outputs allow `propext`, `Classical.choice`, and `Quot.sound`. The checked top-level type still contains its analytic hypothesis; absence of extra axioms does not remove that hypothesis.
 
-The m=100 compact search consists of 231,505 jobs and 14,528,184,145 nodes,
-with zero survivors. Its single fallback job, ID 21366, is independently
-repeated with original arbitrary-precision arithmetic and matches at
-5,063,641 nodes. The entire original-arithmetic repeat remains unfinished at
-this report's snapshot. It must not be described as completed validation.
+The local root build succeeded on 3 October 2026 UTC. GitHub CI supplies a separate-machine Linux build. This is compiler reproduction, not an independent mathematician's assessment.
 
-Each end-to-end audit checks the capacity certificate, initial lower bound,
-directed target generation, exact window endpoints, complete job coverage,
-journal totals, overflow/fallback evidence and final rational contradiction.
-The fixed-width implementation has explicit checked paths and arbitrary-
-precision fallback. A resource limit is unresolved, never an exclusion.
+## Full m=100 original-arithmetic repeat
 
-## Formal verification
+The run uses the unchanged `src/PrefixKernel.cs`, release compilation, eight workers, and split depth 1, giving 956 dispatched jobs. The fixed-width run used 231,505 jobs. Different partitions are intentional: total nodes must be normalized by subtracting dispatched split roots.
 
-The preserved aggregate receipt covers 93 lemmas in 20 Lean modules.
-`formal/retained-loss-verification.json` adds ten lemmas in
-`CollatzRetainedLoss.lean`: seven exact interpolation margins, the numerical
-loss inequalities, the retained-loss implication and the rounding/warmup
-constants. Total: **103 lemmas in 21 modules**.
+```powershell
+pwsh -NoProfile -File src/run_reference_release.ps1 `
+  -Config results/fourth-power-J38-grafted-config-m100-lo1-hi15.json `
+  -Workers 8 -Split 1 -NodeLimit 100000000000 `
+  -Label reference-m100-full-20261002
+python src/audit_journal.py results/reference-m100-full-20261002-journal.jsonl
+pwsh -NoProfile -File src/audit_generator.ps1 `
+  -Config results/fourth-power-J38-grafted-config-m100-lo1-hi15.json `
+  -Split 1 -Label reference-m100-full-20261002
+pwsh -NoProfile -File src/audit_reference_partition.ps1 `
+  -Config results/fourth-power-J38-grafted-config-m100-lo1-hi15.json `
+  -Split 1 -Label reference-m100-full-20261002
+python scripts/verify_revision.py --record-m100
+```
 
-Pinned environment: Lean 4.34.1, mathlib commit
-`d13f23b723b8a846827a245b89c10fc7d3f11612`. The verifiers reject `sorry`,
-`admit`, custom axiom declarations and unsafe proof shortcuts. Compiler reports
-use only `propext`, `Classical.choice` and `Quot.sound`. Source hashes,
-compiler output and the axiom reports are included. No external proof service
-or AI tactic was used.
+Check the JSON statuses; a process exit alone is not sufficient. `--record-m100` requires passed coverage, generator and partition receipts, a complete zero-survivor result, agreement of all seven terminal counters and normalized nodes, and a fresh end-to-end m=100 audit incorporating the reference run. It writes new receipts under `evidence/revision-20261002/`, without replacing the archival audit.
 
-The formalized material supports the written proof. It does not include all
-published transcendence theory, every analytic specialization, all source
-imports, the entire native search or a proof of convergence.
+After the revision receipts are recorded, replay them with:
 
-## Reproducing the evidence
+```sh
+python scripts/verify_revision.py --m100
+```
 
-The completed finite snapshot is `collatz-finite-review-bundle.zip`. A fresh
-extraction reproduced four end-to-end exclusion receipts and two analytic
-receipts byte for byte. Its verification receipt is
-`results/finite-review-bundle-verification.json`.
+The repeat tests arithmetic and partition/coverage consistency. Both implementations share the mathematical reduction and related search logic, so a common logical error can survive agreement. Independent scrutiny of the pruning invariants and external inputs remains necessary.
 
-The final integrated snapshot is `collatz-research-review-bundle.zip`.
-Its manifest lists every included file, size and SHA-256. The companion
-`results/research-review-bundle-verification.json` records whether its fresh
-extraction and seven rerun audits pass. Consult that receipt for the final
-package status; its existence is not inferred from the earlier archive.
+## Manuscript and preserved evidence
 
-After extraction, run:
-
-    python verify_bundle.py
-    python verify_bundle.py --audits
-
-The first checks hashes and saved formal receipts. The second reruns four
-end-to-end audits and three analytic audits in a temporary copy and requires
-byte-identical results. It does not access the network or invoke any model.
-It may take several minutes. It does not recompute billions of native search
-nodes; the archive's `REPRODUCE.ps1` gives the separate full m=100 command.
-
-To recompile the Lean proofs with the pinned dependencies, run both
-`formal/verify_all_formal.py` and `formal/verify_retained_loss_formal.py`,
-supplying their `--mathlib` and `--lean-bin` arguments. Mathlib, compiler
-binaries and third-party papers are not redistributed in the archive.
-
-## Limits and next independent checks
-
-The proofs, implementations and selected checks were developed in one research
-session on one machine. Different algorithms reduce some risks; they do not
-eliminate shared mathematical or implementation errors. SHA-256 binds evidence
-to files but does not establish correctness. Finite tests cannot prove a
-universal theorem, and compiler acceptance applies only to the statements
-actually formalized.
-
-The highest-value next checks are external review of Bugeaud's hypotheses and
-the restart/majorization bridge, independent-machine reproduction of the
-finite certificates, completion of the full m=100 original-arithmetic repeat,
-and a complete literature/priority review. The active J45 and m=101 work is
-excluded from the completed claims. The full Collatz conjecture is unresolved.
-
-**TLDR:** Exact analytic audits, two exhaustive capacity algorithms, completed
-window searches and 103 selected formal lemmas support the candidate results.
-The package makes them reproducible and reviewable; it does not substitute for
-external mathematical review or prove Collatz convergence.
+The current mathematical source is `paper/collatz-research-paper.tex`; the workflow compiles it and uploads the PDF and TeX log. Original root paper files and `formal/` remain byte-for-byte archival evidence. Current wrappers are outside the original manifest, and revision evidence is separately identified. No unfinished m=101 computation is used.

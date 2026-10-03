@@ -1,93 +1,32 @@
-# Collatz research: results and significance
+# Results and scope of the review revision
 
-The work produced two substantial candidate contributions: a smaller explicit
-growth bound for every positive Collatz orbit, and a computer-assisted exclusion
-of cycles with up to 100 local minima. Both have written arguments and
-reproducible internal checks. Correctness and priority still need independent
-specialist review. The full Collatz conjecture remains open.
+The research has two candidate contributions: a particular explicit bound on Collatz block growth and finite certificates extending the located local-minimum exclusion from 95 to 100. Neither establishes the Collatz conjecture. The work remains unrefereed.
 
-## What improved
+## Analytic result
 
-**An explicit smaller exponential base.** Write δ=log₂3. The new argument gives
-λ=δ−1/80≈1.572462500721156. If kₜ is the length of the t-th maximal odd run and
-y₀=log₂(n₀+1), it gives
+With `delta = log2(3)`, `lambda = delta - 1/80`, `B = 1,272,000` and `A = (delta/lambda)^32`, the manuscript argues that every positive block orbit satisfies
 
-    kₜ ≤ A y₀ λᵗ,  A=(δ/λ)³²≈1.288362904142.
+```
+k_t <= A y_0 lambda^t
+y_(t+1) <= delta A y_0 lambda^t
+```
 
-For a hypothetical cycle with m local minima and K odd steps, it gives
+Here a block is a maximal odd run followed by a maximal even run, `k` is its odd-run length, and `y = log2(n+1)` at its start. The resulting cycle upper bounds are `1.61 m lambda^m` for 1024–515619 local minima and `15.27 m lambda^m` above that range.
 
-    K < 1.61 m λᵐ       for 1,024 ≤ m ≤ 515,619,
-    K < 15.27 m λᵐ      for m ≥ 515,620.
+At m=1024 the first displayed bound is about 3,049 times smaller than the applicable `1.4784 m delta^m` bound in Simons–de Weger version 1.44, Theorem 3(d). Both bounds remain enormous. This is an asymptotic quantitative comparison, not a speedup or a proof of convergence; lambda is still greater than one.
 
-The comparison is with the explicit δᵐ estimates in
-[Simons and de Weger, version 1.44, Theorem 3(d)](https://math.deweger.net/papers/%5B35a%5DSidW-3n%2B1-v1.44%5B2010%5D.pdf).
-At m=1,024, our displayed upper bound is about 3.28×10²⁰⁴, compared with
-9.99×10²⁰⁷: over 3,000 times smaller. The improvement grows exponentially
-with m, although the absolute bounds remain enormous.
+## Finite result
 
-The proof specializes [Bugeaud's 1999 p-adic interpolation theorem](https://doi.org/10.1017/S0305004199003692).
-The useful new step in our derivation retains an elementary loss that earlier
-versions discarded, then treats small and large losses separately. Explicit
-parameter inequalities cover both cases and an unbounded tail. A restart
-argument converts those local estimates into the global result.
+Separate certificates use earlier frozen analytic parameters to exclude candidate cycles with 92–100 local minima. Hercher's journal result, including its corrigendum, covers through 91. Wang's located 2026 preprint claims through 95. Thus the additional cases relative to the latter are 96–100. `m` is not the number of individual steps in a cycle.
 
-**Candidate exclusion through 100 local minima.** Our completed certificates
-cover m=92 through 100 independently of the claimed 2026 exclusion through 95.
-Together with [Hercher's journal result through 91 and its corrigendum](https://cs.uwaterloo.ca/journals/JIS/VOL26/Hercher/hercher5.html),
-this would exclude all nontrivial positive cycles with at most 100 local minima.
-The located comparison is [Wang's 2026 preprint through 95](https://doi.org/10.5281/zenodo.21670936).
-Thus 96–100 are the candidate new cases; 92–95 are independently checked prior cases.
+The reduction uses Barina's published verification below 2^71, nonlinear extremal profiles, exact rational-approximation certificates, and complete least-minimum window searches. The full m=100 original-arithmetic reproduction status is maintained in [VERIFICATION-REPORT.md](VERIFICATION-REPORT.md).
 
-A local minimum here starts a maximal odd/even block. This is not merely an
-exclusion of cycles containing 100 integers. The finite argument uses
-[Barina's published convergence verification below 2⁷¹](https://doi.org/10.1007/s11227-025-07337-0),
-stronger block-growth maps, exact majorization, rational approximation and
-complete searches over the remaining possible least cycle members.
+## What changed after feedback
 
-## How it was checked
+- A conventional LaTeX paper replaces the prose-oriented PDF source, with a proof strategy, explicit notation, theorem/proof structure and a search soundness explanation.
+- A standard pinned Lake project imports all active modules. Guarded axiom reports fail the build if the checked dependencies change.
+- A connected top-level theorem now proves the growth inequalities from natural-number block identities **and an explicit local analytic hypothesis**. The external p-adic theorem and full specialization remain outside Lean.
+- The literature review now distinguishes inherited methods from the specific candidate improvement. In particular, Hercher's corrigendum already uses the geometric extremal mechanism underlying our profile argument.
+- The even-run inequality at a closed stratum boundary is corrected from strict to non-strict. The later bounds allow this and the exact analytic audits remain applicable.
 
-- Exact rational audits verify the analytic constants, all seven interpolation
-  rows, the infinite-range reduction and the rounding and warmup inequalities.
-  Large-parameter and exact-integer examples challenge the argument; they do
-  not replace its universal proof.
-- Two complete algorithms verify the central finite-capacity certificate over
-  44,497 arithmetic-progression classes representing more than 1.44×10²⁰ seeds.
-  Python checks every one of 2,032,128 rational thresholds and 112 selected cases.
-  The full Python check is **not** claimed for those 44,497 classes.
-- The compact m=99 search visits 2,758,731,446 nodes. A full repeat using the
-  original arbitrary-precision arithmetic agrees on every substantive counter.
-  The m=100 search visits 14,528,184,145 nodes; its partition, journal and
-  fallback checks pass. Its whole-search original-arithmetic repeat is still
-  running and is not part of the completed claim.
-- **103 selected lemmas** have passed Lean 4.34.1 with pinned mathlib, without
-  proof placeholders. This is partial formal verification, not a formal proof
-  of the entire manuscript or of Collatz convergence.
-- A fresh extraction of the final research archive passed all 428 manifest
-  checks and the saved 103-lemma receipts. Four finite end-to-end audits and
-  three analytic audits, including the strongest retained-loss estimate,
-  reproduced their saved results byte for byte. This did not repeat the
-  billion-node native searches.
-
-## What this means for the field
-
-If independent review confirms correctness and priority, this is a quantitative
-advance in Collatz cycle bounds, with reusable exact certificates and a general
-growth-constrained majorization argument. It is a plausible specialist research
-contribution, not an established breakthrough on the full conjecture.
-
-The new base is still greater than one, so the analytic theorem permits
-unbounded growth. Excluding every cycle up to any fixed number of minima leaves
-infinitely many possible cycle sizes. The next decisive step is external
-mathematical scrutiny and independent-machine reproduction, particularly of
-the p-adic specialization and finite-capacity reduction. A negative literature
-search does not establish that a result is new.
-
-The 13-page paper, its mathematical source, this summary, the verification
-report, and the reproducible review archive are saved together. Research notes,
-failed approaches and unfinished experiments are preserved separately. No
-Claude or external AI research reviewer was consulted, and no reset credit was used.
-
-**TLDR:** Two internally checked candidate advances: a smaller explicit
-exponential growth base and cycle exclusions through 100 local minima.
-The evidence is substantial and reviewable; novelty and external validation
-remain open, and Collatz itself is not solved.
+Feedback has not independently established correctness or novelty. The most valuable next check is a specialist review of the p-adic specialization and its connection to the finite reduction. See the [dated priority search](NOVELTY-REVIEW.md) for inspected sources and limitations.

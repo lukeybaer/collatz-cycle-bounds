@@ -2,45 +2,46 @@
 
 Research by Luke Baer and Amy, an AI research system operating through OpenAI Codex.
 
-This repository contains the code and evidence accompanying *Explicit block-growth bounds and finite-cycle exclusions for the 3n+1 problem*. The manuscript presents candidate analytic bounds and finite-cycle exclusions. Independent mathematical review and confirmation of novelty are pending. The Collatz conjecture remains unsolved.
+This repository accompanies *Explicit block-growth bounds and finite-cycle exclusions for the 3n+1 problem*. It contains a written argument, exact certificates and a **partial, conditional formalization**. Independent mathematical review and confirmation of novelty are pending. Collatz remains unsolved.
 
 ## Read the work
 
-- [Paper, with authorship and AI-contribution disclosure](paper/collatz-research-paper.pdf)
-- [Paper source](paper/collatz-paper.md)
-- [Results, comparison with prior work and limitations](paper/RESEARCH-SUMMARY.md)
-- [Claim-to-evidence verification report](paper/VERIFICATION-REPORT.md)
-- [Python and C# research source](src/)
-- [Lean source and compilation records](formal/)
-- [Saved configurations, certificates and search journals](results/)
+- [LaTeX manuscript](paper/collatz-research-paper.tex) and [PDF](paper/collatz-research-paper.pdf).
+- [Results and limits](paper/RESEARCH-SUMMARY.md).
+- [Claim-to-evidence and reproduction guide](paper/VERIFICATION-REPORT.md).
+- [Expanded priority review, sources and search limitations](paper/NOVELTY-REVIEW.md).
+- [Active Lean project and its exact formal boundary](proof/README.md).
+- [Research implementations](src/) and [saved certificates and journals](results/).
 
-The analytic manuscript gives the block-growth base `lambda = log2(3) - 1/80`. Its displayed odd-step upper bound at 1,024 local minima is about 3,049 times smaller than the cited explicit bound. This is a ratio of mathematical upper bounds. The finite certificates cover local-minimum cases 92 through 100, using the external inputs described in the paper. These claims require specialist scrutiny of the deductions and their assumptions.
+The written analytic claim uses `lambda = log2(3) - 1/80`. At 1,024 local minima its displayed odd-step upper bound is about 3,049 times smaller than the applicable explicit bound in Simons–de Weger, version 1.44. This compares two upper bounds; it is not a runtime speedup. The finite claim covers 92–100 local minima using separate, earlier frozen analytic specializations. Relative to Wang's located preprint through 95, the additional candidate cases are 96–100.
 
-## Reproduce the saved evidence
+## What the Lean build establishes
 
-Clone the repository, enter its directory, and use Python 3.11 or newer. The following checks use only the standard library; no AI service or API key is needed. Use Windows for the `--audits` command: the historical receipts include Windows line endings, and downstream receipts hash those exact bytes. The manifest-only check works across platforms. GitHub runs the full audits on Windows.
+`Collatz.block_growth_of_local_loss` connects natural-number block identities, elementary height bounds, rounding, restart induction and the finite warmup to the two headline growth inequalities. Its `LocalLossCertificate` is an **explicit hypothesis**. The written specialization of Bugeaud's external theorem is not fully formalized. A passing axiom guard does not discharge a theorem's hypotheses.
 
 ```sh
-git clone https://github.com/lukeybaer/collatz-cycle-bounds.git
-cd collatz-cycle-bounds
-python verify_bundle.py
-python verify_bundle.py --audits
+lake exe cache get
+python scripts/build_lean.py
+lake build
 ```
 
-The first command verifies the 428 manifest entries and the preserved receipts for 103 selected Lean lemmas in 21 modules. It checks the saved compilation records; it does not invoke Lean. The second reruns four end-to-end exclusion audits and three analytic audits in a temporary copy, requiring byte-identical output receipts. Allow several minutes.
+Lean 4.34.1 and mathlib commit `d13f23b723b8a846827a245b89c10fc7d3f11612` are pinned. The helper builds legacy modules sequentially to bound memory, then invokes the normal root `lake build`. CI builds this project on Linux. All 21 legacy modules and the connected theorem have guarded axiom reports. See [proof/README.md](proof/README.md) before interpreting a successful build as mathematical evidence.
 
-These audits examine the supplied search evidence. They do not repeat the multi-billion-node searches. [START-HERE.md](START-HERE.md) describes how to rerun the full original-arithmetic search and recompile the Lean modules. The complete `m = 100` original-arithmetic repeat was still pending at the research snapshot. The entire paper, external p-adic theorem and finite search are not formally verified.
+## Reproduce arithmetic evidence
 
-## Snapshot and provenance
+Python 3.11+ is sufficient for the certificate auditors. Windows is required for byte-identical historical receipts; the small native tests also use PowerShell 7. No AI service or API key is needed.
 
-The manifest-bound files at the repository root preserve the 29 September 2026 research snapshot byte for byte. Historical wording such as “private research manuscript” in those files describes the snapshot before this public release. The current author-disclosed paper is in `paper/`; the root PDF is retained as archival evidence. The mathematical content was unchanged by the authorship revision.
+```sh
+python scripts/verify_revision.py --audits
+python scripts/verify_revision.py --small-tests
+```
 
-`MANIFEST.json` binds the original research files. README, GitHub workflow, citation metadata, and the `paper/` copies are publication wrappers outside that original manifest. The source folder contains exploratory utilities as well as the named reproduction paths; not every historical experiment is self-contained.
+The first checks all 428 frozen manifest entries and replays seven saved audits in a minimal temporary copy. It does not copy the Lean dependency cache or modify the archived receipts. The second regenerates Python direct-iteration cases and compares both native kernels, exercises overflow fallback, and checks exact interval/prefix tools.
 
-The Lean environment is pinned to Lean 4.34.1 and mathlib commit `d13f23b723b8a846827a245b89c10fc7d3f11612`. See [formal/README.md](formal/README.md) and the aggregate verification scripts for compilation scope. Paper rendering uses ReportLab and configured Windows fonts, separately from the standard-library mathematical auditors.
+The full `m=100` BigInteger reference rerun is being completed as part of this revision. Its final status and reproduction commands are recorded in the [verification report](paper/VERIFICATION-REPORT.md). The routine audits do not repeat the billion-node searches or Barina's external convergence computation.
 
-## Review and corrections
+## Preservation and review
 
-Please open an issue with a precise claim, file or theorem reference, and a reproducible countercalculation where possible. Independent reproduction, scrutiny of the external inputs, and comparison with prior work are welcome. Public availability and passing code checks do not constitute peer review or acceptance.
+`MANIFEST.json` binds the unchanged 29 September research snapshot, including historical wording and compiler records. Current publication files are in `paper/`, the active Lean project is in `proof/`, and new receipts go in `evidence/revision-20261002/`. The old root manuscript and `formal/` are archival. Code in `src/` includes exploratory utilities as well as the named reproduction paths.
 
-The paper cites Simons and de Weger, Hercher, Wang, Bugeaud, and Barina. References and the comparison boundaries are in the manuscript and [sources.md](sources.md). No endorsement by those authors is claimed.
+Please open an issue with a precise statement, source reference or reproducible countercalculation. Public availability, passing CI and agreement between programs do not constitute peer review. The work builds on Simons–de Weger, Hercher (including his corrigendum), Wang, Bugeaud, Luca, Brox and Barina; no endorsement is claimed.

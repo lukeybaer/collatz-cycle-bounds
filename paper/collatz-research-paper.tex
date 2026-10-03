@@ -1,0 +1,431 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs,array,longtable}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{enumitem}
+\setlist{nosep}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\newcommand{\lb}{\log_2}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\NN}{\mathbb N}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\val}{v_2}
+\newcommand{\repo}{\url{https://github.com/lukeybaer/collatz-cycle-bounds}}
+\title{Explicit block-growth bounds and finite-cycle exclusions\\for the $3n+1$ problem}
+\author{Luke Baer \and Amy (AI research system)\thanks{Research credit and AI disclosure appear in Section~\ref{sec:disclosure}. The AI system is not a human author eligible to assume scholarly responsibility.}}
+\date{First public edition: 29 September 2026\\Review revision: 3 October 2026 (UTC)}
+\begin{document}
+\maketitle
+\begin{abstract}
+We present an explicit bound for positive Collatz orbits indexed by maximal odd/even blocks, with exponential base $\lambda=\log_2 3-1/80$. A retained elementary loss, a specialization of a published $2$-adic interpolation criterion, and a restart envelope yield the bound. Published cycle estimates then give $K<1.61m\lambda^m$ for $1024\le m\le515619$ and $K<15.27m\lambda^m$ for $m\ge515620$, where $K$ counts odd shortcut steps and $m$ counts local minima. Separately, exact certificates support computer-assisted exclusions for $92\le m\le100$. We distinguish the written argument, arithmetic checks, connected conditional Lean theorem, and external inputs. This is an unrefereed research manuscript: correctness of the complete argument and priority have not been independently established. The results do not prove the Collatz conjecture.
+\end{abstract}
+
+\section{Statements, notation, and proof strategy}
+Use $T(n)=(3n+1)/2$ for odd positive $n$ and $T(n)=n/2$ for even $n$. A block is a maximal odd run followed by a maximal even run. At its odd start $n_t$, put $k_t=\val(n_t+1)$ and $y_t=\lb(n_t+1)$. Throughout,
+\[
+ \delta=\lb3,\quad \beta=\delta-1,\quad \eps=1/80,\quad
+ \lambda=\delta-\eps,\quad B=1272000,\quad A=(\delta/\lambda)^{32}.
+\]
+The index $t$ counts blocks. On a cycle, $m$ counts blocks (equivalently local minima), $K=\sum k_t$ counts odd shortcut steps, and $H$ counts all binary divisions, including the division in each odd shortcut step. These three counts must not be interchanged.
+
+\begin{theorem}[Block-growth bound]\label{thm:growth}
+For every positive orbit, beginning at an odd block start,
+\[
+ k_t\le A y_0\lambda^t\quad(t\ge0),\qquad
+ y_t\le\delta A y_0\lambda^{t-1}\quad(t\ge1).
+\]
+Here $\lambda\approx1.572462500721156$ and $A\approx1.288362904142$.
+\end{theorem}
+
+\begin{theorem}[Cycle consequence]\label{thm:cycle}
+A hypothetical nontrivial positive cycle satisfies
+\[
+ K<\begin{cases}1.61m\lambda^m,&1024\le m\le515619,\\
+ 15.27m\lambda^m,&m\ge515620.
+ \end{cases}
+\]
+\end{theorem}
+
+\begin{theorem}[Computer-assisted exclusion claim]\label{thm:finite}
+Under the external inputs and certificate soundness argument specified in Section~\ref{sec:finite}, the completed certificates exclude nontrivial positive cycles with $92\le m\le100$. Combined with Hercher's result and its corrigendum~\cite{hercher}, this excludes $m\le100$.
+\end{theorem}
+Theorem~\ref{thm:finite} is a submitted-for-review computational proof claim; execution receipts alone do not establish the correctness of its mathematical reduction. Wang's located preprint already claims $m\le95$~\cite{wang}. Thus the additional finite cases relative to that claim are $96$--$100$; Wang's exclusion is not an input here.
+
+\paragraph{Strategy.}
+An odd block can grow by approximately a factor $\delta$ in logarithmic height. Either an elementary loss already reduces that growth, or small loss restricts the height of a rational number to which Bugeaud's interpolation theorem applies. The resulting bound on the next odd run forces a loss within two blocks. A restart induction handles every block, including the intermediate one. Published minimum-height bounds turn this all-orbit envelope into a cycle bound. The finite argument separately combines a certified nonlinear envelope with an extremal profile, rational approximation, and exhaustive pruning of possible least minima.
+
+At $m=1024$, Theorem~\ref{thm:cycle}'s displayed upper bound is about $3049$ times smaller than the applicable $1.4784m\delta^m$ bound in Simons--de Weger, version 1.44, Theorem~3(d)~\cite{sdw}. The values are approximately $3.28\cdot10^{204}$ and $9.99\cdot10^{207}$. This is a comparison of two upper bounds, not a speedup or a claim of superiority to every result in the literature. Since $\lambda>1$, the envelope still permits unbounded growth.
+
+\section{Block identities and the retained loss}\label{sec:blocks}
+Write $n=a2^k-1$, where $a$ is positive and odd. If $\ell\ge1$ is the following maximal even-run length, $b_0=2^\ell-1$, and $n'$ is the next odd start, then
+\begin{equation}\label{eq:block}
+ n'=\frac{a3^k-1}{2^\ell},\qquad
+ k'=\val(a3^k+b_0)-\ell,\qquad y=k+\lb a.
+\end{equation}
+Put $D=\ell+\beta\lb a-1\ge0$. Since $n'\ge1$, the inequality
+$n'+1<a3^k/2^\ell+1<2a3^k/2^\ell$ gives
+\begin{align}
+ y'&\le\delta y-D,\label{eq:one}\\
+ y''&\le\delta y-D+\beta k'
+       =\delta^2y-D-\beta(\delta y-k').\label{eq:two}
+\end{align}
+For the second inequality, apply the first one to the next block and discard $\ell'-1\ge0$. Always $k\le y$ and $y'\le\delta y$.
+
+Fix $100\mid J$, $J\ge10000$, and $y\ge79.5J$. If $D\ge J$, equation~\eqref{eq:one} gives the required one-block loss. Otherwise divide into
+\[
+ \mathrm{I}:0\le D\le0.9J,\qquad \mathrm{II}:0.9J<D<J.
+\]
+Write $(d_-,d_+)=(0,0.9)$ in I and $(0.9,1)$ in II. Then
+\begin{equation}\label{eq:heightrestr}
+ \ell\le d_+J+1,\qquad \lb a<\frac{12}{7}(d_+J+1),\qquad k>77J.
+\end{equation}
+Indeed $\beta>7/12$, $\ell\le D+1$, and $\beta\lb a=D-\ell+1\le D$. The non-strict inequality for $\ell$ is intentional: equality can occur at the closed boundary $D=0.9J$. It corrects a strict inequality in the first edition; the subsequent height bounds remain valid with this correction.
+
+\section{The external interpolation criterion}\label{sec:criterion}
+We use the rational clause (6) of Bugeaud's 1999 Theorem~1~\cite{bugeaud99}. In this specialization, $\alpha_1,\alpha_2$ are rational $2$-adic units, $b_1=u_0>0$, $b_2=1$, and $\Lambda=\alpha_1^{u_0}-\alpha_2\ne0$. The theorem's parameters are $g=1$, $u=0$, and $D_{\rm field}=e=f=t=1$. Require $\val(\alpha_1-1)\ge E>1$ and $\val(\alpha_2-1)\ge2$.
+
+Rename its integer $K$ as $M$. Choose integers $M\ge3$, $L\ge2$ and positive $R_1,S_1,R_2,S_2$, and set
+\begin{gather*}
+ R=R_1+R_2-1,\quad S=S_1+S_2-1,\quad N=ML,\quad
+ \gamma=\tfrac12-\frac{N}{6RS},\qquad P_M=\prod_{i=1}^{M-1}i!,\\
+ b=\frac{R-1+(S-1)u_0}{2}\,P_M^{-2/(M(M-1))}.
+\end{gather*}
+The cardinality conditions in this setting are
+\begin{align*}
+ \#\{\alpha_1^{2r}\alpha_2^{2s}:0\le r<R_1,\ 0\le s<S_1\}&\ge L,\\
+ \#\{r+su_0:0\le r<R_2,\ 0\le s<S_2\}&>(M-1)L.
+\end{align*}
+If these hold and
+\begin{equation}\label{eq:interp}
+ M(L-1)E\ln2-3\ln N-(M-1)\ln b
+ -\gamma LRh(\alpha_1)-\gamma LSh(\alpha_2)>0,
+\end{equation}
+the criterion gives $\val(\Lambda)\le E(ML-1/2)<EML$. For a reduced rational $p/q$, $h(p/q)=\ln\max(|p|,|q|)$. Negative rational arguments are permitted. This theorem, with its cardinality conditions, does not require multiplicative independence. This should not be confused with stronger hypotheses in other theorems in the same paper. We inspected the author-hosted source, including the statement on pages 3--4; checking the final journal typesetting remains a useful independent review task.
+
+\begin{lemma}[Factorial estimate]\label{lem:factorial}
+If $M\ge800$, then $P_M^{-2/(M(M-1))}<4.6/(M-1)$. If $M\ge60000$, the constant $4.6$ may be replaced by $4.483$.
+\end{lemma}
+\begin{proof}
+Integrating $\ln x$ gives $\ln(i!)\ge i\ln i-i+1$. Integrating the increasing function $x\ln x$ once more gives
+\[
+ \ln P_M\ge\frac{(M-1)^2}{2}\ln(M-1)-\frac{(M-1)^2}{4}
+ +\frac14-\frac{M(M-1)}2+M-1.
+\]
+After multiplication by $-2/(M(M-1))$ this is at most
+$-\ln(M-1)+3/2+\ln(M-1)/M$.
+For $M=800v$, $v\ge1$, use $\ln800<6.7$ and $\ln v\le v-1$ to get $\ln(M-1)/M<0.009$. The exact inequality $1.509<\ln4.6$ finishes the first case. For $M=60000v$, $\ln60000<12$ gives $\ln(M-1)/M<0.0002$, and $1.5002<\ln4.483$ finishes the second. All decimal constants here denote exact rationals; directed rational series checks accompany their logarithmic comparisons.
+\end{proof}
+
+\section{Fourth-power normalization and finite ranges}\label{sec:fourth}
+Choose $r_0\in\{0,1,2,3\}$ with $4\mid k+r_0$, and use
+\[
+ u_0=(k+r_0)/4,\quad \alpha_1=81,\quad
+ \alpha_2=-3^{r_0}(2^\ell-1)/a,\quad E=4.
+\]
+Here $\Lambda=3^{r_0}(a3^k+b_0)/a>0$. Its valuation equals that of $a3^k+b_0$. If it is at most $3$, the desired bounds are immediate; otherwise $\alpha_2\equiv1\pmod {16}$. Thus all valuation assumptions of Section~\ref{sec:criterion} hold. Reduction of $\alpha_2$ cannot increase its height.
+
+Equation~\eqref{eq:heightrestr} gives
+\[
+ h(\alpha_1)=4\ln3,\qquad h(\alpha_2)<UJ,\qquad
+ U=\frac{12}{7}(d_++10^{-4})\,0.69314719.
+\]
+For the numerator, its binary logarithm is less than $\ell+3\delta\le d_+J+1+3\delta<(12/7)(d_+J+1)$; the final inequality holds for $J\ge10000$, $d_+\ge0.9$. The denominator is bounded by~\eqref{eq:heightrestr}.
+
+Choose $M=xJ$, $L=5$, $R_1=5$, $S_1=1$, $R_2=rJ$, $S_2=S$ from Table~\ref{tab:params}. The table's $h_*$ is a lower bound on $y/J$, and $T_*$ is an upper bound on $k/J$.
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{crrrrrr}\toprule
+Stratum &$h_*$&$T_*$&$x$&$r$&$S$&$20x$\\\midrule
+I &79.5&102.41&6.02&3.01&10&120.4\\
+I &102.41&256&7.84&3.92&10&156.8\\
+II&79.5&79.95&6.10&3.39&9&122.0\\
+II&79.95&80.92&6.13&3.41&9&122.6\\
+II&80.92&86.03&6.21&3.45&9&124.2\\
+II&86.03&109.43&6.62&3.68&9&132.4\\
+II&109.43&256&8.47&4.24&10&169.4\\\bottomrule
+\end{tabular}
+\caption{Exact interpolation parameters; entries are terminating rationals.}\label{tab:params}
+\end{table}
+The first row in each stratum uses $y\ge79.5J$; later rows apply when $k$ exceeds the preceding endpoint and use $y\ge k$. Divisibility of $J$ makes all required parameters integers, with $M\ge60200$. Since $k>77J$ and $r\le4.24$, $R_2<u_0$. Distinct powers of $81$ give the first cardinality condition. Injectivity of $z+u_0w$ on $0\le z<R_2$, $0\le w<S$ and $rS\ge5x$ give the second.
+
+Here $R=rJ+4$, $N=5xJ$, and Lemma~\ref{lem:factorial} gives
+\[
+ b<\frac{4.483\{rJ+3+(S-1)(T_*J+3)/4\}}{2(xJ-1)}.
+\]
+This bound decreases with $J$. Also
+\[
+ \frac{\gamma R}{J}\le\frac r2+0.0002-\frac{5x}{6S},\qquad
+ \gamma S\le\frac S2-\frac{5x}{6(r+0.0004)},\qquad
+ \frac{3\ln N}{J}<0.0039.
+\]
+For the last inequality write $J=10000v$, use $N\le423500v$, $\ln423500<13$, and $\ln v\le v-1$. Let $L_b$ be an upward five-decimal rational bound for the logarithm of the displayed bound on $b$ at $J=10000$. The auditor checks the following sufficient lower bound for~\eqref{eq:interp}, divided by $J$:
+\begin{align*}
+16x(0.69314718)-xL_b-0.0039
+-5\bigg[&\left(\frac r2+0.0002-\frac{5x}{6S}\right)4(1.09861229)\\
+&+\left(\frac S2-\frac{5x}{6(r+0.0004)}\right)U\bigg]>0.
+\end{align*}
+Thus $\val(\Lambda)<4ML=20xJ$, so $k'<20xJ$. Every table row also satisfies the exact rational checks
+\[
+ g=1.5849625h_*-20x>1,\qquad d_-+0.5849625g>16/5.
+\]
+Since $\delta>1.5849625$ and $\beta>0.5849625$, these imply
+\begin{equation}\label{eq:localloss}
+ k'\le\delta y-J,\qquad y''\le\delta^2y-\tfrac{16}{5}J.
+\end{equation}
+In stratum II the positive $d_-$ is retained. The file \texttt{src/audit\_retained\_loss\_bound.py} verifies the rational margins and their logarithm enclosures; it does not replace the symbolic application of the external theorem.
+
+\section{The unbounded range}\label{sec:unbounded}
+For completeness, we give the uniform argument for $D<J$, $k/J>256$, $J\ge100$. Set $r=k\bmod2$, $u_0=(k+r)/2$, $\alpha_1=9$, $\alpha_2=-3^rb_0/a$, and $E=3$. If $\val(\Lambda)\le2$ the bound is immediate; otherwise $\alpha_2\equiv1\pmod8$. The heights satisfy $h(\alpha_1)=2\ln3$ and
+\[
+ h(\alpha_2)<U_0J,\qquad U_0=525099/437500
+ =\tfrac{12}{7}\tfrac{101}{100}(0.6932).
+\]
+Choose the least integer $q$ with $k/J\le2^q$. Then $q\ge9$, $k/J>2^{q-1}$. Use
+\[
+ M=(q+1)J,\ L=q+2,\ R_1=L,\ S_1=1,\ R_2=(q-1)J,\ S_2=q+5.
+\]
+Now $R=(q-1)J+q+1$, $S=q+5$, $N=(q+1)(q+2)J$, $M\ge1000$. The inequalities $q-1<2^{q-2}$ and $(q-1)(q+5)\ge(q+1)(q+2)$ give $R_2<u_0$ and both cardinality conditions, as in Section~\ref{sec:fourth}. In particular $RS>N$ and $1/3<\gamma<1/2$.
+
+Using the weaker factorial constant $5$,
+\[
+ b<\frac{5\{[2(q-1)+(q+4)2^q]J+3q+4\}}{4((q+1)J-1)}
+ \le\frac74\,2^q.
+\]
+For the last inequality it suffices that
+$J[(2q-13)2^q-10q+10]\ge7\cdot2^q+15q+20$.
+At $J\ge100$ this follows from $(200q-1307)2^q\ge1015q-980$, true for $q\ge9$ already upon replacing $2^q$ by $512$. Hence $\ln b<0.6932q+0.56$. Direct calculation gives
+\begin{align*}
+ \gamma R/J&=q/3-1/6-2/(q+5)+(q+1)/(2J)
+ \le(203q-97)/600,\\
+ \gamma S&\le\left(\tfrac12-\tfrac{350}{2127}\right)q
+                   +\tfrac52-\tfrac{1400}{2127}.
+\end{align*}
+The second inequality uses $(q+1)/((q-1)J)\le9/700$ and $(q+1)(q+2)/(q-1)=q+4+6/(q-1)$. Also $\ln J<J/20$, $\ln(q+2)<q/3$, and $\ln(q+1)<q/3$, by $\ln v\le v-1$ after scaling from $100$ or $11$. Thus $3\ln N/J<0.15+0.02q<q/25$.
+
+The normalized interpolation margin is greater than
+\begin{align*}
+P(q)={}&(q+1)[(q+1)2.079-0.6932q-0.56]-q/25\\
+&-(q+2)\left[\frac{203q-97}{600}\,2.198
+ +\left(\left(\tfrac12-\tfrac{350}{2127}\right)q
+       +\tfrac52-\tfrac{1400}{2127}\right)U_0\right].
+\end{align*}
+Its quadratic, linear and constant coefficients are respectively
+\[
+ \frac{1783170953}{7444500000},\qquad
+ -\frac{454813329}{354500000},\qquad
+ -\frac{1631430293}{744450000}.
+\]
+The leading coefficient is positive, $P(9)=3011630363/531750000>5.66$, and $P'(9)=1503066483/496300000>3.02$. Expansion at $9$ proves positivity on the entire range. Hence
+\[
+ k'<3J(q+1)(q+2)<\tfrac{38}{25}J2^{q-1}<\tfrac{38}{25}k.
+\]
+The middle inequality holds at $q=9$, since $330<(38/25)256$, and persists because the ratio of consecutive left sides is $(q+3)/(q+1)\le2$.
+Finally $\delta>19/12$, $\beta>7/12$ give
+$\beta(\delta-38/25)256>16/5$ and $\delta-38/25>1/256$. With~\eqref{eq:two}, these imply~\eqref{eq:localloss} for the unbounded range as well. Thus all possible $k$ and $D$ are covered.
+
+\section{Global restart and the cycle bound}\label{sec:restart}
+For $y\ge B$, choose $J=100\lfloor y/7950\rfloor$. With $C=79.5$, the identities $10000C=795000\le B$ and $100C/(1-C/80)=B$ imply
+\[
+ 100\mid J,\quad J\ge10000,\quad CJ\le y,\quad J>y/C-100\ge y/80.
+\]
+Either $y'\le\lambda y$, or $k'\le\lambda y$ and $y''\le\lambda^2y$. The latter follows from $2\delta\eps-\eps^2<(16/5)\eps$.
+
+Define the continuous increasing envelope
+\[
+ G(y)=\begin{cases}\delta y,&y\le B,\\
+       \max(\lambda y,y+\beta B),&y\ge B.
+       \end{cases}
+\]
+For nonnegative $y$, $\lambda y\le G(y)\le\delta y$. At a one-block restart the next height is bounded by $G$; at a two-block restart, the intermediate run is bounded by $G$ and the endpoint height by $G^2$. Monotonicity and induction on restart times therefore give, at every block index,
+\begin{equation}\label{eq:restartbounds}
+ k_t\le G^t(y_0),\qquad y_{t+1}\le\delta G^t(y_0).
+\end{equation}
+For the intermediate height in a two-block step use $y'\le\delta y$; this is why bounding only restart endpoints would be insufficient.
+
+If $y\ge\beta B/(\lambda-1)$ then $G(y)=\lambda y$. The inequalities $\lambda>1.57$ and $1.03(\lambda-1)>\beta$, together with
+\[
+ 157^{32}>103\cdot1272000\cdot100^{31},
+\]
+put every \emph{virtual} orbit starting from $y_0\ge1$ in this linear region by step $32$. Before that step use $G\le\delta y$, and afterwards use $G=\lambda y$. This yields $G^t(y_0)\le Ay_0\lambda^t$ for all $t$, proving Theorem~\ref{thm:growth}. Nothing here asserts that an actual orbit reaches the virtual height.
+
+For cycle constants, also observe $G(y)\le\lambda y+\eps B$. Put $c=\eps B/(\lambda-1)$. Induction gives
+\begin{equation}\label{eq:affine}
+ G^t(y_0)\le(y_0+c)\lambda^t-c.
+\end{equation}
+Rotate a hypothetical cycle to its least minimum. Simons--de Weger~\cite{sdw}, Theorem~3(d), implies $K<16m\delta^m$ for $m\ge91$ by coarsening the applicable constants, and Corollary~13 gives
+$n_{\min}<m\exp(13.3(0.46057+\ln K))$. Consequently, with $a_0=\lb\delta$,
+\[
+ y_0<1+\frac{13.3(0.46057)}{\ln2}+53.2+14.3\lb m+13.3a_0m.
+\]
+For $m\ge1024$, use $\ln2>0.69$, $a_0<2/3$ and $\lb m\le m/64$. The constant term is below $64$, and $13.3(2/3)+14.3/64+64/1024<10$, so $y_0<10m$. The logarithm comparison holds at $1024$ and its difference increases thereafter; $a_0<2/3$ follows from $\delta<317/200$ and $(317/200)^3<4$. Summing Theorem~\ref{thm:growth} gives $K<22.51m\lambda^m$.
+
+For $1024\le m\le515619$, the same published theorem gives $n_{\min}<51825000m^2\delta^m$. Therefore
+$y_0<1+\lb51825000+2\lb m+a_0m$. Since $51825000<2^{26}$ and $(\lb m)/m$ decreases here,
+\[
+ y_0/m<2/3+47/1024,\qquad
+ \frac{A}{\lambda-1}(2/3+47/1024)<1.61.
+\]
+This proves the middle-range bound. For the larger range, substitute the already established $22.51m\lambda^m$ bound into Corollary~13. With
+\[
+ Q=1+\frac{13.3(0.46057)}{\ln2}+13.3\lb22.51,
+\]
+we have $y_0<Q+14.3\lb m+13.3m\lb\lambda$. Summing~\eqref{eq:affine} bounds $K$ by $\lambda^m(y_0+c)/(\lambda-1)$. Its coefficient divided by $m$ is at most
+\[
+ \frac{13.3\lb\lambda+(Q+14.3\lb m+c)/m}{\lambda-1}.
+\]
+It decreases for $m\ge515620$, and the exact upward rational audit puts it below $15.27$ at that cutoff. This proves Theorem~\ref{thm:cycle} without a circular bootstrap.
+
+\section{A nonlinear extremal profile}\label{sec:majorization}
+The geometric case is established prior machinery: in particular Hercher's 2026 corrigendum~\cite{hercher} treats a geometric extremal vector under cyclic growth constraints. We use the following nonlinear extension and do not claim priority for majorization or convex extremal profiles themselves.
+
+Let $b\in\RR$, $m\ge1$, and let $\Phi:[b,\infty)\to[b,\infty)$ be continuous and strictly increasing with $\Phi(x)\ge x$. Define
+\[
+ \Psi(t)=\begin{cases}b,&b\le t\le\Phi(b),\\
+ \Phi^{-1}(t),&t>\Phi(b).
+ \end{cases}
+\]
+For $S\ge mb$, there is a unique $t\ge b$ with
+\[
+ w_j=\Psi^{m-j}(t)\ (1\le j\le m),\qquad \sum_jw_j=S.
+\]
+Indeed the sum is continuous, strictly increasing (its last term is $t$), starts at $mb$, and tends to infinity.
+
+\begin{theorem}[Extremal profile]\label{thm:profile}
+The increasing vector $w$ majorizes every cyclic vector $x$ with $x_i\ge b$, $x_{i+1}\le\Phi(x_i)$ and $\sum_i x_i=S$. Hence for convex $f$, $\sum_i f(x_i)\le\sum_j f(w_j)$. Equality is attainable by $w$ arranged in increasing cyclic order.
+\end{theorem}
+\begin{proof}
+Sort $x$ as $u_1\le\cdots\le u_m$. For $j<m$, an edge in the original cycle leaves the set of its $j$ smallest vertices. Its start is at most $u_j$ and its end at least $u_{j+1}$; thus $u_{j+1}\le\Phi(u_j)$, equivalently $u_j\ge\Psi(u_{j+1})$.
+Suppose an increasing prefix through $j$ has sum smaller than the $w$-prefix. Necessarily $w_j>b$. Also $u_j<w_j$, since otherwise backward iteration gives $u_i\ge\Psi^{j-i}(u_j)\ge w_i$ for all $i\le j$. After $w_j>b$ all subsequent inverse steps are untruncated, so $w_{j+r}=\Phi^r(w_j)$. Strict monotonicity then gives $u_{j+r}<w_{j+r}$ for all $r\ge1$. The smaller prefix and suffix contradict equality of totals. Thus all increasing prefix sums of $u$ are at least those of $w$, the asserted majorization. The convex inequality follows from the standard majorization inequality. Finally $w_{j+1}\le\Phi(w_j)$ also at the floor transition, and the wraparound holds since $w_1\le w_m\le\Phi(w_m)$.
+\end{proof}
+Neither concavity nor differentiability of $\Phi$ is required.
+
+Suppose periodic heights $y_i\ge b$ and run lengths $k_i$ satisfy $k_{i+t}\le\Phi^t(y_i)$ for all $t\ge0$. Set $v_i=\max(b,k_i)$ and
+\[
+ z_i=\max_{0\le t<m}\Psi^t(v_{i+t}).
+\]
+Periodicity and $\Psi^m(x)\le x$ show this also equals the supremum over all $t\ge0$. We have $v_i\le z_i\le y_i$ and $z_i=\max(v_i,\Psi(z_{i+1}))$, hence $z_{i+1}\le\Phi(z_i)$ and $\sum z_i\ge K=\sum k_i$.
+For a lower bound $K_0\le K$ with $K_0\ge mb$, cap all $z_i$ at a common $T\ge b$ until their sum is $K_0$. Continuity supplies $T$. Capping preserves growth: if $z_i\le T$ the previous inequality suffices; otherwise the capped successor is at most $T\le\Phi(T)$. For decreasing convex $f$ it increases the objective. Theorem~\ref{thm:profile} therefore bounds $\sum f(y_i)$ by the extremal profile of total $K_0$. If $K_0<mb$, use $mf(b)$. We use $f(y)=1/(2^y-1)$.
+
+\section{Finite certificates and their soundness}\label{sec:finite}
+The finite claim uses earlier frozen specializations with $(\eps,B)=(1/160,16384)$ or $(1/93,32768)$, not the stronger parameters of Theorem~\ref{thm:growth}. The external computational input is Barina's published convergence verification below $X=2^{71}$~\cite{barina}; $X$ itself converges because it is a power of two. Therefore every member of a hypothetical nontrivial cycle exceeds $X$. We have not repeated Barina's verification.
+
+\subsection{Finite restart map and coverage}
+For $y\ge71$, define
+\[
+ \Phi(y)=\max\{\delta y-40.99,
+             \min(\delta y-37.99,y+71\beta-37.99)\}.
+\]
+It is continuous, increasing, has slopes at least one and satisfies $\Phi(y)\ge y$. A sufficient witness is $r\ge1$ such that
+\[
+ k_j\le\Phi^j(y_0)\quad(0\le j<r),\qquad y_r\le\Phi^r(y_0).
+\]
+Restart induction then gives all future run bounds. Entry into a verified convergence basin instead eliminates the starting value from a nontrivial cycle.
+
+The reduction uses~\eqref{eq:one}--\eqref{eq:two}, Bugeaud's 2002 Theorem~2~\cite{bugeaud02}, and exhaustive modular checks. The companion proof notes and auditors spell out this earlier specialization. Exceptions are confined to $k<200$, $\ell\le40$ and odd parts below $2^{69}$. For $k\ge2^{19}$ the bound is
+\[
+ \val(a3^k+2^\ell-1)<1700(\ln k+2)^2+3<k;
+\]
+the last comparison extends from its cutoff by monotonicity. The remaining sweep checks $40(2^{19}-1)=20971480$ pairs and the next-run bound $s\le100$. Exact sufficient inequalities eliminate $k\ge200$. The remaining $44497$ residue classes contain exactly $144429913922369056364$ seeds.
+
+Two algorithms cover that input completely: inverse-residue branching with exact affine formulas, and parity bisection of arithmetic progressions. They use $1648100522$ and $1253664985$ nodes, respectively, with maximum restart depth five. Distinct partition rules account for different node counts.
+
+For an odd-part progression, a later minimum has the form $n_j=(Pa+Q)/2^S$, with $P>0$ and $Q+2^S\ge0$. The difference
+$\Phi^j(k_{\rm root}+\lb a)-\lb(n_j+1)$ is nondecreasing: multiply its derivative by $a\ln2$ to obtain a lower bound $1-Pa/(Pa+Q+2^S)\ge0$. Continuity handles breakpoints. A successful least-endpoint comparison therefore certifies the entire progression. Whole-family basin checks use the greatest endpoint. Directed integer logarithms and a rational mantissa grid make these comparisons rigorous. Python checks all $2032128$ grid thresholds and $112$ selected progression cases; it does not repeat all $44497$ classes. Full coverage remains a native-integer-code certificate claim.
+
+\subsection{Joining the analytic tail}
+For either frozen pair $(\eps,B)$, set
+\[
+ F(y)=\min\{\Phi(y),(\delta-\eps)y+\eps B-40.99\}.
+\]
+The branches meet at $B$. Merely taking the minimum of restart maps would not establish a restart property. Above $B$, the analytic restart transfers because $\eps B-40.99>0$ and $F\ge\mathrm{id}$. Below $B$, finite witnesses stay below the join: initial upper height is at most $117$ and $\delta^5 117<B$. Nonexceptional small-$k$ witnesses have $\delta^2 300<B$. For $k\ge200$ use $s\le100$, $F(y)\ge(\delta-\eps)y-40.99$, and the exact checks
+\begin{gather*}
+ ((\delta-\eps)^2-\delta)200-(\delta-\eps+1)40.99-\beta100>0,\\
+ (\delta-\eps)200-40.99>100.
+\end{gather*}
+These include steps crossing the join. Source-bound graft auditors check these inequalities and the recorded root heights and depths. Thus $F$ supplies future-run bounds for basin-avoiding orbits under the stated reduction.
+
+\subsection{Rational approximation and least-minimum windows}
+The cycle product identity and the geometric reciprocal bound within each odd run give
+\[
+ 0<H/K-\delta<\frac1{K\ln2}\sum_{i=1}^m\frac1{n_i}.
+\]
+The profile argument of Section~\ref{sec:majorization} bounds this sum from a lower bound $K_0\le K$. Directed intervals for $\delta$ and $\ln2$ give an open interval containing $H/K$. Exact Stern--Brocot bracketing then gives a new lower bound on $K$; determinant-one neighboring fractions certify the denominator step. Iterate until this exceeds the published upper bound $1.4784m\delta^m$.
+
+For $m=96,97,98$, the profiles close at $X$. For $m=99,100$, least minima must first be excluded in $[X,11X]$ and $[X,15X]$, respectively. With $A_r(y)=\sum_{j=0}^{r-1}F^j(y)$ and a proved upper bound $B_0$ for the starting height, a prefix of $i$ blocks must satisfy
+\[
+ A_{m-i}(y_i)\ge K_0-\lceil A_i(B_0)\rceil.
+\]
+Upward evaluation of $A_r$ and a positive-series lower bound for $2^h$ produce exact necessary integer targets. They are not heuristic pruning thresholds.
+
+The exact prefix-search invariant is
+\[
+ n_i=(Pn_0+Q)/2^S,\quad P=3^{\text{odd steps used}},\quad Q\ge0,
+\]
+with $n_0$ confined to a residue class and interval. Child congruence classes partition the parent. Empty classes are discarded. If $P<2^S$, avoiding descent below $n_0$ requires $n_0\le Q/(2^S-P)$, giving a safe interval restriction. Failure of a necessary capacity target discards a class. When a class has a single possible integer, exact continuation decides its pruning conditions. A depth or node limit yields an unresolved survivor or incomplete run; it is not evidence of exclusion. These are the soundness obligations behind the search counters, and mathematical review must examine their link to the capacity inequalities.
+
+The final profile lower bounds exceed their upper ceilings:
+\begin{center}\small
+\begin{tabular}{crr}\toprule
+$m$&Final lower bound for $K$&Upper ceiling for $K$\\\midrule
+99&$7797285910967231555816016771572875912$&$9274858856993487264329$\\
+100&$3876482907693838530030634129025455$&$14848791401834506924263$\\\bottomrule
+\end{tabular}
+\end{center}
+The complete evidence chain includes the map certificates, profiles, target derivation, journal coverage, partition audits and fixed-width overflow fallback. The revision's full $m=100$ original-arithmetic reproduction is reported with its exact completion status and counters in the repository's verification report. No unfinished $m=101$ experiment is an input.
+
+\section{What Lean proves, and what remains outside it}\label{sec:lean}
+The active project has a root \texttt{lakefile.toml}, pinned Lean 4.34.1 and mathlib commit \texttt{d13f23b723b8a846827a245b89c10fc7d3f11612}, and root module \texttt{Collatz}. It imports guarded copies of all 21 historical modules and the connected modules \texttt{Collatz.Blocks} and \texttt{Collatz.Connected}.
+
+The structure \texttt{Collatz.BlockOrbit} records positive natural-number sequences $n,a,k,\ell$, oddness of $n,a$, and the exact identities $n_i+1=a_i2^{k_i}$ and $n_{i+1}2^{\ell_i}+1=a_i3^{k_i}$. Lean derives $k_i\le y_i$, $y_i\ge1$, and $y_{i+1}\le\delta y_i$ from these identities. It does not yet prove equivalence of this representation with a separately defined iterated $T$.
+
+The explicit proposition \texttt{LocalLossCertificate} is
+\begin{align*}
+ \forall i,J\in\NN,quad 100\mid J,\ J\ge10000,\ 79.5J\le y_i
+ \quad\Longrightarrow\quad& y_{i+1}\le\delta y_i-J\\
+ &\text{or }\bigl(k_{i+1}\le\delta y_i-J\ \text{and }\
+ y_{i+2}\le\delta^2y_i-\tfrac{16}{5}J\bigr).
+\end{align*}
+The top-level theorem \texttt{Collatz.block\_growth\_of\_local\_loss} takes a \texttt{BlockOrbit} and a proof of this proposition, and concludes both inequalities of Theorem~\ref{thm:growth}. Rounding, restart induction and the finite warmup are connected to that conclusion. The proposition is a hypothesis, not a newly declared axiom or a proof supplied by a numerical table. Its mathematical justification is Sections~\ref{sec:blocks}--\ref{sec:unbounded}; that justification is not fully formalized.
+
+\texttt{\#guard\_msgs} checks the axiom reports, allowing only Lean's usual \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}. This excludes proof placeholders in the checked conclusions, but does not remove their explicit hypotheses. The external interpolation theorem, its full specialization, imported cycle theorems and exhaustive search programs remain outside the connected formal proof. A successful build is therefore partial formal verification, not a machine-checked proof of the whole paper.
+
+\section{Prior work, priority, and review status}\label{sec:prior}
+The comparison point for the displayed cycle upper bounds is Simons--de Weger~\cite{sdw}. Bugeaud's estimates~\cite{bugeaud99,bugeaud02} supply the transcendence input. Normalized-exponent improvements themselves are established tools, as reviewed in~\cite{bprime}. Hercher~\cite{hercher} supplies the journal exclusion through $91$ and relevant geometric extremal machinery; Wang~\cite{wang} supplies the located preprint comparison through $95$. Barina~\cite{barina} supplies the convergence floor.
+
+Brox~\cite{brox} and Luca~\cite{luca} are important earlier results on cycle complexity. Luca's run parameter counts blocks with $k_i\ge2$ and can be smaller than our $m$. His effective bounds and displayed height recurrence do not state the uniform all-orbit estimate with the explicit base here. Brox's finiteness result for cycles with few descents is not the same quantitative assertion. We do not infer newness merely because those papers use different notation.
+
+The expanded search also examined primary texts or statements on rational-cycle bounds, newer $p$-adic estimates, and 2026 conditional or formal Collatz work. The dated search log, inspected sections, parameter comparisons, and access limitations are in \texttt{paper/NOVELTY-REVIEW.md}. We found no matching statement of the particular base and prefactor, or the same finite extension through $100$, in that search. This is evidence for a \emph{candidate} contribution, not a proof of priority. We make no separate priority claim for the general nonlinear profile lemma.
+
+If correctness and priority are confirmed, the contribution is quantitative: smaller explicit growth bounds and five additional local-minimum cases relative to the located preprint. It does not exclude all cycle sizes or divergent orbits, and it does not show that a solution of Collatz is near. The first public edition was posted on 29 September 2026; neither that posting nor this revision is journal acceptance. Feedback received so far concerned formalization and presentation, not endorsement of the mathematical claims.
+
+\section{Reproduction and the next review step}\label{sec:reproduce}
+The public repository is \repo. The original 428-file manifest and its historical sources and receipts are preserved. Current paper files, the active Lean project and revision evidence are separately identified. The default audits replay certificate checks, not every multi-billion-node search.
+\begin{verbatim}
+python scripts/verify_revision.py --audits
+lake exe cache get
+lake build
+\end{verbatim}
+The documented full-reference command uses the original BigInteger kernel, a different split from the fixed-width run, and requires exact agreement of seven terminal counters and nodes after subtraction of dispatched roots. This is an arithmetic implementation cross-check sharing the reduction and some search logic; it is not independent mathematical review. The new receipt also requires journal coverage, generator agreement and a partition audit. The full command and current evidence paths are in \texttt{paper/VERIFICATION-REPORT.md}.
+
+The most useful next mathematical review is bounded: check the rational clause of Bugeaud's theorem, its signed rational arguments and height conventions, both cardinality conditions, the unbounded dyadic range, then the analytic-to-finite join. A separate reviewer can check the search invariant and directed rounding from the preserved source. Independent-machine reruns and further formalization would reduce distinct risks. Agreement of two programs cannot exclude a common mistaken mathematical premise.
+
+\section{Authorship and AI disclosure}\label{sec:disclosure}
+Luke Baer originated and directed the project, supplied its resources, and required saved evidence and reproducible verification. Amy, operating through OpenAI Codex, developed the arguments, implementations and manuscript and performed the internal checks. Amy is an AI research system, not a human researcher. Joint project credit does not represent eligibility for journal authorship. Any submission requires accountable human review and compliance with the destination's authorship and AI-disclosure rules. No external AI model was consulted for this work or this revision. No correspondence recipient's endorsement or coauthorship is implied.
+
+\begin{thebibliography}{99}
+\bibitem{bugeaud99} Y. Bugeaud, Linear forms in $p$-adic logarithms and the Diophantine equation $(x^n-1)/(x-1)=y^q$, \emph{Math. Proc. Cambridge Philos. Soc.} \textbf{127} (1999), 373--381. \href{https://doi.org/10.1017/S0305004199003692}{doi:10.1017/S0305004199003692}. Author source: \url{https://irma.math.unistra.fr/~bugeaud/travaux/shopuissdef.ps}.
+\bibitem{sdw} J. Simons and B. de Weger, \emph{Theoretical and computational bounds for $m$-cycles of the $3n+1$ problem}, version 1.44, 31 August 2010, Theorem 3(d) and Corollary 13. \href{https://math.deweger.net/papers/\%5B35a\%5DSidW-3n\%2B1-v1.44\%5B2010\%5D.pdf}{Author-hosted version 1.44}.
+\bibitem{barina} D. Barina, Improved verification limit for the convergence of the Collatz conjecture, \emph{J. Supercomput.} \textbf{81} (2025), article 810. \href{https://doi.org/10.1007/s11227-025-07337-0}{doi:10.1007/s11227-025-07337-0}. We use the published $2^{71}$ limit.
+\bibitem{hercher} C. Hercher, There are no Collatz $m$-Cycles with $m\le91$, \emph{J. Integer Seq.} \textbf{26} (2023), article 23.3.5, and corrigendum dated 14 June 2026. \url{https://cs.uwaterloo.ca/journals/JIS/VOL26/Hercher/hercher5.html}.
+\bibitem{wang} X. Wang, \emph{Non-existence of Collatz $m$-cycles for $m\le95$}, 2026 preprint and computational files; located record dated 29 July 2026. \href{https://doi.org/10.5281/zenodo.21670936}{doi:10.5281/zenodo.21670936}. Manuscript and code inspected; code not executed. Journal acceptance not verified.
+\bibitem{luca} F. Luca, On the non-trivial cycles in Collatz's problem, \emph{SUT J. Math.} \textbf{41} (2005), 31--41. \url{https://www.rs.tus.ac.jp/sutjmath/_userdata/41-1/03-luca.pdf}.
+\bibitem{bprime} Y. Bugeaud, \emph{$B'$}, 2022. \url{https://arxiv.org/abs/2209.00275}.
+\bibitem{bugeaud02} Y. Bugeaud, Linear forms in two $m$-adic logarithms and applications to Diophantine problems, \emph{Compos. Math.} \textbf{132} (2002), 137--158, Theorem 2. \href{https://doi.org/10.1023/A:1015825809661}{doi:10.1023/A:1015825809661}. We use Theorem 2, without silently substituting height conventions from the differently printed general Theorem 1.
+\bibitem{brox} T. Brox, Collatz cycles with few descents, \emph{Acta Arith.} \textbf{92} (2000), 181--188. \href{https://doi.org/10.4064/aa-92-2-181-188}{doi:10.4064/aa-92-2-181-188}. The primary indexed theorem statement was inspected; a full-text retrieval limitation is recorded in the search log.
+\end{thebibliography}
+\end{document}
